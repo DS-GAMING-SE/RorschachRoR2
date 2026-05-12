@@ -40,13 +40,29 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             Language.Add(prefix + "OUTRO_FAILURE", outroFailure);
 
             #region Skins
-            Language.Add(prefix + "MASTERY_SKIN_NAME", "Alternate");
+            Language.Add(prefix + "CLASSIC_SKIN_NAME", "Classic");
+            Language.Add(prefix + "FUTURE_SKIN_NAME", "Future");
+            Language.Add(prefix + "WARFRAME_SKIN_NAME", "Warframe");
             #endregion
 
             #region Passive
             Language.Add(prefix + "PASSIVE_NAME", $"{HedgehogUtils.Helpers.wipIcon} Improvised Weaponry");
             Language.Add(prefix + "PASSIVE_DESCRIPTION", $"Killing large or elite monsters has a chance of dropping one of three {Tokens.UtilityText("Improvised Weapons")}, a {Tokens.DamageText("flame can")}, {Tokens.DamageText("pipe")}, or {Tokens.DamageText("cleaver")}, which temporarily upgrade some of your skills.");
             Language.Add(prefix + "PASSIVE_IMPROVISED_WEAPON_KEYWORD", "<style=cKeywordName>Improvised Weapon</style><style=cSub>A unique temporary item that replaces some of Rorschach's skills.</style>");
+
+            #region Items
+            Language.Add(prefix + "IMPROVISED_WEAPON_FLAME_CAN", $"{HedgehogUtils.Helpers.wipIcon} Flame Can");
+            Language.Add(prefix + "IMPROVISED_WEAPON_FLAME_CAN_PICKUP", $"A long-range weapon that sprays fire at enemies.");
+            Language.Add(prefix + "IMPROVISED_WEAPON_FLAME_CAN_DESC", $"A long-range weapon that sprays fire at enemies.");
+
+            Language.Add(prefix + "IMPROVISED_WEAPON_PIPE", $"{HedgehogUtils.Helpers.wipIcon} Pipe");
+            Language.Add(prefix + "IMPROVISED_WEAPON_PIPE_PICKUP", $"A heavy weapon with high damage and stuns.");
+            Language.Add(prefix + "IMPROVISED_WEAPON_PIPE_DESC", $"A heavy weapon with high damage and stuns.");
+
+            Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER", $"{HedgehogUtils.Helpers.wipIcon} Cleaver");
+            Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER_PICKUP", $"A fast-attacking weapon that increases bleed chance.");
+            Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER_DESC", $"A fast-attacking weapon that increases bleed chance.");
+            #endregion
             #endregion
 
             #region Primary

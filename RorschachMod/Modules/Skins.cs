@@ -60,7 +60,7 @@ namespace RorschachMod.Modules
             R2API.SkinDefParamsInfo masterySkinParamsInfo = new R2API.SkinDefParamsInfo
             {
                 Name = RORSCHACH_PREFIX + "MASTERY_SKIN_NAME",
-                NameToken = RORSCHACH_PREFIX + "MASTERY_SKIN_NAME",
+                NameToken = RORSCHACH_PREFIX + "CLASSIC_SKIN_NAME",
                 Icon = Addressables.LoadAssetAsync<Sprite>(RorschachAssets.masterySkinIcon).WaitForCompletion(),
                 UnlockableDef = RorschachUnlockables.masterySkinUnlockableDef,
                 RootObject = prefabCharacterModel.gameObject,

@@ -1,5 +1,5 @@
-# <img src="https://github.com/DS-GAMING-SE/AmyRoseRoR2/blob/master/AmyRoseUnityProject/Assets/AmyRoseAssets/AmyRoseBundle/Icons/texAmyRoseIcon.png?raw=true" width="64"> Character Name
-To test the latest version of the mod, download the Latest.zip file found [here](https://github.com/DS-GAMING-SE/AmyRoseRoR2/tree/master/Thunderstore) and add it to your mod list using your mod managers "import local mod" option.
+# <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texHenryIcon.png?raw=true" width="64"> Rorschach
+To test the latest version of the mod, download the RorschachLatest.zip file found [here](https://github.com/DS-GAMING-SE/RorschachRoR2/tree/master/Thunderstore) and add it to your mod list using your mod managers "import local mod" option.
 
 description todo
 

@@ -6,7 +6,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
     {
         #region Passive
 
-        public const float passiveEliteDropChance = 0.25f;
+        public const float passiveEliteDropChance = 25f;
 
         #endregion
 

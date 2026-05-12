@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using HG;
+using System.Linq;
 
+[assembly: HG.Reflection.SearchableAttribute.OptIn]
 namespace RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons
 {
     public static class ImprovisedWeaponManager
@@ -22,6 +24,43 @@ namespace RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons
                 decayValue = 1
             }, position + Vector3.up * 1.5f, 
             Vector3.up * 20f + velocityDirectionOffset * 2f, false, false);
+        }
+
+        public static void Initialize()
+        {
+            GlobalEventManager.onCharacterDeathGlobal += OnCharacterDeath;
+            On.RoR2.GenericPickupController.BodyHasPickupPermission += RestrictImprovisedItemPickup;
+        }
+        public static void OnCharacterDeath(DamageReport damageReport)
+        {
+            if (damageReport.attackerBody && damageReport.attackerBodyIndex == rorschachBodyIndex && damageReport.victimBody)
+            {
+                if (damageReport.victimIsChampion)
+                {
+                    DropItem(damageReport.victimBody.corePosition, damageReport.victimBody.characterDirection ? damageReport.victimBody.characterDirection.forward : damageReport.victimBody.transform.forward);
+                }
+                if (damageReport.victimIsElite && Util.CheckRoll(RorschachStaticValues.passiveEliteDropChance))
+                {
+                    DropItem(damageReport.victimBody.corePosition, damageReport.victimBody.characterDirection ? damageReport.victimBody.characterDirection.forward : damageReport.victimBody.transform.forward);
+                }
+            }
+        }
+
+        public static bool RestrictImprovisedItemPickup(On.RoR2.GenericPickupController.orig_BodyHasPickupPermission orig, CharacterBody characterBody, UniquePickup pickup)
+        {
+            if (improvisedWeaponPickupIndices.Contains(pickup.pickupIndex))
+            {
+                if (!characterBody || characterBody.bodyIndex != rorschachBodyIndex || !characterBody.inventory)
+                {
+                    return false;
+                }
+                PickupDef pickupDef = PickupCatalog.GetPickupDef(pickup.pickupIndex);
+                if (pickupDef.itemIndex != ItemIndex.None && characterBody.inventory.GetTotalItemCountOfTier(ImprovisedWeaponItemDefs.improvisedWeaponTier.tier) != characterBody.inventory.GetItemCountEffective(pickupDef.itemIndex))
+                {
+                    return false;
+                }
+            }
+            return orig(characterBody, pickup);
         }
 
         [SystemInitializer(typeof(BodyCatalog))]
