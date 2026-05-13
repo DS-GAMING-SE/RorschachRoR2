@@ -15,7 +15,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             masterySkinUnlockableDef = Modules.Content.CreateAndAddUnlockbleDef(
                 RorschachMasteryAchievement.unlockableIdentifier,
                 Modules.Tokens.GetAchievementNameToken(RorschachMasteryAchievement.identifier), null);
-            RorschachAssets.masterySkinIcon.LoadAssetAsync<Sprite>().Completed += x => { masterySkinUnlockableDef.achievementIcon = x.Result; };
+            RorschachAssets.classicSkinIcon.LoadAssetAsync<Sprite>().Completed += x => { masterySkinUnlockableDef.achievementIcon = x.Result; };
         }
     }
 }

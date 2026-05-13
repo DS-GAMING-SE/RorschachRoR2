@@ -41,16 +41,12 @@ MonoBehaviour:
     m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texHenryIcon.png
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: e1b58742d5489f9409faeafa1fe57f42
-    m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texSecondaryIcon.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 0f5783e971afb924daa22df12d6c1325
     m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texUtilityIcon.png
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 44a1d09fd35f1384e819b98e0f18058e
-    m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texSpecialIcon.png
+  - m_GUID: 6f0e7dc80d946bd489940eccc8c92f5b
+    m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texFlameCanIcon.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 977438518be9ff545a06824ddf881e15
@@ -89,10 +85,6 @@ MonoBehaviour:
     m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texMasteryAchievement.png
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 4d32648010cd8714d980002a6b64b503
-    m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texPrimaryIcon.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 507751368e16e18409e1c93f8022eb8c
     m_Address: Assets/RorschachAssets/RorschachBundle/Materials/matHenryAlt.mat
     m_ReadOnly: 0
@@ -107,6 +99,18 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 95bb770c878495b4296296a4b09a6034
     m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshPistol.mesh
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d79f886258b3bb74a90bd0d43ee60854
+    m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texCleaverIcon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1872c188be0e7fd4397142cd14cc8863
+    m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texPipeIcon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b4d4d8a7648b8c04393ee5d064218886
+    m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texPunchIcon.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

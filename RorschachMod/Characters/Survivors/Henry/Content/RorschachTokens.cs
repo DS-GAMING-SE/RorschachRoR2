@@ -46,8 +46,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             #endregion
 
             #region Passive
-            Language.Add(prefix + "PASSIVE_NAME", $"{HedgehogUtils.Helpers.wipIcon} Improvised Weaponry");
-            Language.Add(prefix + "PASSIVE_DESCRIPTION", $"Killing large or elite monsters has a chance of dropping one of three {Tokens.UtilityText("Improvised Weapons")}, a {Tokens.DamageText("flame can")}, {Tokens.DamageText("pipe")}, or {Tokens.DamageText("cleaver")}, which temporarily upgrade some of your skills.");
+            Language.Add(prefix + "PASSIVE_NAME", $"Improvised Weaponry");
+            Language.Add(prefix + "PASSIVE_DESCRIPTION", $"Killing large or elite monsters has a chance of dropping one of three {Tokens.UtilityText("Improvised Weapons")}, a {HedgehogUtils.Helpers.wipIcon + " " + Tokens.DamageText("flame can")}, {HedgehogUtils.Helpers.wipIcon + " " + Tokens.DamageText("pipe")}, or {HedgehogUtils.Helpers.wipIcon + " " + Tokens.DamageText("cleaver")}, which temporarily upgrade some of your skills. {Tokens.UtilityText("Unaffected by luck")}.");
             Language.Add(prefix + "PASSIVE_IMPROVISED_WEAPON_KEYWORD", "<style=cKeywordName>Improvised Weapon</style><style=cSub>A unique temporary item that replaces some of Rorschach's skills.</style>");
 
             #region Items
@@ -66,13 +66,13 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             #endregion
 
             #region Primary
-            Language.Add(prefix + "PRIMARY_DEFAULT_NAME", $"{HedgehogUtils.Helpers.wipIcon} Black and White");
-            Language.Add(prefix + "PRIMARY_DEFAULT_DESCRIPTION", $"Swing forward for <style=cIsDamage>{100f * RorschachStaticValues.swordDamageCoefficient}% damage</style>.");
+            Language.Add(prefix + "PRIMARY_DEFAULT_NAME", $"Black and White");
+            Language.Add(prefix + "PRIMARY_DEFAULT_DESCRIPTION", $"Swing forward for <style=cIsDamage>{100f * RorschachStaticValues.primaryDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Secondary
             Language.Add(prefix + "SECONDARY_DEFAULT_NAME", $"{HedgehogUtils.Helpers.wipIcon} Judgement Fists");
-            Language.Add(prefix + "SECONDARY_DEFAULT_DESCRIPTION", $"Dash forward, dealing {Tokens.DamageValueText(0)}. Hold the skill to charge up a strong punch, dealing {Tokens.DamageValueText(0,0)}. Landing a fully charged punch grants {Tokens.RedText("Judgement")}.");
+            Language.Add(prefix + "SECONDARY_DEFAULT_DESCRIPTION", $"Dash forward, dealing {Tokens.DamageValueText(0)}. Hold the skill to charge up a strong punch, dealing {Tokens.DamageValueText(RorschachStaticValues.secondaryChargeMinDamageCoefficient, RorschachStaticValues.secondaryChargeMaxDamageCoefficient)}. Landing a fully charged punch grants {Tokens.RedText("Judgement")}.");
             Language.Add(prefix + "JUDGEMENT_KEYWORD", "<style=cKeywordName>Judgement</style><style=cSub>A buff that is consumed to strengthen your special skill. Stacks up to 4 times.</style>");
             #endregion
 

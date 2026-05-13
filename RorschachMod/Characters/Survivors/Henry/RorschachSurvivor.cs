@@ -1,17 +1,18 @@
 ﻿using BepInEx.Configuration;
-using RorschachMod.Modules;
-using RorschachMod.Modules.Characters;
+using HG;
+using R2API.Networking;
+using RoR2;
+using RoR2.ContentManagement;
+using RoR2.Skills;
 using RorschachMod.Characters.Survivors.Rorschach.Components;
 using RorschachMod.Characters.Survivors.Rorschach.SkillStates;
-using RoR2;
-using RoR2.Skills;
+using RorschachMod.Modules;
+using RorschachMod.Modules.Characters;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using RoR2.ContentManagement;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using HG;
 
 namespace RorschachMod.Characters.Survivors.Rorschach
 {
@@ -189,12 +190,14 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                     RORSCHACH_PREFIX + "PRIMARY_DEFAULT_NAME",
                     RORSCHACH_PREFIX + "PRIMARY_DEFAULT_DESCRIPTION",
                     RorschachAssets.primarySkillIcon.LoadAssetAsync().WaitForCompletion(),
-                    new EntityStates.SerializableEntityStateType(typeof(SkillStates.SlashCombo)),
+                    new EntityStates.SerializableEntityStateType(typeof(PrimaryDefault)),
                     "Weapon"
                 ));
             //custom Skilldefs can have additional fields that you can set manually
-            primarySkillDef1.stepCount = 2;
+            primarySkillDef1.stepCount = 3;
             primarySkillDef1.stepGraceDuration = 0.5f;
+
+            // Remember DamageType.BleedOnHit for cleaver
 
             Skills.AddPrimarySkills(bodyPrefab, primarySkillDef1);
         }
@@ -212,11 +215,11 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 keywordTokens = new string[] { RORSCHACH_PREFIX + "JUDGEMENT_KEYWORD" },
                 skillIcon = RorschachAssets.secondarySkillIcon.LoadAssetAsync().WaitForCompletion(),
 
-                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Shoot)),
-                activationStateMachineName = "Weapon2",
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SecondaryDefaultChargedAttack)),
+                activationStateMachineName = "Body",
                 interruptPriority = EntityStates.InterruptPriority.Skill,
 
-                baseRechargeInterval = 1f,
+                baseRechargeInterval = 3f,
                 baseMaxStock = 1,
 
                 rechargeStock = 1,
@@ -226,17 +229,18 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 resetCooldownTimerOnUse = false,
                 fullRestockOnAssign = true,
                 dontAllowPastMaxStocks = false,
-                mustKeyPress = false,
-                beginSkillCooldownOnSkillEnd = false,
+                mustKeyPress = true,
+                beginSkillCooldownOnSkillEnd = true,
 
                 isCombatSkill = true,
                 canceledFromSprinting = false,
                 cancelSprintingOnActivation = false,
-                forceSprintDuringState = false,
+                forceSprintDuringState = true,
 
             });
 
             Skills.AddSecondarySkills(bodyPrefab, secondarySkillDef1);
+            NetworkingAPI.RegisterMessageType<NetworkJudgement>();
         }
 
         private void AddUtiitySkills()

@@ -8,6 +8,27 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
         public const float passiveEliteDropChance = 25f;
 
+        public const float passiveCleaverBleedChance = 30f;
+
+        #endregion
+
+        #region Primary
+
+        public const float primaryDamageCoefficient = 2.6f;
+
+        #endregion
+
+        #region Secondary
+
+        public const float secondaryDashDamageCoefficient = 3.5f;
+
+        public const float secondaryChargeMinDamageCoefficient = 6f;
+        public const float secondaryChargeMaxDamageCoefficient = 10f;
+
+        public const float secondaryChargeDuration = 1f;
+
+        public const int judgementBuffCap = 4;
+
         #endregion
 
         #region Utility
@@ -16,16 +37,14 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
         #endregion
 
-        public const float swordDamageCoefficient = 2.8f;
+        #region Special
+
+        public const float specialOnKillBuffMultiplier = 0.25f;
+
+        #endregion
 
         public const float gunDamageCoefficient = 4.2f;
 
         public const float bombDamageCoefficient = 16f;
-
-        #region Boost
-        public const float boostListedSpeedCoefficient = 0.25f;
-
-        public const float boostArmor = 50;
-        #endregion
     }
 }

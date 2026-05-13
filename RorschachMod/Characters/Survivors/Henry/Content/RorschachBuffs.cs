@@ -8,18 +8,25 @@ using RoR2;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace RorschachMod.Characters.Survivors.Rorschach
 {
     public static class RorschachBuffs
     {
-        public static BuffDef boostBuff;
+        public static BuffDef judgementBuff;
+        public static BuffDef specialOnKillBuff;
 
         public static void Init()
         {
-            boostBuff = Modules.Content.CreateAndAddBuff("bdRorschachBoost",
-                LegacyResourcesAPI.Load<BuffDef>("BuffDefs/CloakSpeed").iconSprite,
-                Color.white,
+            judgementBuff = Modules.Content.CreateAndAddBuff("bdRorschachJudgement",
+                Addressables.LoadAssetAsync<Sprite>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_WarCryOnMultiKill.texWarcryBuffIcon_tif).WaitForCompletion(),
+                Color.red,
+                true,
+                false);
+            specialOnKillBuff = Modules.Content.CreateAndAddBuff("bdRorschachSpecialOnKill",
+                Addressables.LoadAssetAsync<Sprite>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Bandit2.texBuffBanditSkullIcon_tif).WaitForCompletion(),
+                Color.red,
                 false,
                 false);
 
@@ -33,7 +40,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         {
             if (Language.languagesByName.TryGetValue("en", out RoR2.Language en))
             {
-                RegisterLookingGlassBuff(en, boostBuff, "Rorschach Boost", $"Gain <style=cIsUtility>+{RorschachStaticValues.boostArmor} armor</style>. Gain <style=cIsUtility>+{RorschachStaticValues.boostListedSpeedCoefficient * 100}% movement speed</style>.");
+                RegisterLookingGlassBuff(en, judgementBuff, "Rorschach Judgement", $"Powers up your next special skill.");
+                RegisterLookingGlassBuff(en, specialOnKillBuff, "Rorschach SpecialOnKill", $"Gain {Modules.Tokens.UtilityText("+"+RorschachStaticValues.specialOnKillBuffMultiplier+"% movement speed")} and {Modules.Tokens.DamageText("attack speed")}. ");
             }
         }
 

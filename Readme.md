@@ -7,17 +7,17 @@ description todo
 
 | Skill | Icon | Description |
 | ---- | -------- | ---- |
-| Passive - **Passive Name** | <img src="https://github.com/DS-GAMING-SE/AmyRoseRoR2/blob/master/AmyRoseUnityProject/Assets/AmyRoseAssets/AmyRoseBundle/Icons/texPassiveMomentumIcon.png?raw=true" width="128"> | Passive desc. |
-| Primary - **Primary Name** | <img src="https://github.com/DS-GAMING-SE/AmyRoseRoR2/blob/master/AmyRoseUnityProject/Assets/AmyRoseAssets/AmyRoseBundle/Icons/texPrimaryHammerSwingIcon.png?raw=true" width="128"> | Primary desc. |
-| Secondary - **Secondary Name**  | <img src="https://github.com/DS-GAMING-SE/AmyRoseRoR2/blob/master/AmyRoseUnityProject/Assets/AmyRoseAssets/AmyRoseBundle/Icons/texSecondaryHammerSmashIcon.png?raw=true" width="128"> | Secondary desc. <details>todo</details>  |
-| Utility - **Utility Name** | <img src="https://github.com/DS-GAMING-SE/AmyRoseRoR2/blob/master/AmyRoseUnityProject/Assets/AmyRoseAssets/AmyRoseBundle/Icons/texUtilityBoostIcon.png?raw=true" width="128"> | Utility desc. <details>todo</details> |
-| Special - **Special Name** | <img src="https://github.com/DS-GAMING-SE/AmyRoseRoR2/blob/master/AmyRoseUnityProject/Assets/AmyRoseAssets/AmyRoseBundle/Icons/texSpecialMultiLockIcon.png?raw=true" width="128"> | Special Desc.<details>todo</details> |
+| Passive - **Improvised Weaponry** | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texPassiveIcon.png?raw=true" width="128"> | Passive desc. |
+| Primary - **Black and White** | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texPunchIcon.png?raw=true" width="128"> | Primary desc. |
+| Secondary - **Judgement Fists**  | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texPunchIcon.png?raw=true" width="128"> | Secondary desc. <details>todo</details>  |
+| Utility - **Grappling Hook** | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texUtilityIcon.png?raw=true" width="128"> | Utility desc. <details>todo</details> |
+| Special - **Uncompromising** | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texPunchIcon.png?raw=true" width="128"> | Special Desc.<details>todo</details> |
 
 # Compatible Mods
 - [CustomEmotesAPI](https://thunderstore.io/package/MetrosexualFruitcake/CustomEmotesAPI/)
 - [LookingGlass](https://thunderstore.io/package/DropPod/LookingGlass/)
 - [RiskOfOptions](https://thunderstore.io/package/Rune580/Risk_Of_Options/)
-- [StandaloneAncientScepter](https://thunderstore.io/package/amogus_lovers/StandaloneAncientScepter/) (Upgrades special skill)
+- ~~[StandaloneAncientScepter](https://thunderstore.io/package/amogus_lovers/StandaloneAncientScepter/) (Upgrades special skill)~~
 
 # Credits
 | Name | Platform | Contribution|

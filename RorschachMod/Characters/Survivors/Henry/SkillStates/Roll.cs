@@ -52,7 +52,6 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 
             if (NetworkServer.active)
             {
-                characterBody.AddTimedBuff(RorschachBuffs.boostBuff, 3f * duration);
                 characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, 0.5f * duration);
             }
         }

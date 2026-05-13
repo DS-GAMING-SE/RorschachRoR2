@@ -4,18 +4,18 @@ using UnityEngine;
 
 namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 {
-    public class SlashCombo : BaseMeleeAttack
+    public class PrimaryDefault : BaseMeleeAttack
     {
         public override void OnEnter()
         {
             hitboxGroupName = "SwordGroup";
 
             damageType = DamageTypeCombo.GenericPrimary;
-            damageCoefficient = RorschachStaticValues.swordDamageCoefficient;
+            damageCoefficient = RorschachStaticValues.primaryDamageCoefficient;
             procCoefficient = 1f;
             pushForce = 300f;
             bonusForce = Vector3.zero;
-            baseDuration = 1f;
+            baseDuration = 0.92f;
 
             //0-1 multiplier of baseduration, used to time when the hitbox is out (usually based on the run time of the animation)
             //for example, if attackStartPercentTime is 0.5, the attack will start hitting halfway through the ability. if baseduration is 3 seconds, the attack will start happening at 1.5 seconds
@@ -25,7 +25,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             //this is the point at which the attack can be interrupted by itself, continuing a combo
             earlyExitPercentTime = 0.6f;
 
-            hitStopDuration = 0.012f;
+            hitStopDuration = 0.016f;
             attackRecoil = 0.5f;
             hitHopVelocity = 4f;
 
@@ -43,7 +43,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 
         protected override void PlayAttackAnimation()
         {
-            PlayCrossfade("Gesture, Override", "Slash" + (1 + swingIndex), playbackRateParam, duration, 0.1f * duration);
+            PlayCrossfade("Gesture, Override", swingIndex % 2 == 0 ? "Slash1" : "Slash2", playbackRateParam, duration, 0.1f * duration);
         }
 
         protected override void PlaySwingEffect()

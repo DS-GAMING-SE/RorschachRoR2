@@ -5,6 +5,7 @@ using System.Text;
 using RoR2;
 using RorschachMod;
 using RorschachMod.Characters.Survivors.Rorschach;
+using RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons;
 
 namespace RorschachMod.Modules
 {
@@ -18,10 +19,10 @@ namespace RorschachMod.Modules
         {
             if (self)
             {
-                if (self.HasBuff(RorschachBuffs.boostBuff))
+                if (self.HasBuff(RorschachBuffs.specialOnKillBuff))
                 {
-                    HedgehogUtils.Boost.BoostLogic.BoostStats(self, stats, RorschachStaticValues.boostListedSpeedCoefficient);
-                    stats.armorAdd += RorschachStaticValues.boostArmor;
+                    stats.attackSpeedMultAdd += RorschachStaticValues.specialOnKillBuffMultiplier;
+                    stats.moveSpeedMultAdd += RorschachStaticValues.specialOnKillBuffMultiplier;
                 }
             }
         }
