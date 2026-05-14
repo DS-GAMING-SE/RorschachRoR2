@@ -4,6 +4,7 @@ using LookingGlass.LookingGlassLanguage;
 using System;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
+using static RorschachMod.Characters.Survivors.Rorschach.RorschachStaticValues;
 
 namespace RorschachMod.Characters.Survivors.Rorschach
 {
@@ -67,18 +68,18 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
             #region Primary
             Language.Add(prefix + "PRIMARY_DEFAULT_NAME", $"Black and White");
-            Language.Add(prefix + "PRIMARY_DEFAULT_DESCRIPTION", $"Swing forward for <style=cIsDamage>{100f * RorschachStaticValues.primaryDamageCoefficient}% damage</style>.");
+            Language.Add(prefix + "PRIMARY_DEFAULT_DESCRIPTION", $"Swing forward for <style=cIsDamage>{100f * primaryDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Secondary
             Language.Add(prefix + "SECONDARY_DEFAULT_NAME", $"{HedgehogUtils.Helpers.wipIcon} Judgement Fists");
-            Language.Add(prefix + "SECONDARY_DEFAULT_DESCRIPTION", $"Dash forward, dealing {Tokens.DamageValueText(0)}. Hold the skill to charge up a strong punch, dealing {Tokens.DamageValueText(RorschachStaticValues.secondaryChargeMinDamageCoefficient, RorschachStaticValues.secondaryChargeMaxDamageCoefficient)}. Landing a fully charged punch grants {Tokens.RedText("Judgement")}.");
+            Language.Add(prefix + "SECONDARY_DEFAULT_DESCRIPTION", $"Dash forward, dealing {Tokens.DamageValueText(secondaryDashDamageCoefficient)}. Hold the skill to charge up a strong punch, dealing {Tokens.DamageValueText(secondaryChargeMinDamageCoefficient, secondaryChargeMaxDamageCoefficient)}. Landing a fully charged punch grants {Tokens.RedText("Judgement")}.");
             Language.Add(prefix + "JUDGEMENT_KEYWORD", "<style=cKeywordName>Judgement</style><style=cSub>A buff that is consumed to strengthen your special skill. Stacks up to 4 times.</style>");
             #endregion
 
             #region Utility
             Language.Add(prefix + "UTILITY_DEFAULT_NAME", $"{HedgehogUtils.Helpers.wipIcon} Grappling Hook");
-            Language.Add(prefix + "UTILITY_DEFAULT_DESCRIPTION", $"{Tokens.DamageText("Stunning.")} Fire your grappling hook, dealing {Tokens.DamageValueText(RorschachStaticValues.utilityDamageCoefficient)} damage and {Tokens.UtilityText("pulling")} you to the target.");
+            Language.Add(prefix + "UTILITY_DEFAULT_DESCRIPTION", $"{Tokens.DamageText("Stunning.")} Fire your grappling hook, dealing {Tokens.DamageValueText(utilityDamageCoefficient)} damage and {Tokens.UtilityText("pulling")} you to the target.");
             #endregion
 
             #region Special

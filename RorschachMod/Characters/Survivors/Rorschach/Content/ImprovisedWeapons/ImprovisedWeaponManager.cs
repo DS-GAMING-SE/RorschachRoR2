@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using HG;
 using System.Linq;
+using R2API;
 
 [assembly: HG.Reflection.SearchableAttribute.OptIn]
 namespace RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons
@@ -33,15 +34,23 @@ namespace RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons
         }
         public static void OnCharacterDeath(DamageReport damageReport)
         {
-            if (damageReport.attackerBody && damageReport.attackerBodyIndex == rorschachBodyIndex && damageReport.victimBody)
+            if (damageReport.attackerBody)
             {
-                if (damageReport.victimIsChampion)
+                if (damageReport.damageInfo.damageType.HasModdedDamageType(RorschachDamageTypes.specialOnKillBuff))
                 {
-                    DropItem(damageReport.victimBody.corePosition, damageReport.victimBody.characterDirection ? damageReport.victimBody.characterDirection.forward : damageReport.victimBody.transform.forward);
+                    damageReport.attackerBody.AddTimedBuff(RorschachBuffs.specialOnKillBuff, 3f + damageReport.damageInfo.damageType.ReadJudgementStacks());
+                    Chat.AddMessage($"Judgement Stacks: {damageReport.damageInfo.damageType.ReadJudgementStacks()}");
                 }
-                if (damageReport.victimIsElite && Util.CheckRoll(RorschachStaticValues.passiveEliteDropChance))
+                if (damageReport.attackerBodyIndex == rorschachBodyIndex && damageReport.victimBody)
                 {
-                    DropItem(damageReport.victimBody.corePosition, damageReport.victimBody.characterDirection ? damageReport.victimBody.characterDirection.forward : damageReport.victimBody.transform.forward);
+                    if (damageReport.victimIsChampion)
+                    {
+                        DropItem(damageReport.victimBody.corePosition, damageReport.victimBody.characterDirection ? damageReport.victimBody.characterDirection.forward : damageReport.victimBody.transform.forward);
+                    }
+                    if (damageReport.victimIsElite && Util.CheckRoll(RorschachStaticValues.passiveEliteDropChance))
+                    {
+                        DropItem(damageReport.victimBody.corePosition, damageReport.victimBody.characterDirection ? damageReport.victimBody.characterDirection.forward : damageReport.victimBody.transform.forward);
+                    }
                 }
             }
         }

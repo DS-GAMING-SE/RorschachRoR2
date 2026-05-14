@@ -1,4 +1,5 @@
-﻿using RorschachMod.Characters.Survivors.Rorschach.SkillStates;
+﻿using RorschachMod.Characters.Survivors.Rorschach.SkillStates.FlameCan;
+using RorschachMod.Characters.Survivors.Rorschach.SkillStates;
 
 namespace RorschachMod.Characters.Survivors.Rorschach
 {
@@ -13,7 +14,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
             Modules.Content.AddEntityState(typeof(Roll));
 
-            Modules.Content.AddEntityState(typeof(ThrowBomb));
+            Modules.Content.AddEntityState(typeof(SpecialFlameCan));
         }
     }
 }

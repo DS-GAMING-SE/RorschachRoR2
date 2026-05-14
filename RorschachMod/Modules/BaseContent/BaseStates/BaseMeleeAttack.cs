@@ -53,6 +53,7 @@ namespace RorschachMod.Modules.BaseStates
         public override void OnEnter()
         {
             base.OnEnter();
+            Prepare();
             duration = baseDuration / attackSpeedStat;
             animator = GetModelAnimator();
             StartAimMode(0.5f + duration, false);
@@ -75,6 +76,8 @@ namespace RorschachMod.Modules.BaseStates
 
             ModifyOverlapAttack(attack);
         }
+
+        protected abstract void Prepare();
 
         protected virtual void ModifyOverlapAttack(OverlapAttack attack)
         {

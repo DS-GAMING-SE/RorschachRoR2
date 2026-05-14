@@ -4,6 +4,7 @@ using R2API.Networking;
 using RoR2;
 using RoR2.ContentManagement;
 using RoR2.Skills;
+using RorschachMod.Characters.Survivors.Rorschach.SkillStates.FlameCan;
 using RorschachMod.Characters.Survivors.Rorschach.Components;
 using RorschachMod.Characters.Survivors.Rorschach.SkillStates;
 using RorschachMod.Modules;
@@ -106,6 +107,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             RorschachStates.Init();
             RorschachTokens.Init();
 
+            RorschachDamageTypes.Initialize();
             RorschachAssets.Init();
             RorschachBuffs.Init();
 
@@ -295,15 +297,16 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 keywordTokens = new string[] { RORSCHACH_PREFIX + "JUDGEMENT_KEYWORD", RORSCHACH_PREFIX + "SPECIAL_ON_KILL_BUFF_KEYWORD", RORSCHACH_PREFIX + "PASSIVE_IMPROVISED_WEAPON_KEYWORD" },
                 skillIcon = RorschachAssets.specialSkillIcon.LoadAssetAsync().WaitForCompletion(),
 
-                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.ThrowBomb)),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SpecialFlameCan)),
                 //setting this to the "weapon2" EntityStateMachine allows us to cast this skill at the same time primary, which is set to the "weapon" EntityStateMachine
-                activationStateMachineName = "Weapon2", interruptPriority = EntityStates.InterruptPriority.Skill,
+                activationStateMachineName = "Weapon", interruptPriority = EntityStates.InterruptPriority.Skill,
 
                 baseMaxStock = 1,
                 baseRechargeInterval = 10f,
 
                 isCombatSkill = true,
-                mustKeyPress = false,
+                mustKeyPress = true,
+                suppressSkillActivation = true
             });
 
             // remember AimThrowableBase for Flame Can Special

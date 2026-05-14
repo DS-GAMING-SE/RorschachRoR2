@@ -6,7 +6,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 {
     public class PrimaryDefault : BaseMeleeAttack
     {
-        public override void OnEnter()
+        protected override void Prepare()
         {
             hitboxGroupName = "SwordGroup";
 
@@ -37,8 +37,6 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             hitEffectPrefab = RorschachAssets.swordHitImpactEffect;
 
             impactSound = RorschachAssets.swordHitSoundEvent.index;
-
-            base.OnEnter();
         }
 
         protected override void PlayAttackAnimation()

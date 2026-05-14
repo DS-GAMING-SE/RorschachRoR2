@@ -6,6 +6,7 @@ using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using R2API;
 
 namespace RorschachMod.Characters.Survivors.Rorschach
 {
@@ -131,15 +132,20 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             UnityEngine.Object.Destroy(bombProjectilePrefab.GetComponent<ProjectileImpactExplosion>());
             ProjectileImpactExplosion bombImpactExplosion = bombProjectilePrefab.AddComponent<ProjectileImpactExplosion>();
             
-            bombImpactExplosion.blastRadius = 16f;
+            bombImpactExplosion.blastRadius = 12f;
             bombImpactExplosion.blastDamageCoefficient = 1f;
             bombImpactExplosion.falloffModel = BlastAttack.FalloffModel.None;
             bombImpactExplosion.destroyOnEnemy = true;
-            bombImpactExplosion.lifetime = 12f;
+            bombImpactExplosion.lifetime = 1.5f;
             bombImpactExplosion.impactEffect = bombExplosionEffect;
             bombImpactExplosion.lifetimeExpiredSound = Content.CreateAndAddNetworkSoundEventDef("HenryBombExplosion");
             bombImpactExplosion.timerAfterImpact = true;
             bombImpactExplosion.lifetimeAfterImpact = 0.1f;
+
+            var damage = bombProjectilePrefab.GetComponent<ProjectileDamage>();
+            damage.damageType = DamageTypeCombo.AnyFire;
+            damage.damageType.damageSource = DamageSource.Special;
+            damage.damageType.AddModdedDamageType(RorschachDamageTypes.specialOnKillBuff);
 
             ProjectileController bombController = bombProjectilePrefab.GetComponent<ProjectileController>();
             RorschachAssets.projectileGhost.LoadAssetAsync().Completed += delegate (AsyncOperationHandle<GameObject> x)

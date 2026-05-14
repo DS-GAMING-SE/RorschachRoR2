@@ -41,6 +41,9 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
         public const float specialOnKillBuffMultiplier = 0.25f;
 
+        public const float specialFlameCanDamageCoefficient = 20f;
+        public const float specialFlameCanJudgementDamageMultiplier = 0.5f / 4f;
+
         #endregion
 
         public const float gunDamageCoefficient = 4.2f;
