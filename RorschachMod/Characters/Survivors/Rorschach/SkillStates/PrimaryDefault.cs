@@ -11,7 +11,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             hitboxGroupName = "SwordGroup";
 
             damageType = DamageTypeCombo.GenericPrimary;
-            damageCoefficient = RorschachStaticValues.primaryDamageCoefficient;
+            damageCoefficient = RorschachStaticValues.primaryDefaultDamageCoefficient;
             procCoefficient = 1f;
             pushForce = 300f;
             bonusForce = Vector3.zero;

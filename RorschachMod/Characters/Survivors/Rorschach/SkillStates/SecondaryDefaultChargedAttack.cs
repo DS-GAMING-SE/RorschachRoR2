@@ -10,7 +10,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 {
     public class SecondaryDefaultChargedAttack : BaseMeleeAttack
     {
-        public float charge = 1f;
+        public float charge;
         protected bool gainedJudgement;
         
         protected override void Prepare()
@@ -22,15 +22,15 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             procCoefficient = 1f;
             pushForce = 300f;
             bonusForce = Vector3.zero;
-            baseDuration = 1.4f;
+            baseDuration = 0.65f;
 
             //0-1 multiplier of baseduration, used to time when the hitbox is out (usually based on the run time of the animation)
             //for example, if attackStartPercentTime is 0.5, the attack will start hitting halfway through the ability. if baseduration is 3 seconds, the attack will start happening at 1.5 seconds
-            attackStartPercentTime = 0.2f;
-            attackEndPercentTime = 0.4f;
+            attackStartPercentTime = 0.1f;
+            attackEndPercentTime = 0.3f;
 
             //this is the point at which the attack can be interrupted by itself, continuing a combo
-            earlyExitPercentTime = 0.7f;
+            earlyExitPercentTime = 1f;
 
             hitStopDuration = 0.03f;
             attackRecoil = 0.5f;
@@ -44,6 +44,24 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             hitEffectPrefab = RorschachAssets.swordHitImpactEffect;
 
             impactSound = RorschachAssets.swordHitSoundEvent.index;
+        }
+
+        public override void OnEnter()
+        {
+            base.OnEnter();
+            characterBody.AddBuff(RoR2Content.Buffs.SmallArmorBoost);
+        }
+        public override void Update()
+        {
+            base.Update();
+            if (base.isAuthority)
+            {
+                float fadeTime = attackEndPercentTime - attackStartPercentTime;
+                Vector3 displacement = (inputBank.aimDirection * characterBody.moveSpeed * 1.35f * Time.deltaTime * Mathf.Clamp01(age * ((-1 / duration) / fadeTime) + (attackEndPercentTime / fadeTime))) / (duration * earlyExitPercentTime);
+                if (characterMotor.isGrounded) displacement.y = 0;
+                characterMotor.AddDisplacement(displacement);
+                characterMotor.velocity.y = Mathf.Max(-1f, characterMotor.velocity.y);
+            }
         }
 
         protected override void PlayAttackAnimation()
@@ -72,6 +90,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 
         public override void OnExit()
         {
+            characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
             base.OnExit();
         }
 

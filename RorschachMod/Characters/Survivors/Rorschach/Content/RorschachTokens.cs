@@ -61,18 +61,24 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             Language.Add(prefix + "IMPROVISED_WEAPON_PIPE_DESC", $"A heavy weapon with high damage and stuns.");
 
             Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER", $"{HedgehogUtils.Helpers.wipIcon} Cleaver");
-            Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER_PICKUP", $"A fast-attacking weapon that increases bleed chance.");
-            Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER_DESC", $"A fast-attacking weapon that increases bleed chance.");
+            Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER_PICKUP", $"A fast-attacking weapon with a chance to bleed on hit.");
+            Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER_DESC", $"A fast-attacking weapon with a chance to bleed on hit.");
             #endregion
             #endregion
 
             #region Primary
             Language.Add(prefix + "PRIMARY_DEFAULT_NAME", $"Black and White");
-            Language.Add(prefix + "PRIMARY_DEFAULT_DESCRIPTION", $"Swing forward for <style=cIsDamage>{100f * primaryDamageCoefficient}% damage</style>.");
+            Language.Add(prefix + "PRIMARY_DEFAULT_DESCRIPTION", $"Swing forward for <style=cIsDamage>{100f * primaryDefaultDamageCoefficient}% damage</style>.");
+
+            Language.Add(prefix + "PRIMARY_PIPE_NAME", $"Bludgeon");
+            Language.Add(prefix + "PRIMARY_PIPE_DESCRIPTION", $"Swing forward for <style=cIsDamage>{100f * primaryPipeDamageCoefficient}% damage</style>.");
+
+            Language.Add(prefix + "PRIMARY_CLEAVER_NAME", $"Cleave");
+            Language.Add(prefix + "PRIMARY_CLEAVER_DESCRIPTION", $"Swing forward for <style=cIsDamage>{100f * primaryCleaverDamageCoefficient}% damage</style> and a {Tokens.DamageText($"{primaryCleaverBleedChance*100f}%")} chance to {Tokens.DamageText("bleed")}.");
             #endregion
 
             #region Secondary
-            Language.Add(prefix + "SECONDARY_DEFAULT_NAME", $"{HedgehogUtils.Helpers.wipIcon} Judgement Fists");
+            Language.Add(prefix + "SECONDARY_DEFAULT_NAME", $"Judgement Fists");
             Language.Add(prefix + "SECONDARY_DEFAULT_DESCRIPTION", $"Dash forward, dealing {Tokens.DamageValueText(secondaryDashDamageCoefficient)}. Hold the skill to charge up a strong punch, dealing {Tokens.DamageValueText(secondaryChargeMinDamageCoefficient, secondaryChargeMaxDamageCoefficient)}. Landing a fully charged punch grants {Tokens.RedText("Judgement")}.");
             Language.Add(prefix + "JUDGEMENT_KEYWORD", "<style=cKeywordName>Judgement</style><style=cSub>A buff that is consumed to strengthen your special skill. Stacks up to 4 times.</style>");
             #endregion
@@ -86,6 +92,9 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             Language.Add(prefix + "SPECIAL_DEFAULT_NAME", $"{HedgehogUtils.Helpers.wipIcon} Uncompromising");
             Language.Add(prefix + "SPECIAL_DEFAULT_DESCRIPTION", $"Grab the target and perform a double axe handle, dealing {Tokens.DamageValueText(0)}. Kills grant {Tokens.UtilityText("BUFFNAME")}. {Tokens.RedText("Judgement")} gives an extra hit of {Tokens.DamageValueText(0)} per stack. Using this move {Tokens.RedText("consumes")} any {Tokens.UtilityText("Improvised Weapons")}.");
             Language.Add(prefix + "SPECIAL_ON_KILL_BUFF_KEYWORD", $"<style=cKeywordName>BUFFNAME</style><style=cSub>Increases attack speed and movement speed by {"0%"} for {"3"}s. Judgement increases this duration.</style>");
+
+            Language.Add(prefix + "SPECIAL_FLAME_CAN_NAME", $"Homemade Explosive");
+            Language.Add(prefix + "SPECIAL_FLAME_CAN_DESCRIPTION", $"Prime your flame can to explode before throwing it forward, dealing {Tokens.DamageValueText(specialFlameCanDamageCoefficient)}. Kills grant {Tokens.UtilityText("BUFFNAME")}. {Tokens.RedText("Judgement")} gives {Tokens.DamageText($"{specialFlameCanJudgementDamageMultiplier*100f}% increased damage")} per stack. Using this move {Tokens.RedText("consumes")} your {Tokens.DamageText("flame can")}.");
             #endregion
 
             #region Achievements

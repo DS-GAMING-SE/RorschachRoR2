@@ -41,7 +41,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             if (Language.languagesByName.TryGetValue("en", out RoR2.Language en))
             {
                 RegisterLookingGlassBuff(en, judgementBuff, "Rorschach Judgement", $"Powers up your next special skill.");
-                RegisterLookingGlassBuff(en, specialOnKillBuff, "Rorschach SpecialOnKill", $"Gain {Modules.Tokens.UtilityText("+"+RorschachStaticValues.specialOnKillBuffMultiplier * 100f+"% movement speed")} and {Modules.Tokens.DamageText("attack speed")}. ");
+                RegisterLookingGlassBuff(en, specialOnKillBuff, "Rorschach SpecialOnKill", $"Gain {Modules.Tokens.UtilityText("+"+RorschachStaticValues.specialOnKillBuffMultiplier * 100f+"% movement speed")} and {Modules.Tokens.DamageText("attack speed")}.");
             }
         }
 

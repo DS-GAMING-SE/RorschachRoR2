@@ -8,24 +8,28 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
         public const float passiveEliteDropChance = 25f;
 
-        public const float passiveCleaverBleedChance = 30f;
-
         #endregion
 
         #region Primary
 
-        public const float primaryDamageCoefficient = 2.6f;
+        public const float primaryDefaultDamageCoefficient = 2.6f;
+
+        public const float primaryPipeDamageCoefficient = 5f;
+
+        public const float primaryCleaverDamageCoefficient = 2.2f;
+        public const float primaryCleaverBleedChance = 0.3f;
+
 
         #endregion
 
         #region Secondary
 
-        public const float secondaryDashDamageCoefficient = 3.5f;
+        public const float secondaryDashDamageCoefficient = 3.2f;
 
         public const float secondaryChargeMinDamageCoefficient = 6f;
         public const float secondaryChargeMaxDamageCoefficient = 10f;
 
-        public const float secondaryChargeDuration = 1f;
+        public const float secondaryChargeDuration = 0.65f;
 
         public const int judgementBuffCap = 4;
 

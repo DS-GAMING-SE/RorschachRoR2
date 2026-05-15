@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons;
 
 namespace RorschachMod.Characters.Survivors.Rorschach
 {
@@ -199,7 +200,29 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             primarySkillDef1.stepCount = 3;
             primarySkillDef1.stepGraceDuration = 0.5f;
 
-            // Remember DamageType.BleedOnHit for cleaver
+            ImprovisedWeaponManager.primaryPipe = Skills.CreateSkillDef<SteppedSkillDef>(new SkillDefInfo
+                (
+                    "RorschachPrimaryPipe",
+                    RORSCHACH_PREFIX + "PRIMARY_PIPE_NAME",
+                    RORSCHACH_PREFIX + "PRIMARY_PIPE_DESCRIPTION",
+                    RorschachAssets.primaryPipeSkillIcon.LoadAssetAsync().WaitForCompletion(),
+                    new EntityStates.SerializableEntityStateType(typeof(PrimaryPipe)),
+                    "Weapon"
+                ));
+            ImprovisedWeaponManager.primaryPipe.stepCount = 2;
+            ImprovisedWeaponManager.primaryPipe.stepGraceDuration = 0.5f;
+
+            ImprovisedWeaponManager.primaryCleaver = Skills.CreateSkillDef<SteppedSkillDef>(new SkillDefInfo
+                (
+                    "RorschachPrimaryCleaver",
+                    RORSCHACH_PREFIX + "PRIMARY_CLEAVER_NAME",
+                    RORSCHACH_PREFIX + "PRIMARY_CLEAVER_DESCRIPTION",
+                    RorschachAssets.primaryCleaverSkillIcon.LoadAssetAsync().WaitForCompletion(),
+                    new EntityStates.SerializableEntityStateType(typeof(PrimaryCleaver)),
+                    "Weapon"
+                ));
+            ImprovisedWeaponManager.primaryCleaver.stepCount = 2;
+            ImprovisedWeaponManager.primaryCleaver.stepGraceDuration = 0.5f;
 
             Skills.AddPrimarySkills(bodyPrefab, primarySkillDef1);
         }
@@ -217,11 +240,11 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 keywordTokens = new string[] { RORSCHACH_PREFIX + "JUDGEMENT_KEYWORD" },
                 skillIcon = RorschachAssets.secondarySkillIcon.LoadAssetAsync().WaitForCompletion(),
 
-                activationState = new EntityStates.SerializableEntityStateType(typeof(SecondaryDefaultChargedAttack)),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SecondaryDefaultDash)),
                 activationStateMachineName = "Body",
                 interruptPriority = EntityStates.InterruptPriority.Skill,
 
-                baseRechargeInterval = 3f,
+                baseRechargeInterval = 4f,
                 baseMaxStock = 1,
 
                 rechargeStock = 1,
@@ -305,8 +328,27 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 baseRechargeInterval = 10f,
 
                 isCombatSkill = true,
-                mustKeyPress = true,
-                suppressSkillActivation = true
+                mustKeyPress = true
+            });
+
+            ImprovisedWeaponManager.specialFlameCan = Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "RorschachSpecialFlameCan",
+                skillNameToken = RORSCHACH_PREFIX + "SPECIAL_FLAME_CAN_NAME",
+                skillDescriptionToken = RORSCHACH_PREFIX + "SPECIAL_FLAME_CAN_DESCRIPTION",
+                keywordTokens = new string[] { RORSCHACH_PREFIX + "JUDGEMENT_KEYWORD", RORSCHACH_PREFIX + "SPECIAL_ON_KILL_BUFF_KEYWORD", RORSCHACH_PREFIX + "PASSIVE_IMPROVISED_WEAPON_KEYWORD" },
+                skillIcon = RorschachAssets.specialFlameCanSkillIcon.LoadAssetAsync().WaitForCompletion(),
+
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SpecialFlameCan)),
+                //setting this to the "weapon2" EntityStateMachine allows us to cast this skill at the same time primary, which is set to the "weapon" EntityStateMachine
+                activationStateMachineName = "Weapon",
+                interruptPriority = EntityStates.InterruptPriority.Skill,
+
+                baseMaxStock = 1,
+                baseRechargeInterval = 10f,
+
+                isCombatSkill = true,
+                mustKeyPress = true
             });
 
             // remember AimThrowableBase for Flame Can Special
