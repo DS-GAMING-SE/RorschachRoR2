@@ -10,8 +10,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             Modules.Content.AddEntityState(typeof(PrimaryDefault));
             Modules.Content.AddEntityState(typeof(PrimaryPipe));
             Modules.Content.AddEntityState(typeof(PrimaryCleaver));
+            Modules.Content.AddEntityState(typeof(PrimaryFlameCan));
 
-            Modules.Content.AddEntityState(typeof(Shoot));
             Modules.Content.AddEntityState(typeof(SecondaryDefaultDash));
             Modules.Content.AddEntityState(typeof(SecondaryDefaultCharge));
             Modules.Content.AddEntityState(typeof(SecondaryDefaultChargedAttack));

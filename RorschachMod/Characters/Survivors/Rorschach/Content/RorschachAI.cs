@@ -37,7 +37,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             swingDriver.moveTargetType = AISkillDriver.TargetType.CurrentEnemy;
             swingDriver.activationRequiresTargetLoS = false;
             swingDriver.activationRequiresAimTargetLoS = false;
-            swingDriver.activationRequiresAimConfirmation = false;
+            swingDriver.activationRequiresAimConfirmation = true;
             swingDriver.movementType = AISkillDriver.MovementType.ChaseMoveTarget;
             swingDriver.moveInputScale = 1;
             swingDriver.aimType = AISkillDriver.AimType.AtMoveTarget;
@@ -59,10 +59,10 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             shootDriver.skillSlot = SkillSlot.Secondary;
             shootDriver.requireSkillReady = true;
             shootDriver.minDistance = 0;
-            shootDriver.maxDistance = 25;
+            shootDriver.maxDistance = 12;
             shootDriver.selectionRequiresTargetLoS = false;
             shootDriver.selectionRequiresOnGround = false;
-            shootDriver.selectionRequiresAimTarget = false;
+            shootDriver.selectionRequiresAimTarget = true;
             shootDriver.maxTimesSelected = -1;
 
             //Behavior
@@ -80,9 +80,9 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             rollDriver.customName = "Use Utility Roll";
             rollDriver.skillSlot = SkillSlot.Utility;
             rollDriver.requireSkillReady = true;
-            rollDriver.minDistance = 8;
-            rollDriver.maxDistance = 20;
-            rollDriver.selectionRequiresTargetLoS = true;
+            rollDriver.minDistance = 12;
+            rollDriver.maxDistance = float.MaxValue;
+            rollDriver.selectionRequiresTargetLoS = false;
             rollDriver.selectionRequiresOnGround = false;
             rollDriver.selectionRequiresAimTarget = false;
             rollDriver.maxTimesSelected = -1;
@@ -103,21 +103,21 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             bombDriver.skillSlot = SkillSlot.Special;
             bombDriver.requireSkillReady = true;
             bombDriver.minDistance = 0;
-            bombDriver.maxDistance = 20;
+            bombDriver.maxDistance = 12;
             bombDriver.selectionRequiresTargetLoS = false;
             bombDriver.selectionRequiresOnGround = false;
-            bombDriver.selectionRequiresAimTarget = false;
+            bombDriver.selectionRequiresAimTarget = true;
             bombDriver.maxTimesSelected = -1;
 
             //Behavior
             bombDriver.moveTargetType = AISkillDriver.TargetType.CurrentEnemy;
             bombDriver.activationRequiresTargetLoS = false;
             bombDriver.activationRequiresAimTargetLoS = false;
-            bombDriver.activationRequiresAimConfirmation = false;
+            bombDriver.activationRequiresAimConfirmation = true;
             bombDriver.movementType = AISkillDriver.MovementType.ChaseMoveTarget;
             bombDriver.moveInputScale = 1;
             bombDriver.aimType = AISkillDriver.AimType.AtMoveTarget;
-            bombDriver.buttonPressType = AISkillDriver.ButtonPressType.Hold;
+            bombDriver.buttonPressType = AISkillDriver.ButtonPressType.TapContinuous;
 
             AISkillDriver chaseDriver = master.AddComponent<AISkillDriver>();
             //Selection Conditions

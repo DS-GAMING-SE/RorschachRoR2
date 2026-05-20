@@ -74,7 +74,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 }
         };
 
-        public override UnlockableDef characterUnlockableDef => RorschachUnlockables.characterUnlockableDef;
+        public override UnlockableDef characterUnlockableDef => null;
         
         public override ItemDisplaysBase itemDisplays => null;
 
@@ -199,6 +199,17 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             //custom Skilldefs can have additional fields that you can set manually
             primarySkillDef1.stepCount = 3;
             primarySkillDef1.stepGraceDuration = 0.5f;
+
+            ImprovisedWeaponManager.primaryFlameCan = Skills.CreateSkillDef<SkillDef>(new SkillDefInfo
+                (
+                    "RorschachPrimaryFlameCan",
+                    RORSCHACH_PREFIX + "PRIMARY_FLAME_CAN_NAME",
+                    RORSCHACH_PREFIX + "PRIMARY_FLAME_CAN_DESCRIPTION",
+                    RorschachAssets.primaryFlameCanSkillIcon.LoadAssetAsync().WaitForCompletion(),
+                    new EntityStates.SerializableEntityStateType(typeof(PrimaryFlameCan)),
+                    "Weapon"
+                ));
+            ImprovisedWeaponManager.primaryFlameCan.canceledFromSprinting = true;
 
             ImprovisedWeaponManager.primaryPipe = Skills.CreateSkillDef<SteppedSkillDef>(new SkillDefInfo
                 (
@@ -350,9 +361,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 isCombatSkill = true,
                 mustKeyPress = true
             });
-
-            // remember AimThrowableBase for Flame Can Special
-
+            // Remember to make all hits of special use peak judgement stacks and special on kill damage types
+            
             Skills.AddSpecialSkills(bodyPrefab, specialSkillDef1);
         }
         #endregion skills

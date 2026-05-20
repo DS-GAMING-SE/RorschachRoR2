@@ -14,11 +14,16 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
         public const float primaryDefaultDamageCoefficient = 2.6f;
 
-        public const float primaryPipeDamageCoefficient = 5f;
+        public const float primaryPipeDamageCoefficient = primaryDefaultDamageCoefficient * 2f;
 
-        public const float primaryCleaverDamageCoefficient = 2.2f;
+        public const float primaryCleaverDamageCoefficient = 2.4f;
         public const float primaryCleaverBleedChance = 0.3f;
 
+        public const float primaryFlameCanDamagePerSecond = 5f;
+        public const float primaryFlameCanAttacksPerSecond = 3f;
+        public const float primaryFlameCanDamageCoefficient = primaryFlameCanDamagePerSecond / primaryFlameCanAttacksPerSecond;
+        public const float primaryFlameCanProcCoefficient = 0.5f;
+        public const float primaryFlameCanRange = 15f;
 
         #endregion
 
@@ -33,6 +38,12 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
         public const int judgementBuffCap = 4;
 
+        public const float secondaryPipeChargeMinDamageCoefficient = secondaryChargeMinDamageCoefficient * 2f;
+        public const float secondaryPipeChargeMaxDamageCoefficient = secondaryChargeMaxDamageCoefficient * 2f;
+
+        public const float secondaryCleaverChargeMinDamageCoefficient = secondaryChargeMinDamageCoefficient * 0.9f;
+        public const float secondaryCleaverChargeMaxDamageCoefficient = secondaryChargeMaxDamageCoefficient * 0.9f;
+
         #endregion
 
         #region Utility
@@ -46,12 +57,9 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public const float specialOnKillBuffMultiplier = 0.25f;
 
         public const float specialFlameCanDamageCoefficient = 20f;
-        public const float specialFlameCanJudgementDamageMultiplier = 0.5f / 4f;
+        public const float specialFlameCanMaxJudgementDamageMultiplier = 1f;
+        public const float specialFlameCanJudgementDamageMultiplier = specialFlameCanMaxJudgementDamageMultiplier / judgementBuffCap;
 
         #endregion
-
-        public const float gunDamageCoefficient = 4.2f;
-
-        public const float bombDamageCoefficient = 16f;
     }
 }
