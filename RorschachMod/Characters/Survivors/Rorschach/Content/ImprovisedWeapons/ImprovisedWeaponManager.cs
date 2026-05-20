@@ -54,17 +54,6 @@ namespace RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons
                 {
                     damageReport.attackerBody.AddTimedBuff(RorschachBuffs.specialOnKillBuff, 3f + damageReport.damageInfo.damageType.ReadJudgementStacks());
                 }
-                if (damageReport.attackerBodyIndex == rorschachBodyIndex && damageReport.victimBody)
-                {
-                    if (damageReport.victimIsChampion)
-                    {
-                        DropItem(damageReport.victimBody.corePosition, damageReport.victimBody.characterDirection ? damageReport.victimBody.characterDirection.forward : damageReport.victimBody.transform.forward);
-                    }
-                    if (damageReport.victimIsElite && Util.CheckRoll(RorschachStaticValues.passiveEliteDropChance))
-                    {
-                        DropItem(damageReport.victimBody.corePosition, damageReport.victimBody.characterDirection ? damageReport.victimBody.characterDirection.forward : damageReport.victimBody.transform.forward);
-                    }
-                }
             }
         }
 

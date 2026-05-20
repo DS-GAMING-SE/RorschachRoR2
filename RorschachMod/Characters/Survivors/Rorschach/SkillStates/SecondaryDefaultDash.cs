@@ -9,6 +9,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
     {
         private bool hit;
         public virtual Type chargeStateType { get { return typeof(SecondaryDefaultCharge); } }
+        protected float movementFadePercentTime = 0.75f;
 
         protected override void Prepare()
         {
@@ -71,8 +72,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             base.Update();
             if (base.isAuthority)
             {
-                float fadeTime = attackEndPercentTime - attackStartPercentTime;
-                Vector3 displacement = (inputBank.aimDirection * characterBody.moveSpeed * Time.deltaTime * Mathf.Clamp01(age * ((-1 / duration) / fadeTime) + (attackEndPercentTime / fadeTime))) / (duration * earlyExitPercentTime);
+                float fadeTime = duration * (movementFadePercentTime - attackStartPercentTime);
+                Vector3 displacement = inputBank.aimDirection * characterBody.moveSpeed * 1.5f * Time.deltaTime * Mathf.Clamp01(age * (-1/fadeTime) + ((duration * movementFadePercentTime) / fadeTime));
                 if (!hit) displacement *= 2f;
                 if (characterMotor.isGrounded) displacement.y = 0;
                 characterMotor.AddDisplacement(displacement);

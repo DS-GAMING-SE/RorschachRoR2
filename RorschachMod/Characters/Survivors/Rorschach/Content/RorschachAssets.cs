@@ -34,7 +34,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         #region Icons
         public static AssetReferenceTexture characterIcon = new AssetReferenceTexture("33c89ac909113894280a0cfd14c99f2e");
 
-        public static AssetReferenceSprite passiveSkillIcon = new AssetReferenceSprite("977438518be9ff545a06824ddf881e15");
+        public static AssetReferenceSprite passiveSkillIcon = new AssetReferenceSprite("0e4c80d73da34aa40b303eb595226e63");
 
         public static AssetReferenceSprite primarySkillIcon = new AssetReferenceSprite("b4d4d8a7648b8c04393ee5d064218886");
         public static AssetReferenceSprite primaryFlameCanSkillIcon = new AssetReferenceSprite("6f0e7dc80d946bd489940eccc8c92f5b");
@@ -47,7 +47,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
         public static AssetReferenceSprite utilitySkillIcon = new AssetReferenceSprite("0f5783e971afb924daa22df12d6c1325");
 
-        public static AssetReferenceSprite specialSkillIcon = new AssetReferenceSprite("b4d4d8a7648b8c04393ee5d064218886");
+        public static AssetReferenceSprite specialSkillIcon = new AssetReferenceSprite("0f8fafa204cb2764ea1a9555ae161057");
         public static AssetReferenceSprite specialFlameCanSkillIcon = new AssetReferenceSprite("6f0e7dc80d946bd489940eccc8c92f5b");
         public static AssetReferenceSprite specialPipeSkillIcon = new AssetReferenceSprite("1872c188be0e7fd4397142cd14cc8863");
         public static AssetReferenceSprite specialCleaverSkillIcon = new AssetReferenceSprite("d79f886258b3bb74a90bd0d43ee60854");

@@ -47,22 +47,27 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             #endregion
 
             #region Passive
+            string flameCanDesc = "A long-range weapon that sprays fire at enemies.";
+            string pipeDesc = "A heavy weapon with high damage and stuns.";
+            string cleaverDesc = "A fast-attacking weapon with a chance to bleed on hit.";
             Language.Add(prefix + "PASSIVE_NAME", $"Improvised Weaponry");
-            Language.Add(prefix + "PASSIVE_DESCRIPTION", $"Killing large or elite monsters has a chance of dropping one of three {Tokens.UtilityText("Improvised Weapons")}, a {Tokens.DamageText("flame can")}, {HedgehogUtils.Helpers.wipIcon + " " + Tokens.DamageText("pipe")}, or {HedgehogUtils.Helpers.wipIcon + " " + Tokens.DamageText("cleaver")}, which temporarily upgrade some of your skills. {Tokens.UtilityText("Unaffected by luck")}.");
+            Language.Add(prefix + "PASSIVE_DESCRIPTION", $"Kills will occasionally drop one of three {Tokens.UtilityText("Improvised Weapons")} which temporarily upgrade some of your skills. {Tokens.UtilityText("Unaffected by luck")}.");
             Language.Add(prefix + "PASSIVE_IMPROVISED_WEAPON_KEYWORD", "<style=cKeywordName>Improvised Weapon</style><style=cSub>A unique temporary item that replaces some of Rorschach's skills.</style>");
-
+            Language.Add(prefix + "PASSIVE_FLAME_CAN_KEYWORD", $"{Tokens.KeywordText("Flame Can", flameCanDesc)}");
+            Language.Add(prefix + "PASSIVE_PIPE_KEYWORD", $"{Tokens.KeywordText("Pipe", pipeDesc)}");
+            Language.Add(prefix + "PASSIVE_CLEAVER_KEYWORD", $"{Tokens.KeywordText("Cleaver", cleaverDesc)}");
             #region Items
             Language.Add(prefix + "IMPROVISED_WEAPON_FLAME_CAN", $"Flame Can");
-            Language.Add(prefix + "IMPROVISED_WEAPON_FLAME_CAN_PICKUP", $"A long-range weapon that sprays fire at enemies.");
-            Language.Add(prefix + "IMPROVISED_WEAPON_FLAME_CAN_DESC", $"A long-range weapon that sprays fire at enemies.");
+            Language.Add(prefix + "IMPROVISED_WEAPON_FLAME_CAN_PICKUP", flameCanDesc);
+            Language.Add(prefix + "IMPROVISED_WEAPON_FLAME_CAN_DESC", flameCanDesc);
 
             Language.Add(prefix + "IMPROVISED_WEAPON_PIPE", $"{HedgehogUtils.Helpers.wipIcon} Pipe");
-            Language.Add(prefix + "IMPROVISED_WEAPON_PIPE_PICKUP", $"A heavy weapon with high damage and stuns.");
-            Language.Add(prefix + "IMPROVISED_WEAPON_PIPE_DESC", $"A heavy weapon with high damage and stuns.");
+            Language.Add(prefix + "IMPROVISED_WEAPON_PIPE_PICKUP", pipeDesc);
+            Language.Add(prefix + "IMPROVISED_WEAPON_PIPE_DESC", pipeDesc);
 
             Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER", $"{HedgehogUtils.Helpers.wipIcon} Cleaver");
-            Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER_PICKUP", $"A fast-attacking weapon with a chance to bleed on hit.");
-            Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER_DESC", $"A fast-attacking weapon with a chance to bleed on hit.");
+            Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER_PICKUP", cleaverDesc);
+            Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER_DESC", cleaverDesc);
             #endregion
             #endregion
 

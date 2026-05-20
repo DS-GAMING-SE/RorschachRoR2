@@ -126,7 +126,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         private void AdditionalBodySetup()
         {
             AddHitboxes();
-            //bodyPrefab.AddComponent<HedgehogUtils.Miscellaneous.MomentumPassive>();
+            bodyPrefab.AddComponent<Components.ImrovisedWeaponComponent>();
             //bodyPrefab.AddComponent<HedgehogUtils.Boost.BoostLogic>();
             //anything else here
         }
@@ -170,14 +170,29 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         private void AddPassiveSkill()
         {
             //option 1. fake passive icon just to describe functionality we will implement elsewhere
-            bodyPrefab.GetComponent<SkillLocator>().passiveSkill = new SkillLocator.PassiveSkill
+            /*bodyPrefab.GetComponent<SkillLocator>().passiveSkill = new SkillLocator.PassiveSkill
             {
                 enabled = true,
                 skillNameToken = RORSCHACH_PREFIX + "PASSIVE_NAME",
                 skillDescriptionToken = RORSCHACH_PREFIX + "PASSIVE_DESCRIPTION",
                 keywordToken = RORSCHACH_PREFIX + "PASSIVE_IMPROVISED_WEAPON_KEYWORD",
                 icon = RorschachAssets.passiveSkillIcon.LoadAssetAsync().WaitForCompletion(),
-            };
+            };*/
+            GenericSkill passiveGenericSkill = Skills.CreateGenericSkillWithSkillFamily(bodyPrefab, "PassiveSkill");
+            passiveGenericSkill.hideInLoadoutSelect = true;
+            SkillDef passiveSkillDef1 = Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "RorschachPassive",
+                skillNameToken = RORSCHACH_PREFIX + "PASSIVE_NAME",
+                skillDescriptionToken = RORSCHACH_PREFIX + "PASSIVE_DESCRIPTION",
+                keywordTokens = new string[] { RORSCHACH_PREFIX + "PASSIVE_IMPROVISED_WEAPON_KEYWORD", RORSCHACH_PREFIX + "PASSIVE_FLAME_CAN_KEYWORD",
+                RORSCHACH_PREFIX + "PASSIVE_PIPE_KEYWORD", RORSCHACH_PREFIX + "PASSIVE_CLEAVER_KEYWORD"},
+                skillIcon = RorschachAssets.passiveSkillIcon.LoadAssetAsync().WaitForCompletion(),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.Idle)),
+                activationStateMachineName = "Body"
+            });
+
+            Skills.AddSkillToFamily(passiveGenericSkill.skillFamily, passiveSkillDef1);
         }
 
         //if this is your first look at skilldef creation, take a look at Secondary first

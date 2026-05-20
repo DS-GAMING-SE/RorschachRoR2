@@ -6,7 +6,12 @@ namespace RorschachMod.Characters.Survivors.Rorschach
     {
         #region Passive
 
-        public const float passiveEliteDropChance = 25f;
+        public const float passiveMaxProgress = 100f;
+        public const float passiveStartProgress = 40f;
+        public const float passiveProgressOnKill = 3f;
+        public const float passiveProgressEliteMultiplier = 2f;
+        public const float passiveProgressChampionMultiplier = 5f;
+        public const float passiveProgressBossMultiplier = 3f;
 
         #endregion
 
@@ -23,7 +28,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public const float primaryFlameCanAttacksPerSecond = 3f;
         public const float primaryFlameCanDamageCoefficient = primaryFlameCanDamagePerSecond / primaryFlameCanAttacksPerSecond;
         public const float primaryFlameCanProcCoefficient = 0.5f;
-        public const float primaryFlameCanRange = 15f;
+        public const float primaryFlameCanRange = 20f;
 
         #endregion
 

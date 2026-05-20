@@ -32,6 +32,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates.FlameCan
             DamageTypeCombo damageType = DamageTypeCombo.AnyFire;
             damageType.AddModdedDamageType(RorschachDamageTypes.specialOnKillBuff);
             damageType.AddJudgementStacks(characterBody.GetBuffCount(RorschachBuffs.judgementBuff.buffIndex));
+            damageType.damageSource = DamageSource.Special;
             fireProjectileInfo.damageTypeOverride = damageType;
         }
 

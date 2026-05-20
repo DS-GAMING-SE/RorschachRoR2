@@ -49,8 +49,8 @@ MonoBehaviour:
     m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texFlameCanIcon.png
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 977438518be9ff545a06824ddf881e15
-    m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texPassiveIcon.png
+  - m_GUID: 0e4c80d73da34aa40b303eb595226e63
+    m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texPassiveSkillIcon.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 05b273758480af74a919e826c7b80a86
@@ -111,6 +111,10 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: b4d4d8a7648b8c04393ee5d064218886
     m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texPunchIcon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0f8fafa204cb2764ea1a9555ae161057
+    m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texSpecialDefaultSkillIcon.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
