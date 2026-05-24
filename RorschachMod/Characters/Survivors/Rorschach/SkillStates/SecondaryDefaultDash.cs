@@ -73,7 +73,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             if (base.isAuthority)
             {
                 float fadeTime = duration * (movementFadePercentTime - attackStartPercentTime);
-                Vector3 displacement = inputBank.aimDirection * characterBody.moveSpeed * 1.5f * Time.deltaTime * Mathf.Clamp01(age * (-1/fadeTime) + ((duration * movementFadePercentTime) / fadeTime));
+                Vector3 displacement = inputBank.aimDirection * characterBody.moveSpeed * 1.8f * Time.deltaTime * Mathf.Clamp01(age * (-1/fadeTime) + ((duration * movementFadePercentTime) / fadeTime));
                 if (!hit) displacement *= 2f;
                 if (characterMotor.isGrounded) displacement.y = 0;
                 characterMotor.AddDisplacement(displacement);

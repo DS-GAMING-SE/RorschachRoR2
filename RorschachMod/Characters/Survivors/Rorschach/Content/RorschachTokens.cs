@@ -94,12 +94,12 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             Language.Add(prefix + "SECONDARY_PIPE_DESCRIPTION", $"Dash forward, dealing {Tokens.DamageValueText(secondaryDashDamageCoefficient)}. Hold the skill to charge up a strong swing, dealing {Tokens.DamageValueText(secondaryPipeChargeMinDamageCoefficient, secondaryPipeChargeMaxDamageCoefficient)}. Landing a fully charged swing {Tokens.UtilityText("launches enemies")} and grants {Tokens.RedText("Judgement")}.");
 
             Language.Add(prefix + "SECONDARY_CLEAVER_NAME", $"Cleaver Hemorrhage");
-            Language.Add(prefix + "SECONDARY_CLEAVER_DESCRIPTION", $"Dash forward, dealing {Tokens.DamageValueText(secondaryDashDamageCoefficient)}. Hold the skill to charge up a strong slash, dealing {Tokens.DamageValueText(secondaryCleaverChargeMinDamageCoefficient, secondaryCleaverChargeMaxDamageCoefficient)}. Landing a fully charged slash {Tokens.DamageText("bleeds enemies")} grants {Tokens.RedText("Judgement")}.");
+            Language.Add(prefix + "SECONDARY_CLEAVER_DESCRIPTION", $"Dash forward, dealing {Tokens.DamageValueText(secondaryDashDamageCoefficient)}. Hold the skill to charge up a strong slash, dealing {Tokens.DamageValueText(secondaryCleaverChargeMinDamageCoefficient, secondaryCleaverChargeMaxDamageCoefficient)}. Landing a fully charged slash {Tokens.DamageText("bleeds enemies")} and grants {Tokens.RedText("Judgement")}.");
             #endregion
 
             #region Utility
-            Language.Add(prefix + "UTILITY_DEFAULT_NAME", $"{HedgehogUtils.Helpers.wipIcon} Grappling Hook");
-            Language.Add(prefix + "UTILITY_DEFAULT_DESCRIPTION", $"{Tokens.DamageText("Stunning.")} Fire your grappling hook, dealing {Tokens.DamageValueText(utilityDamageCoefficient)} damage and {Tokens.UtilityText("pulling")} you to the target.");
+            Language.Add(prefix + "UTILITY_DEFAULT_NAME", $"Grappling Hook");
+            Language.Add(prefix + "UTILITY_DEFAULT_DESCRIPTION", $"{Tokens.DamageText("Stunning")}. Fire your grappling hook, dealing {Tokens.DamageValueText(utilityGrappleDamageCoefficient)} damage and {Tokens.UtilityText("pulling")} you to the target. Upon reaching an enemy, strike them with your knee dealing {Tokens.DamageValueText(RorschachStaticValues.utilityKneeDamageCoefficient)}.");
             #endregion
 
             #region Special

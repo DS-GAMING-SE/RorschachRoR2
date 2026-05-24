@@ -1,4 +1,6 @@
-﻿namespace RorschachMod.Modules
+﻿using UnityEngine;
+
+namespace RorschachMod.Modules
 {
     internal static class Tokens
     {
@@ -10,11 +12,11 @@
         }
         public static string DamageValueText(float value)
         {
-            return $"<style=cIsDamage>{value * 100}% damage</style>";
+            return $"<style=cIsDamage>{Mathf.RoundToInt(value * 100)}% damage</style>";
         }
         public static string DamageValueText(float value, float value2)
         {
-            return $"<style=cIsDamage>{value * 100}%-{value2 * 100}% damage</style>";
+            return $"<style=cIsDamage>{Mathf.RoundToInt(value * 100)}%-{Mathf.RoundToInt(value2 * 100)}% damage</style>";
         }
         public static string UtilityText(string text)
         {

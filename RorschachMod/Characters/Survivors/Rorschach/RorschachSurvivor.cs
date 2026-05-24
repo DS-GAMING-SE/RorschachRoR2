@@ -148,8 +148,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             //if you set up a custom main characterstate, set it up here
                 //don't forget to register custom entitystates in your RorschachStates.cs
 
-            Prefabs.AddEntityStateMachine(bodyPrefab, "Weapon");
-            Prefabs.AddEntityStateMachine(bodyPrefab, "Weapon2");
+            Prefabs.AddEntityStateMachine(bodyPrefab, "Hook"); // Reusing loader grapple forces me to run it on a state machine called hook even though I want it on the same machine as attacks
         }
 
         #region skills
@@ -161,7 +160,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             AddPassiveSkill();
             AddPrimarySkills();
             AddSecondarySkills();
-            AddUtiitySkills();
+            AddUtilitySkills();
             AddSpecialSkills();
         }
 
@@ -209,7 +208,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                     RORSCHACH_PREFIX + "PRIMARY_DEFAULT_DESCRIPTION",
                     RorschachAssets.primarySkillIcon.LoadAssetAsync().WaitForCompletion(),
                     new EntityStates.SerializableEntityStateType(typeof(PrimaryDefault)),
-                    "Weapon"
+                    "Hook"
                 ));
             //custom Skilldefs can have additional fields that you can set manually
             primarySkillDef1.stepCount = 3;
@@ -222,7 +221,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                     RORSCHACH_PREFIX + "PRIMARY_FLAME_CAN_DESCRIPTION",
                     RorschachAssets.primaryFlameCanSkillIcon.LoadAssetAsync().WaitForCompletion(),
                     new EntityStates.SerializableEntityStateType(typeof(PrimaryFlameCan)),
-                    "Weapon"
+                    "Hook"
                 ));
             ImprovisedWeaponManager.primaryFlameCan.canceledFromSprinting = true;
 
@@ -233,7 +232,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                     RORSCHACH_PREFIX + "PRIMARY_PIPE_DESCRIPTION",
                     RorschachAssets.primaryPipeSkillIcon.LoadAssetAsync().WaitForCompletion(),
                     new EntityStates.SerializableEntityStateType(typeof(PrimaryPipe)),
-                    "Weapon"
+                    "Hook"
                 ));
             ImprovisedWeaponManager.primaryPipe.stepCount = 2;
             ImprovisedWeaponManager.primaryPipe.stepGraceDuration = 0.5f;
@@ -245,7 +244,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                     RORSCHACH_PREFIX + "PRIMARY_CLEAVER_DESCRIPTION",
                     RorschachAssets.primaryCleaverSkillIcon.LoadAssetAsync().WaitForCompletion(),
                     new EntityStates.SerializableEntityStateType(typeof(PrimaryCleaver)),
-                    "Weapon"
+                    "Hook"
                 ));
             ImprovisedWeaponManager.primaryCleaver.stepCount = 2;
             ImprovisedWeaponManager.primaryCleaver.stepGraceDuration = 0.5f;
@@ -289,12 +288,74 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 forceSprintDuringState = true,
 
             });
+            ImprovisedWeaponManager.secondaryCleaver = Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "RorschachSecondaryCleaver",
+                skillNameToken = RORSCHACH_PREFIX + "SECONDARY_CLEAVER_NAME",
+                skillDescriptionToken = RORSCHACH_PREFIX + "SECONDARY_CLEAVER_DESCRIPTION",
+                keywordTokens = new string[] { RORSCHACH_PREFIX + "JUDGEMENT_KEYWORD" },
+                skillIcon = RorschachAssets.secondaryCleaverSkillIcon.LoadAssetAsync().WaitForCompletion(),
+
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SecondaryCleaverDash)),
+                activationStateMachineName = "Body",
+                interruptPriority = EntityStates.InterruptPriority.Skill,
+
+                baseRechargeInterval = 4f,
+                baseMaxStock = 1,
+
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+
+                resetCooldownTimerOnUse = false,
+                fullRestockOnAssign = true,
+                dontAllowPastMaxStocks = false,
+                mustKeyPress = true,
+                beginSkillCooldownOnSkillEnd = true,
+
+                isCombatSkill = true,
+                canceledFromSprinting = false,
+                cancelSprintingOnActivation = false,
+                forceSprintDuringState = true,
+
+            });
+            ImprovisedWeaponManager.secondaryPipe = Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "RorschachSecondaryPipe",
+                skillNameToken = RORSCHACH_PREFIX + "SECONDARY_PIPE_NAME",
+                skillDescriptionToken = RORSCHACH_PREFIX + "SECONDARY_PIPE_DESCRIPTION",
+                keywordTokens = new string[] { RORSCHACH_PREFIX + "JUDGEMENT_KEYWORD" },
+                skillIcon = RorschachAssets.secondaryPipeSkillIcon.LoadAssetAsync().WaitForCompletion(),
+
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SecondaryPipeDash)),
+                activationStateMachineName = "Body",
+                interruptPriority = EntityStates.InterruptPriority.Skill,
+
+                baseRechargeInterval = 4f,
+                baseMaxStock = 1,
+
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+
+                resetCooldownTimerOnUse = false,
+                fullRestockOnAssign = true,
+                dontAllowPastMaxStocks = false,
+                mustKeyPress = true,
+                beginSkillCooldownOnSkillEnd = true,
+
+                isCombatSkill = true,
+                canceledFromSprinting = false,
+                cancelSprintingOnActivation = false,
+                forceSprintDuringState = true,
+
+            });
 
             Skills.AddSecondarySkills(bodyPrefab, secondarySkillDef1);
             NetworkingAPI.RegisterMessageType<NetworkJudgement>();
         }
 
-        private void AddUtiitySkills()
+        private void AddUtilitySkills()
         {
             Skills.CreateGenericSkillWithSkillFamily(bodyPrefab, SkillSlot.Utility);
 
@@ -307,27 +368,27 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 keywordTokens = new string[] { "KEYWORD_STUNNING" },
                 skillIcon = RorschachAssets.utilitySkillIcon.LoadAssetAsync().WaitForCompletion(),
 
-                activationState = new EntityStates.SerializableEntityStateType(typeof(Roll)),
-                activationStateMachineName = "Body",
+                activationState = new EntityStates.SerializableEntityStateType(typeof(UtilityHooking)),
+                activationStateMachineName = "Hook",
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
 
-                baseRechargeInterval = 4f,
+                baseRechargeInterval = 5f,
                 baseMaxStock = 1,
 
                 rechargeStock = 1,
                 requiredStock = 1,
-                stockToConsume = 1,
+                stockToConsume = 0,
 
                 resetCooldownTimerOnUse = false,
                 fullRestockOnAssign = true,
                 dontAllowPastMaxStocks = false,
-                mustKeyPress = false,
-                beginSkillCooldownOnSkillEnd = false,
+                mustKeyPress = true,
+                beginSkillCooldownOnSkillEnd = true,
 
                 isCombatSkill = false,
                 canceledFromSprinting = false,
                 cancelSprintingOnActivation = false,
-                forceSprintDuringState = true,
+                forceSprintDuringState = false,
             });
 
             Skills.AddUtilitySkills(bodyPrefab, utilitySkillDef1);
@@ -348,7 +409,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SpecialFlameCan)),
                 //setting this to the "weapon2" EntityStateMachine allows us to cast this skill at the same time primary, which is set to the "weapon" EntityStateMachine
-                activationStateMachineName = "Weapon", interruptPriority = EntityStates.InterruptPriority.Skill,
+                activationStateMachineName = "Hook", interruptPriority = EntityStates.InterruptPriority.Skill,
 
                 baseMaxStock = 1,
                 baseRechargeInterval = 10f,
@@ -367,7 +428,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SpecialFlameCan)),
                 //setting this to the "weapon2" EntityStateMachine allows us to cast this skill at the same time primary, which is set to the "weapon" EntityStateMachine
-                activationStateMachineName = "Weapon",
+                activationStateMachineName = "Hook",
                 interruptPriority = EntityStates.InterruptPriority.Skill,
 
                 baseMaxStock = 1,

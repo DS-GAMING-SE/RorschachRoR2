@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using R2API;
+using RorschachMod.Characters.Survivors.Rorschach.SkillStates;
 
 namespace RorschachMod.Characters.Survivors.Rorschach
 {
@@ -22,6 +23,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public static NetworkSoundEventDef swordHitSoundEvent;
 
         //projectiles
+        public static GameObject grappleProjectilePrefab;
         public static GameObject bombProjectilePrefab;
 
         #region AssetGUIDs
@@ -90,6 +92,19 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             { 
                 CreateBombExplosionEffect(x.Result);
                 CreateBombProjectile();
+            };
+            Addressables.LoadAssetAsync<GameObject>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Loader.LoaderYankHook_prefab).Completed += x =>
+            {
+                grappleProjectilePrefab = x.Result;
+                ProjectileGrappleController grappleController = grappleProjectilePrefab.GetComponent<ProjectileGrappleController>();
+                grappleController.yankMassLimit = 0;
+                grappleController.ownerHookStateType = new EntityStates.SerializableEntityStateType(typeof(UtilityHooking));
+                grappleController.muzzleStringOnBody = "Muzzle";
+                grappleController.nearBreakDistance = 5f;
+                EntityStateMachine stateMachine = grappleProjectilePrefab.GetComponent<EntityStateMachine>();
+                stateMachine.initialStateType = new EntityStates.SerializableEntityStateType(typeof(UtilityGrappleFly));
+                stateMachine.mainStateType = new EntityStates.SerializableEntityStateType(typeof(UtilityGrappleFly));
+                grappleProjectilePrefab.GetComponent<ProjectileOverlapAttack>().damageCoefficient = 1f;
             };
 
             RorschachAssets.swingEffect.LoadAssetAsync().Completed += delegate (AsyncOperationHandle<GameObject> x)

@@ -53,7 +53,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
         #region Utility
 
-        public const float utilityDamageCoefficient = 3.2f;
+        public const float utilityGrappleDamageCoefficient = 3.2f;
+        public const float utilityKneeDamageCoefficient = 6f;
 
         #endregion
 
