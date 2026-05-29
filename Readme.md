@@ -7,11 +7,11 @@ description todo
 
 | Skill | Icon | Description |
 | ---- | -------- | ---- |
-| Passive - **Improvised Weaponry** | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texPassiveIcon.png?raw=true" width="128"> | Passive desc. |
-| Primary - **Black and White** | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texPunchIcon.png?raw=true" width="128"> | Primary desc. |
-| Secondary - **Judgement Fists**  | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texPunchIcon.png?raw=true" width="128"> | Secondary desc. <details>todo</details>  |
-| Utility - **Grappling Hook** | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texUtilityIcon.png?raw=true" width="128"> | Utility desc. <details>todo</details> |
-| Special - **Uncompromising** | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texPunchIcon.png?raw=true" width="128"> | Special Desc.<details>todo</details> |
+| Passive - **Improvised Weaponry** | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texPassiveSkillIcon.png?raw=true" width="128"> | Kills will occasionally drop one of three *improvised weapons* which temporarily upgrade some of your skills. Unaffected by luck. |
+| Primary - **Black and White** | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texPunchIcon.png?raw=true" width="128"> | Swing forward for 260% damage. |
+| Secondary - **Judgement Fists**  | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texPunchIcon.png?raw=true" width="128"> | Dash forward, dealing 320% damage. Hold the skill to charge up a strong punch, dealing 600%-1000% damage. Landing a fully charged punch grants *Judgement*. <details>todo</details>  |
+| Utility - **Grappling Hook** | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texUtilityIcon.png?raw=true" width="128"> | Stunning. Fire your grappling hook, dealing 320% damage and pulling you to the target. Upon reaching an enemy, strike them with your knee dealing 600% damage. <details>todo</details> |
+| Special - **Uncompromising** | <img src="https://github.com/DS-GAMING-SE/RorschachRoR2/blob/master/RorschachUnityProject/Assets/RorschachAssets/RorschachBundle/Icons/texSpecialDefaultSkillIcon.png?raw=true" width="128"> | Grab the target and perform a double axe handle, dealing x% damage. Kills grant BUFF. *Judgement* gives an extra hit of x% damage per stack. Using this move consumes any *improvised weapons*.<details>todo</details> |
 
 # Compatible Mods
 - [CustomEmotesAPI](https://thunderstore.io/package/MetrosexualFruitcake/CustomEmotesAPI/)

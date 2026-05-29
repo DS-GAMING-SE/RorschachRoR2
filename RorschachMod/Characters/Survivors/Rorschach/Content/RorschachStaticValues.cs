@@ -24,8 +24,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public const float primaryCleaverDamageCoefficient = 2.4f;
         public const float primaryCleaverBleedChance = 0.3f;
 
-        public const float primaryFlameCanDamagePerSecond = 5f;
-        public const float primaryFlameCanAttacksPerSecond = 3f;
+        public const float primaryFlameCanDamagePerSecond = 6f;
+        public const float primaryFlameCanAttacksPerSecond = 3.5f;
         public const float primaryFlameCanDamageCoefficient = primaryFlameCanDamagePerSecond / primaryFlameCanAttacksPerSecond;
         public const float primaryFlameCanProcCoefficient = 0.5f;
         public const float primaryFlameCanRange = 20f;
@@ -60,9 +60,18 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
         #region Special
 
+        public const float specialJudgementDamageCoefficient = 3.6f;
+        public const float specialFinalDamageCoefficient = 16f;
+
+        public const float specialCleaverJudgementDamageCoefficient = specialJudgementDamageCoefficient * 0.9f;
+        public const float specialCleaverFinalDamageCoefficient = specialFinalDamageCoefficient * 0.9f;
+
+        public const float specialPipeJudgementDamageCoefficient = specialJudgementDamageCoefficient * 2f;
+        public const float specialPipeFinalDamageCoefficient = specialFinalDamageCoefficient * 2f;
+
         public const float specialOnKillBuffMultiplier = 0.25f;
 
-        public const float specialFlameCanDamageCoefficient = 20f;
+        public const float specialFlameCanDamageCoefficient = 25f;
         public const float specialFlameCanMaxJudgementDamageMultiplier = 1f;
         public const float specialFlameCanJudgementDamageMultiplier = specialFlameCanMaxJudgementDamageMultiplier / judgementBuffCap;
 

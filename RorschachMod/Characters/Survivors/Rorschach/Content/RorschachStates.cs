@@ -22,7 +22,6 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             Modules.Content.AddEntityState(typeof(SecondaryPipeCharge));
             Modules.Content.AddEntityState(typeof(SecondaryPipeChargedAttack));
 
-            Modules.Content.AddEntityState(typeof(Roll));
             Modules.Content.AddEntityState(typeof(UtilityHooking));
             Modules.Content.AddEntityState(typeof(UtilityKnee));
             Modules.Content.AddEntityState(typeof(UtilityGrappleFly));

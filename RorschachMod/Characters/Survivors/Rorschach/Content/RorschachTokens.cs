@@ -104,8 +104,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
             #region Special
             Language.Add(prefix + "SPECIAL_DEFAULT_NAME", $"{HedgehogUtils.Helpers.wipIcon} Uncompromising");
-            Language.Add(prefix + "SPECIAL_DEFAULT_DESCRIPTION", $"Grab the target and perform a double axe handle, dealing {Tokens.DamageValueText(0)}. Kills grant {Tokens.UtilityText("BUFFNAME")}. {Tokens.RedText("Judgement")} gives an extra hit of {Tokens.DamageValueText(0)} per stack. Using this move {Tokens.RedText("consumes")} any {Tokens.UtilityText("Improvised Weapons")}.");
-            Language.Add(prefix + "SPECIAL_ON_KILL_BUFF_KEYWORD", $"<style=cKeywordName>BUFFNAME</style><style=cSub>Increases attack speed and movement speed by {"0%"} for {"3"}s. Judgement increases this duration.</style>");
+            Language.Add(prefix + "SPECIAL_DEFAULT_DESCRIPTION", $"Grab the target and perform a double axe handle, dealing {Tokens.DamageValueText(specialFinalDamageCoefficient)}. Kills grant {Tokens.UtilityText("BUFFNAME")}. {Tokens.RedText("Judgement")} gives an extra hit of {Tokens.DamageValueText(specialJudgementDamageCoefficient)} per stack. Using this move {Tokens.RedText("consumes")} any {Tokens.UtilityText("Improvised Weapons")}.");
+            Language.Add(prefix + "SPECIAL_ON_KILL_BUFF_KEYWORD", $"<style=cKeywordName>BUFFNAME</style><style=cSub>Increases attack speed and movement speed by {specialOnKillBuffMultiplier*100f}% for 3s. Judgement increases this duration.</style>");
 
             Language.Add(prefix + "SPECIAL_FLAME_CAN_NAME", $"Homemade Explosive");
             Language.Add(prefix + "SPECIAL_FLAME_CAN_DESCRIPTION", $"Prime your flame can to explode before throwing it forward, dealing {Tokens.DamageValueText(specialFlameCanDamageCoefficient)}. Kills grant {Tokens.UtilityText("BUFFNAME")}. {Tokens.RedText("Judgement")} gives {Tokens.DamageText($"{specialFlameCanJudgementDamageMultiplier*100f}% increased damage")} per stack. Using this move {Tokens.RedText("consumes")} your {Tokens.DamageText("flame can")}.");

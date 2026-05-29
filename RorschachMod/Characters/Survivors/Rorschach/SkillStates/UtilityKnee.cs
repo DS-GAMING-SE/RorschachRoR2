@@ -18,7 +18,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             procCoefficient = 1f;
             pushForce = 300f;
             bonusForce = Vector3.zero;
-            baseDuration = 0.92f;
+            baseDuration = 1.1f;
 
             //0-1 multiplier of baseduration, used to time when the hitbox is out (usually based on the run time of the animation)
             //for example, if attackStartPercentTime is 0.5, the attack will start hitting halfway through the ability. if baseduration is 3 seconds, the attack will start happening at 1.5 seconds
@@ -51,7 +51,10 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
                 Vector3 displacement = inputBank.aimDirection * characterBody.moveSpeed * 1.5f * Time.deltaTime * Mathf.Clamp01(age * (-1 / fadeTime) + ((duration * earlyExitPercentTime) / fadeTime));
                 if (characterMotor.isGrounded) displacement.y = 0;
                 characterMotor.AddDisplacement(displacement);
-                characterMotor.velocity.y = Mathf.Max(-1f, characterMotor.velocity.y);
+                if (fixedAge <= duration * attackEndPercentTime)
+                {
+                    characterMotor.velocity.y = Mathf.Max(-1f, characterMotor.velocity.y);
+                }
             }
         }
 

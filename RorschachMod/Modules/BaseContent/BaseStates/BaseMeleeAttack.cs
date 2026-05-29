@@ -131,7 +131,7 @@ namespace RorschachMod.Modules.BaseStates
             }
         }
 
-        private void FireAttack()
+        protected virtual void FireAttack()
         {
             if (isAuthority)
             {
