@@ -26,9 +26,7 @@ namespace RorschachMod.Modules
             SkinDefParams defaultSkinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
             defaultSkinDefParams.rendererInfos = ArrayUtils.Clone(defaultRendererinfos);
             defaultSkinDefParams.meshReplacements = new SkinDefParams.MeshReplacement[]
-            { new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.defaultSkinMesh, renderer = defaultRendererinfos[0].renderer },
-            new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.defaultSkinSwordMesh, renderer = defaultRendererinfos[1].renderer },
-            new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.defaultSkinGunMesh, renderer = defaultRendererinfos[2].renderer }};
+            { new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.defaultSkinMesh, renderer = defaultRendererinfos[0].renderer }};
             R2API.SkinDefParamsInfo defaultSkinParamsInfo = new R2API.SkinDefParamsInfo
             {
                 Name = RORSCHACH_PREFIX + "DEFAULT_SKIN_NAME",
@@ -51,18 +49,14 @@ namespace RorschachMod.Modules
             SkinDefParams masterySkinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
             masterySkinDefParams.rendererInfos = ArrayUtils.Clone(defaultRendererinfos);
             masterySkinDefParams.rendererInfos[0].defaultMaterialAddress = RorschachAssets.classicSkinMaterial;
-            masterySkinDefParams.rendererInfos[1].defaultMaterialAddress = RorschachAssets.classicSkinMaterial;
-            masterySkinDefParams.rendererInfos[2].defaultMaterialAddress = RorschachAssets.classicSkinMaterial;
             masterySkinDefParams.meshReplacements = new SkinDefParams.MeshReplacement[]
-            { new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.classicSkinMesh, renderer = defaultRendererinfos[0].renderer },
-            new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.classicSkinSwordMesh, renderer = defaultRendererinfos[1].renderer },
-            new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.defaultSkinGunMesh, renderer = defaultRendererinfos[2].renderer }};
+            { new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.classicSkinMesh, renderer = defaultRendererinfos[0].renderer }};
             R2API.SkinDefParamsInfo masterySkinParamsInfo = new R2API.SkinDefParamsInfo
             {
                 Name = RORSCHACH_PREFIX + "CLASSIC_SKIN_NAME",
                 NameToken = RORSCHACH_PREFIX + "CLASSIC_SKIN_NAME",
                 Icon = Addressables.LoadAssetAsync<Sprite>(RorschachAssets.classicSkinIcon).WaitForCompletion(),
-                UnlockableDef = RorschachUnlockables.masterySkinUnlockableDef,
+                //UnlockableDef = RorschachUnlockables.masterySkinUnlockableDef,
                 RootObject = prefabCharacterModel.gameObject,
                 SkinDefParams = masterySkinDefParams
             };

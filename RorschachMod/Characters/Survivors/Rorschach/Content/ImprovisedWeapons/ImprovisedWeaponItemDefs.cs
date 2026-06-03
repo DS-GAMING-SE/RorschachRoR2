@@ -34,17 +34,20 @@ namespace RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons
             improvisedWeaponTier.bgIconTexture = Addressables.LoadAssetAsync<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common.texTier1BGIcon_png).WaitForCompletion();
             ContentPacks.itemTierDefs.Add(improvisedWeaponTier);
 
+            RorschachAssets.flameCanItemModel.LoadAssetAsync().Completed += x => { AddModelPanelParams(x.Result); };
             flameCan = AddNewItem("RorschachFlameCan", "FLAME_CAN",
                 Addressables.LoadAssetAsync<Sprite>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC1_Molotov.texMolotovIcon_png).WaitForCompletion(),
-                new AssetReferenceT<GameObject>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC1_Molotov.PickupMolotov_prefab));
+                RorschachAssets.flameCanItemModel);
 
+            RorschachAssets.pipeItemModel.LoadAssetAsync().Completed += x => { AddModelPanelParams(x.Result); };
             pipe = AddNewItem("RorschachPipe", "PIPE",
                 Addressables.LoadAssetAsync<Sprite>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_StunChanceOnHit.texStunGrenadeIcon_png).WaitForCompletion(),
-                new AssetReferenceT<GameObject>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_StunChanceOnHit.PickupStunGrenade_prefab));
+                RorschachAssets.pipeItemModel);
 
+            RorschachAssets.cleaverItemModel.LoadAssetAsync().Completed += x => { AddModelPanelParams(x.Result); };
             cleaver = AddNewItem("RorschachCleaver", "CLEAVER",
                 Addressables.LoadAssetAsync<Sprite>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_BleedOnHit.texTriTipIcon_png).WaitForCompletion(),
-                new AssetReferenceT<GameObject>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_BleedOnHit.PickupTriTip_prefab));
+                RorschachAssets.cleaverItemModel);
 
             ImprovisedWeaponManager.Initialize();
         }
@@ -56,8 +59,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons
 
             panel.cameraPositionTransform = prefab.transform.Find("FocusPoint/CameraPosition");
 
-            panel.minDistance = 0.6f;
-            panel.maxDistance = 1.5f;
+            panel.minDistance = 0.4f;
+            panel.maxDistance = 1f;
             return prefab;
         }
 

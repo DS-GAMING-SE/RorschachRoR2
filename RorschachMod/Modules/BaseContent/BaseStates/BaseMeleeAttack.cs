@@ -100,7 +100,7 @@ namespace RorschachMod.Modules.BaseStates
 
         protected virtual void PlaySwingEffect()
         {
-            EffectManager.SimpleMuzzleFlash(swingEffectPrefab, gameObject, muzzleString, false);
+            //EffectManager.SimpleMuzzleFlash(swingEffectPrefab, gameObject, muzzleString, false);
         }
 
         protected virtual void OnHitEnemyAuthority()

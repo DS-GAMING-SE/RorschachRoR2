@@ -60,17 +60,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 new CustomRendererInfo
                 {
                     childName = "Model",
-                    materialReference = RorschachAssets.defaultSkinMaterial
-                },
-                new CustomRendererInfo
-                {
-                    childName = "SwordModel",
-                    materialReference = RorschachAssets.defaultSkinMaterial
-                },
-                new CustomRendererInfo
-                {
-                    childName = "GunModel",
-                    materialReference = RorschachAssets.defaultSkinMaterial
+                    materialReference = RorschachAssets.classicSkinMaterial
                 }
         };
 
@@ -134,7 +124,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public void AddHitboxes()
         {
             //example of how to create a HitBoxGroup. see summary for more details
-            Prefabs.SetupHitBoxGroup(characterModelObject, "SwordGroup", "SwordHitbox");
+            Prefabs.SetupHitBoxGroup(characterModelObject, "SwordGroup", "MeleeHitbox");
         }
 
         public override void InitializeEntityStateMachines() 
@@ -449,9 +439,9 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             ModelSkinController skinController = prefabCharacterModel.gameObject.AddComponent<ModelSkinController>();
             ModelSkinController skinController2 = displayPrefab.gameObject.AddComponent<ModelSkinController>();
             skinController._animatorControllerAddress = RorschachAssets.animator;
-            skinController._avatarAddress = RorschachAssets.animatorAvatar;
+            //skinController._avatarAddress = RorschachAssets.animatorAvatar;
             skinController2._animatorControllerAddress = RorschachAssets.displayAnimator;
-            skinController2._avatarAddress = RorschachAssets.animatorAvatar;
+            //skinController2._avatarAddress = RorschachAssets.animatorAvatar;
             ChildLocator childLocator = prefabCharacterModel.GetComponent<ChildLocator>();
             CharacterModel.RendererInfo[] defaultRendererinfos = prefabCharacterModel.baseRendererInfos;
 

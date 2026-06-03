@@ -27,12 +27,12 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public static GameObject bombProjectilePrefab;
 
         #region AssetGUIDs
-        public static AssetReferenceT<GameObject> characterModel = new AssetReferenceT<GameObject>("a32fb17ad7dfd7b4f8b893feaf7d7512");
-        public static AssetReferenceT<GameObject> displayPrefab = new AssetReferenceT<GameObject>("9552880169ac54248bdf012a5175ef46");
+        public static AssetReferenceT<GameObject> characterModel = new AssetReferenceT<GameObject>("8fb604c74ac3bc6488217a956b19c5c1");
+        public static AssetReferenceT<GameObject> displayPrefab = new AssetReferenceT<GameObject>("0dcff97246be01d4ebb5aab85c259247");
 
-        public static AssetReferenceT<RuntimeAnimatorController> animator = new AssetReferenceT<RuntimeAnimatorController>("f1a82152954bc974895f8ff9f035f84f");
-        public static AssetReferenceT<RuntimeAnimatorController> displayAnimator = new AssetReferenceT<RuntimeAnimatorController>("4397b394b0996d44ba60f0f7769a33d1");
-        public static AssetReferenceT<Avatar> animatorAvatar = new AssetReferenceT<Avatar>("3f55d8352b2212743b809db2974cdd5e");
+        public static AssetReferenceT<RuntimeAnimatorController> animator = new AssetReferenceT<RuntimeAnimatorController>("3952c852b06ed0b44a71c936e0236a86");
+        public static AssetReferenceT<RuntimeAnimatorController> displayAnimator = new AssetReferenceT<RuntimeAnimatorController>("6af916c388c16a24ea7cda778e419f43");
+        public static AssetReferenceT<Avatar> animatorAvatar = new AssetReferenceT<Avatar>("3f55d8352b2212743b809db2974cdd5e"); // commented out of where its used
         #region Icons
         public static AssetReferenceTexture characterIcon = new AssetReferenceTexture("33c89ac909113894280a0cfd14c99f2e");
 
@@ -47,7 +47,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public static AssetReferenceSprite secondaryPipeSkillIcon = new AssetReferenceSprite("1872c188be0e7fd4397142cd14cc8863");
         public static AssetReferenceSprite secondaryCleaverSkillIcon = new AssetReferenceSprite("d79f886258b3bb74a90bd0d43ee60854");
 
-        public static AssetReferenceSprite utilitySkillIcon = new AssetReferenceSprite("0f5783e971afb924daa22df12d6c1325");
+        public static AssetReferenceSprite utilitySkillIcon = new AssetReferenceSprite("575453e0e8deed8488330e8cd804dbab");
 
         public static AssetReferenceSprite specialSkillIcon = new AssetReferenceSprite("0f8fafa204cb2764ea1a9555ae161057");
         public static AssetReferenceSprite specialFlameCanSkillIcon = new AssetReferenceSprite("6f0e7dc80d946bd489940eccc8c92f5b");
@@ -56,18 +56,20 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         #endregion
         #region Skins
         #region Default Skin
-        public static AssetReferenceT<Material> defaultSkinMaterial = new AssetReferenceT<Material>("14d6d121af8aca345b797120c5f6331b");
-        public static AssetReferenceT<Mesh> defaultSkinMesh = new AssetReferenceT<Mesh>("fee9d8e08c8c818498f7613f868f2e34");
-        public static AssetReferenceT<Mesh> defaultSkinSwordMesh = new AssetReferenceT<Mesh>("06ba2d7b66b5a7c47ae54f402cb9e132");
-        public static AssetReferenceT<Mesh> defaultSkinGunMesh = new AssetReferenceT<Mesh>("95bb770c878495b4296296a4b09a6034");
+        public static AssetReferenceT<Material> defaultSkinMaterial = new AssetReferenceT<Material>("83e8838e42f0e0c44bfa65f58572c81e");
+        public static AssetReferenceT<Mesh> defaultSkinMesh = new AssetReferenceT<Mesh>("f6efc04c1d6022b49b7ba02315ba11cd");
         public static AssetReferenceSprite defaultSkinIcon = new AssetReferenceSprite("e0bd4029a2d0049499dc8c6d68c3716b");
         #endregion
         #region Classic Skin
-        public static AssetReferenceT<Material> classicSkinMaterial = new AssetReferenceT<Material>("507751368e16e18409e1c93f8022eb8c");
-        public static AssetReferenceT<Mesh> classicSkinMesh = new AssetReferenceT<Mesh>("e49dd36434c00024985424af2da4cedd");
-        public static AssetReferenceT<Mesh> classicSkinSwordMesh = new AssetReferenceT<Mesh>("7a3e4cd720806a248b00c548032956cd");
+        public static AssetReferenceT<Material> classicSkinMaterial = new AssetReferenceT<Material>("cd3ae74bb0848124b9c4e4813f731cc6");
+        public static AssetReferenceT<Mesh> classicSkinMesh = new AssetReferenceT<Mesh>("ad56b3718c09c2045a7a304d672c8792");
         public static AssetReferenceSprite classicSkinIcon = new AssetReferenceSprite("b6f91ba019353654992c4a536e207a87");
         #endregion
+        #endregion
+        #region Items
+        public static AssetReferenceT<GameObject> flameCanItemModel = new AssetReferenceT<GameObject>("2142cbcfebb888744983f02b83eb0dba");
+        public static AssetReferenceT<GameObject> pipeItemModel = new AssetReferenceT<GameObject>("508bdaea945e3b8498a2d82f4825bc51");
+        public static AssetReferenceT<GameObject> cleaverItemModel = new AssetReferenceT<GameObject>("8dce5d1b37999f34faf5a6f53164427b");
         #endregion
         #region VFX
         public static AssetReferenceT<GameObject> projectileGhost = new AssetReferenceT<GameObject>("2b1ae6eb92856db41a261cf5336101dc");
@@ -99,7 +101,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 ProjectileGrappleController grappleController = grappleProjectilePrefab.GetComponent<ProjectileGrappleController>();
                 grappleController.yankMassLimit = 0;
                 grappleController.ownerHookStateType = new EntityStates.SerializableEntityStateType(typeof(UtilityHooking));
-                grappleController.muzzleStringOnBody = "Muzzle";
+                grappleController.muzzleStringOnBody = "GrapplingHookMuzzle";
                 grappleController.nearBreakDistance = 5f;
                 EntityStateMachine stateMachine = grappleProjectilePrefab.GetComponent<EntityStateMachine>();
                 stateMachine.initialStateType = new EntityStates.SerializableEntityStateType(typeof(UtilityGrappleFly));

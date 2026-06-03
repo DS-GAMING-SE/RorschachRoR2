@@ -41,8 +41,8 @@ MonoBehaviour:
     m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texHenryIcon.png
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 0f5783e971afb924daa22df12d6c1325
-    m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texUtilityIcon.png
+  - m_GUID: 575453e0e8deed8488330e8cd804dbab
+    m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texUtilityDefaultSkillIcon.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 6f0e7dc80d946bd489940eccc8c92f5b
@@ -115,6 +115,42 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 0f8fafa204cb2764ea1a9555ae161057
     m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texSpecialDefaultSkillIcon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8fb604c74ac3bc6488217a956b19c5c1
+    m_Address: Assets/RorschachAssets/RorschachBundle/mdlRorschach.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f6efc04c1d6022b49b7ba02315ba11cd
+    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschach.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ad56b3718c09c2045a7a304d672c8792
+    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachClassic.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cd3ae74bb0848124b9c4e4813f731cc6
+    m_Address: Assets/RorschachAssets/RorschachBundle/Materials/matRorschachClassic.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 83e8838e42f0e0c44bfa65f58572c81e
+    m_Address: Assets/RorschachAssets/RorschachBundle/Materials/matRorschach.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0dcff97246be01d4ebb5aab85c259247
+    m_Address: Assets/RorschachAssets/RorschachBundle/RorschachDisplay.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8dce5d1b37999f34faf5a6f53164427b
+    m_Address: Assets/RorschachAssets/RorschachBundle/mdlCleaver.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2142cbcfebb888744983f02b83eb0dba
+    m_Address: Assets/RorschachAssets/RorschachBundle/mdlFlameCan.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 508bdaea945e3b8498a2d82f4825bc51
+    m_Address: Assets/RorschachAssets/RorschachBundle/mdlPipe.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

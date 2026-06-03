@@ -40,7 +40,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates.FlameCan
                 bulletAttack.minSpread = 0f;
                 bulletAttack.damage = RorschachStaticValues.primaryFlameCanDamageCoefficient * characterBody.damage;
                 bulletAttack.force = 0f;
-                bulletAttack.muzzleName = "Muzzle";
+                bulletAttack.muzzleName = "FlameCanMuzzle";
                 bulletAttack.hitEffectPrefab = EntityStates.Mage.Weapon.Flamethrower.impactEffectPrefab;
                 bulletAttack.isCrit = Util.CheckRoll(characterBody.crit, characterBody.master);
                 bulletAttack.radius = EntityStates.Mage.Weapon.Flamethrower.radius;

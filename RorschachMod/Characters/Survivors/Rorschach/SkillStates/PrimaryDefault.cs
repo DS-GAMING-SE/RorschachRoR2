@@ -33,7 +33,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             hitSoundString = "";
             muzzleString = swingIndex % 2 == 0 ? "SwingLeft" : "SwingRight";
             playbackRateParam = "Slash.playbackRate";
-            swingEffectPrefab = RorschachAssets.swordSwingEffect;
+            swingEffectPrefab = RorschachAssets.swordSwingEffect; // basemeleeattack swing effect use is commented out currently
             hitEffectPrefab = RorschachAssets.swordHitImpactEffect;
 
             impactSound = RorschachAssets.swordHitSoundEvent.index;
