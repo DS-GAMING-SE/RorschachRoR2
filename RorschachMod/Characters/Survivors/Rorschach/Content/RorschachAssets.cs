@@ -56,6 +56,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         #endregion
         #region Skins
         #region Default Skin
+        // REMEMBER TO MAKE RIG NOT 100 SCALE SO PARTICLES DON'T FREAK OUT
         public static AssetReferenceT<Material> defaultSkinMaterial = new AssetReferenceT<Material>("83e8838e42f0e0c44bfa65f58572c81e");
         public static AssetReferenceT<Mesh> defaultSkinMesh = new AssetReferenceT<Mesh>("f6efc04c1d6022b49b7ba02315ba11cd");
         public static AssetReferenceSprite defaultSkinIcon = new AssetReferenceSprite("e0bd4029a2d0049499dc8c6d68c3716b");
@@ -162,7 +163,6 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             var damage = bombProjectilePrefab.GetComponent<ProjectileDamage>();
             damage.damageType = DamageTypeCombo.AnyFire;
             damage.damageType.damageSource = DamageSource.Special;
-            damage.damageType.AddModdedDamageType(RorschachDamageTypes.specialOnKillBuff);
 
             ProjectileController bombController = bombProjectilePrefab.GetComponent<ProjectileController>();
             RorschachAssets.projectileGhost.LoadAssetAsync().Completed += delegate (AsyncOperationHandle<GameObject> x)

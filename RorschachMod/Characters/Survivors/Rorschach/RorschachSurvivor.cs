@@ -397,9 +397,9 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 keywordTokens = new string[] { RORSCHACH_PREFIX + "JUDGEMENT_KEYWORD", RORSCHACH_PREFIX + "SPECIAL_ON_KILL_BUFF_KEYWORD", RORSCHACH_PREFIX + "PASSIVE_IMPROVISED_WEAPON_KEYWORD" },
                 skillIcon = RorschachAssets.specialSkillIcon.LoadAssetAsync().WaitForCompletion(),
 
-                activationState = new EntityStates.SerializableEntityStateType(typeof(SpecialFlameCan)),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SpecialDefaultDash)),
                 //setting this to the "weapon2" EntityStateMachine allows us to cast this skill at the same time primary, which is set to the "weapon" EntityStateMachine
-                activationStateMachineName = "Hook", interruptPriority = EntityStates.InterruptPriority.Skill,
+                activationStateMachineName = "Body", interruptPriority = EntityStates.InterruptPriority.Skill,
 
                 baseMaxStock = 1,
                 baseRechargeInterval = 10f,
@@ -427,8 +427,48 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 isCombatSkill = true,
                 mustKeyPress = true
             });
+
+            ImprovisedWeaponManager.specialPipe = Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "RorschachSpecialPipe",
+                skillNameToken = RORSCHACH_PREFIX + "SPECIAL_PIPE_NAME",
+                skillDescriptionToken = RORSCHACH_PREFIX + "SPECIAL_PIPe_DESCRIPTION",
+                keywordTokens = new string[] { RORSCHACH_PREFIX + "JUDGEMENT_KEYWORD", RORSCHACH_PREFIX + "SPECIAL_ON_KILL_BUFF_KEYWORD", RORSCHACH_PREFIX + "PASSIVE_IMPROVISED_WEAPON_KEYWORD" },
+                skillIcon = RorschachAssets.specialPipeSkillIcon.LoadAssetAsync().WaitForCompletion(),
+
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SpecialPipeDash)),
+                //setting this to the "weapon2" EntityStateMachine allows us to cast this skill at the same time primary, which is set to the "weapon" EntityStateMachine
+                activationStateMachineName = "Body",
+                interruptPriority = EntityStates.InterruptPriority.Skill,
+
+                baseMaxStock = 1,
+                baseRechargeInterval = 10f,
+
+                isCombatSkill = true,
+                mustKeyPress = true
+            });
+
+            ImprovisedWeaponManager.specialCleaver = Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "RorschachSpecialCleaver",
+                skillNameToken = RORSCHACH_PREFIX + "SPECIAL_CLEAVER_NAME",
+                skillDescriptionToken = RORSCHACH_PREFIX + "SPECIAL_CLEAVER_DESCRIPTION",
+                keywordTokens = new string[] { RORSCHACH_PREFIX + "JUDGEMENT_KEYWORD", RORSCHACH_PREFIX + "SPECIAL_ON_KILL_BUFF_KEYWORD", RORSCHACH_PREFIX + "PASSIVE_IMPROVISED_WEAPON_KEYWORD" },
+                skillIcon = RorschachAssets.specialCleaverSkillIcon.LoadAssetAsync().WaitForCompletion(),
+
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SpecialCleaverDash)),
+                //setting this to the "weapon2" EntityStateMachine allows us to cast this skill at the same time primary, which is set to the "weapon" EntityStateMachine
+                activationStateMachineName = "Body",
+                interruptPriority = EntityStates.InterruptPriority.Skill,
+
+                baseMaxStock = 1,
+                baseRechargeInterval = 10f,
+
+                isCombatSkill = true,
+                mustKeyPress = true
+            });
             // Remember to make all hits of special use peak judgement stacks and special on kill damage types
-            
+
             Skills.AddSpecialSkills(bodyPrefab, specialSkillDef1);
         }
         #endregion skills

@@ -1,9 +1,10 @@
 ﻿using EntityStates;
+using RoR2;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using RoR2;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 {
@@ -23,7 +24,10 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         {
             Prepare();
             base.OnEnter();
-            characterBody.AddBuff(RoR2Content.Buffs.SmallArmorBoost);
+            if (NetworkServer.active)
+            {
+                characterBody.AddBuff(RoR2Content.Buffs.SmallArmorBoost);
+            }
             maxDuration = baseMaxDuration / attackSpeedStat;
             characterBody.SetAimTimer(maxDuration);
         }
@@ -58,7 +62,10 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 
         public override void OnExit()
         {
-            characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
+            if (NetworkServer.active)
+            {
+                characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
+            }
             base.OnExit();
         }
     }

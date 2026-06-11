@@ -49,6 +49,7 @@ namespace RorschachMod.Modules.BaseStates
         protected Animator animator;
         private HitStopCachedState hitStopCachedState;
         private Vector3 storedVelocity;
+        protected bool handleEndState = true;
 
         public override void OnEnter()
         {

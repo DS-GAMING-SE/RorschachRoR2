@@ -50,7 +50,10 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         public override void OnEnter()
         {
             base.OnEnter();
-            characterBody.AddBuff(RoR2Content.Buffs.SmallArmorBoost);
+            if (NetworkServer.active)
+            {
+                characterBody.AddBuff(RoR2Content.Buffs.SmallArmorBoost);
+            }
         }
         public override void Update()
         {
@@ -91,7 +94,10 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 
         public override void OnExit()
         {
-            characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
+            if (NetworkServer.active)
+            {
+                characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
+            }
             base.OnExit();
         }
 

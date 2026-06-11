@@ -21,7 +21,7 @@ namespace RorschachMod.Modules
 
             #region DefaultSkin
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.defaultSkinMaterial).Completed += x =>
-            { x.Result.SetHopooMaterial(); };
+            { x.Result.SetHopooMaterial().SetSpecular(0.15f, 2.5f).SpecularIgnoreAlpha(); };
 
             SkinDefParams defaultSkinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
             defaultSkinDefParams.rendererInfos = ArrayUtils.Clone(defaultRendererinfos);
@@ -37,14 +37,12 @@ namespace RorschachMod.Modules
                 SkinDefParams = defaultSkinDefParams
             };
             SkinDef defaultSkin = R2API.Skins.CreateNewSkinDef(defaultSkinParamsInfo);
-            //add new skindef to our list of skindefs. this is what we'll be passing to the SkinController
             skins.Add(defaultSkin);
             #endregion
 
-            //uncomment this when you have a mastery skin
             #region MasterySkin
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.classicSkinMaterial).Completed += x =>
-            { x.Result.SetHopooMaterial(); };
+            { x.Result.SetHopooMaterial().SetSpecular(0.15f, 2.5f).SpecularIgnoreAlpha(); };
 
             SkinDefParams masterySkinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
             masterySkinDefParams.rendererInfos = ArrayUtils.Clone(defaultRendererinfos);

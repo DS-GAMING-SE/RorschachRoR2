@@ -74,7 +74,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             this.outer.SetNextState(new ProjectileGrappleController.ReturnState());
             if (owner.characterMotor)
             {
-                owner.characterMotor.velocity = (this.position - this.aimOrigin).normalized * GetSpeed() * 0.5f;
+                owner.characterMotor.velocity = (this.position - this.aimOrigin).normalized * GetSpeed() * 0.35f;
             }
         }
     }
