@@ -60,7 +60,20 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 new CustomRendererInfo
                 {
                     childName = "Model",
-                    materialReference = RorschachAssets.classicSkinMaterial
+                    dontHotpoo = true,
+                    materialReference = RorschachAssets.defaultSkinMaterial
+                },
+                new CustomRendererInfo
+                {
+                    childName = "AccessoryModel1",
+                    dontHotpoo = true,
+                    material = HedgehogUtils.Helpers.CreateGlassMaterial(new Color(0.6f, 0.6f, 0.6f))
+                },
+                new CustomRendererInfo
+                {
+                    childName = "AccessoryModel2",
+                    dontHotpoo = true,
+                    materialReference = RorschachAssets.defaultSkinArmMaterial
                 }
         };
 
@@ -482,10 +495,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             //skinController._avatarAddress = RorschachAssets.animatorAvatar;
             skinController2._animatorControllerAddress = RorschachAssets.displayAnimator;
             //skinController2._avatarAddress = RorschachAssets.animatorAvatar;
-            ChildLocator childLocator = prefabCharacterModel.GetComponent<ChildLocator>();
-            CharacterModel.RendererInfo[] defaultRendererinfos = prefabCharacterModel.baseRendererInfos;
 
-            skinController.skins = Skins.InitializeSkins(prefabCharacterModel, defaultRendererinfos);
+            skinController.skins = Skins.InitializeSkins(prefabCharacterModel, prefabCharacterModel.baseRendererInfos);
             skinController2.skins = ArrayUtils.Clone(skinController.skins);
         }
         #endregion skins

@@ -22,11 +22,15 @@ namespace RorschachMod.Modules
             #region DefaultSkin
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.defaultSkinMaterial).Completed += x =>
             { x.Result.SetHopooMaterial().SetSpecular(0.15f, 2.5f).SpecularIgnoreAlpha(); };
+            AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.defaultSkinArmMaterial).Completed += x =>
+            { x.Result.SetHopooMaterial().SetSpecular(0.4f, 1.5f).SpecularIgnoreAlpha(); };
 
             SkinDefParams defaultSkinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
             defaultSkinDefParams.rendererInfos = ArrayUtils.Clone(defaultRendererinfos);
             defaultSkinDefParams.meshReplacements = new SkinDefParams.MeshReplacement[]
-            { new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.defaultSkinMesh, renderer = defaultRendererinfos[0].renderer }};
+            { new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.defaultSkinMesh, renderer = defaultRendererinfos[0].renderer },
+            new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.defaultSkinGlassMesh, renderer = defaultRendererinfos[1].renderer },
+            new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.defaultSkinArmMesh, renderer = defaultRendererinfos[2].renderer }};
             R2API.SkinDefParamsInfo defaultSkinParamsInfo = new R2API.SkinDefParamsInfo
             {
                 Name = RORSCHACH_PREFIX + "DEFAULT_SKIN_NAME",
@@ -47,8 +51,13 @@ namespace RorschachMod.Modules
             SkinDefParams masterySkinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
             masterySkinDefParams.rendererInfos = ArrayUtils.Clone(defaultRendererinfos);
             masterySkinDefParams.rendererInfos[0].defaultMaterialAddress = RorschachAssets.classicSkinMaterial;
+            masterySkinDefParams.rendererInfos[1].defaultMaterial = null;
+            masterySkinDefParams.rendererInfos[1].defaultMaterialAddress = null;
+            masterySkinDefParams.rendererInfos[2].defaultMaterialAddress = null;
             masterySkinDefParams.meshReplacements = new SkinDefParams.MeshReplacement[]
-            { new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.classicSkinMesh, renderer = defaultRendererinfos[0].renderer }};
+            { new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.classicSkinMesh, renderer = defaultRendererinfos[0].renderer },
+            new SkinDefParams.MeshReplacement { meshAddress = null, renderer = defaultRendererinfos[1].renderer },
+            new SkinDefParams.MeshReplacement { meshAddress = null, renderer = defaultRendererinfos[2].renderer }};
             R2API.SkinDefParamsInfo masterySkinParamsInfo = new R2API.SkinDefParamsInfo
             {
                 Name = RORSCHACH_PREFIX + "CLASSIC_SKIN_NAME",
@@ -59,8 +68,63 @@ namespace RorschachMod.Modules
                 SkinDefParams = masterySkinDefParams
             };
             SkinDef masterySkin = R2API.Skins.CreateNewSkinDef(masterySkinParamsInfo);
-            //add new skindef to our list of skindefs. this is what we'll be passing to the SkinController
             skins.Add(masterySkin);
+            #endregion
+
+            #region FutureSkin
+            AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.futureSkinMaterial).Completed += x =>
+            { x.Result.SetHopooMaterial().SetSpecular(0.15f, 2.5f).SpecularIgnoreAlpha().SetEmission(0.5f); };
+
+            SkinDefParams futureSkinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
+            futureSkinDefParams.rendererInfos = ArrayUtils.Clone(defaultRendererinfos);
+            futureSkinDefParams.rendererInfos[0].defaultMaterialAddress = RorschachAssets.futureSkinMaterial;
+            futureSkinDefParams.rendererInfos[1].defaultMaterial = null;
+            futureSkinDefParams.rendererInfos[1].defaultMaterialAddress = null;
+            futureSkinDefParams.rendererInfos[2].defaultMaterialAddress = null;
+            futureSkinDefParams.meshReplacements = new SkinDefParams.MeshReplacement[]
+            { new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.futureSkinMesh, renderer = defaultRendererinfos[0].renderer },
+            new SkinDefParams.MeshReplacement { meshAddress = null, renderer = defaultRendererinfos[1].renderer },
+            new SkinDefParams.MeshReplacement { meshAddress = null, renderer = defaultRendererinfos[2].renderer }};
+            R2API.SkinDefParamsInfo futureSkinParamsInfo = new R2API.SkinDefParamsInfo
+            {
+                Name = RORSCHACH_PREFIX + "FUTURE_SKIN_NAME",
+                NameToken = RORSCHACH_PREFIX + "FUTURE_SKIN_NAME",
+                Icon = Addressables.LoadAssetAsync<Sprite>(RorschachAssets.futureSkinIcon).WaitForCompletion(),
+                //UnlockableDef = RorschachUnlockables.masterySkinUnlockableDef,
+                RootObject = prefabCharacterModel.gameObject,
+                SkinDefParams = futureSkinDefParams
+            };
+            SkinDef futureSkin = R2API.Skins.CreateNewSkinDef(futureSkinParamsInfo);
+            skins.Add(futureSkin);
+            #endregion
+
+            #region WarframeSkin
+            AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.warframeSkinMaterial).Completed += x =>
+            { x.Result.SetHopooMaterial().SetSpecular(0.2f, 2.5f).SpecularIgnoreAlpha().SetEmission(0.5f); };
+            AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.warframeSkinHatMaterial).Completed += x =>
+            { x.Result.SetHopooMaterial().SetSpecular(0.2f, 2.5f).SpecularIgnoreAlpha().SetEmission(0.5f); };
+
+            SkinDefParams warframeSkinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
+            warframeSkinDefParams.rendererInfos = ArrayUtils.Clone(defaultRendererinfos);
+            warframeSkinDefParams.rendererInfos[0].defaultMaterialAddress = RorschachAssets.warframeSkinMaterial;
+            warframeSkinDefParams.rendererInfos[1].defaultMaterial = null;
+            warframeSkinDefParams.rendererInfos[1].defaultMaterialAddress = RorschachAssets.warframeSkinHatMaterial;
+            warframeSkinDefParams.rendererInfos[2].defaultMaterialAddress = null;
+            warframeSkinDefParams.meshReplacements = new SkinDefParams.MeshReplacement[]
+            { new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.warframeSkinMesh, renderer = defaultRendererinfos[0].renderer },
+            new SkinDefParams.MeshReplacement { meshAddress = RorschachAssets.warframeSkinHatMesh, renderer = defaultRendererinfos[1].renderer },
+            new SkinDefParams.MeshReplacement { meshAddress = null, renderer = defaultRendererinfos[2].renderer }};
+            R2API.SkinDefParamsInfo warframeSkinParamsInfo = new R2API.SkinDefParamsInfo
+            {
+                Name = RORSCHACH_PREFIX + "WARFRAME_SKIN_NAME",
+                NameToken = RORSCHACH_PREFIX + "WARFRAME_SKIN_NAME",
+                Icon = Addressables.LoadAssetAsync<Sprite>(RorschachAssets.warframeSkinIcon).WaitForCompletion(),
+                //UnlockableDef = RorschachUnlockables.masterySkinUnlockableDef,
+                RootObject = prefabCharacterModel.gameObject,
+                SkinDefParams = warframeSkinDefParams
+            };
+            SkinDef warframeSkin = R2API.Skins.CreateNewSkinDef(warframeSkinParamsInfo);
+            skins.Add(warframeSkin);
             #endregion
 
             return skins.ToArray();

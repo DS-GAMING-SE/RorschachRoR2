@@ -38,12 +38,12 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
         public static AssetReferenceSprite passiveSkillIcon = new AssetReferenceSprite("0e4c80d73da34aa40b303eb595226e63");
 
-        public static AssetReferenceSprite primarySkillIcon = new AssetReferenceSprite("b4d4d8a7648b8c04393ee5d064218886");
+        public static AssetReferenceSprite primarySkillIcon = new AssetReferenceSprite("01b09e98ee52574479b17c0349c88e29");
         public static AssetReferenceSprite primaryFlameCanSkillIcon = new AssetReferenceSprite("6f0e7dc80d946bd489940eccc8c92f5b");
         public static AssetReferenceSprite primaryPipeSkillIcon = new AssetReferenceSprite("1872c188be0e7fd4397142cd14cc8863");
         public static AssetReferenceSprite primaryCleaverSkillIcon = new AssetReferenceSprite("d79f886258b3bb74a90bd0d43ee60854");
 
-        public static AssetReferenceSprite secondarySkillIcon = new AssetReferenceSprite("b4d4d8a7648b8c04393ee5d064218886");
+        public static AssetReferenceSprite secondarySkillIcon = new AssetReferenceSprite("ab8c7686dfc15b148a46a8bc609acf3e");
         public static AssetReferenceSprite secondaryPipeSkillIcon = new AssetReferenceSprite("1872c188be0e7fd4397142cd14cc8863");
         public static AssetReferenceSprite secondaryCleaverSkillIcon = new AssetReferenceSprite("d79f886258b3bb74a90bd0d43ee60854");
 
@@ -56,15 +56,29 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         #endregion
         #region Skins
         #region Default Skin
-        // REMEMBER TO MAKE RIG NOT 100 SCALE SO PARTICLES DON'T FREAK OUT
         public static AssetReferenceT<Material> defaultSkinMaterial = new AssetReferenceT<Material>("83e8838e42f0e0c44bfa65f58572c81e");
-        public static AssetReferenceT<Mesh> defaultSkinMesh = new AssetReferenceT<Mesh>("f6efc04c1d6022b49b7ba02315ba11cd");
+        public static AssetReferenceT<Material> defaultSkinArmMaterial = new AssetReferenceT<Material>("3c6c7959e383556429c3faa40e7783ff");
+        public static AssetReferenceT<Mesh> defaultSkinMesh = new AssetReferenceT<Mesh>("822bef3ef7e19554ba24e37bed51d699");
+        public static AssetReferenceT<Mesh> defaultSkinGlassMesh = new AssetReferenceT<Mesh>("bcfbbd3f6cd900e488cbb1d96a995783");
+        public static AssetReferenceT<Mesh> defaultSkinArmMesh = new AssetReferenceT<Mesh>("73f4e1e3829b7364f886976fe5274efe");
         public static AssetReferenceSprite defaultSkinIcon = new AssetReferenceSprite("e0bd4029a2d0049499dc8c6d68c3716b");
         #endregion
         #region Classic Skin
         public static AssetReferenceT<Material> classicSkinMaterial = new AssetReferenceT<Material>("cd3ae74bb0848124b9c4e4813f731cc6");
-        public static AssetReferenceT<Mesh> classicSkinMesh = new AssetReferenceT<Mesh>("ad56b3718c09c2045a7a304d672c8792");
+        public static AssetReferenceT<Mesh> classicSkinMesh = new AssetReferenceT<Mesh>("5f4832150f25b3041a4ee59b3781a08d");
         public static AssetReferenceSprite classicSkinIcon = new AssetReferenceSprite("b6f91ba019353654992c4a536e207a87");
+        #endregion
+        #region Future Skin
+        public static AssetReferenceT<Material> futureSkinMaterial = new AssetReferenceT<Material>("b0f8af76c50b18d44a0102da35b23dc3");
+        public static AssetReferenceT<Mesh> futureSkinMesh = new AssetReferenceT<Mesh>("ee1e4bcf8d27acc4593282ff2badeaeb");
+        public static AssetReferenceSprite futureSkinIcon = new AssetReferenceSprite("b6f91ba019353654992c4a536e207a87");
+        #endregion
+        #region Warframe Skin
+        public static AssetReferenceT<Material> warframeSkinMaterial = new AssetReferenceT<Material>("fa40aa64deb77d04da385a554f3de463");
+        public static AssetReferenceT<Material> warframeSkinHatMaterial = new AssetReferenceT<Material>("7bd906e6af579f140917fd51aa9d7a6a");
+        public static AssetReferenceT<Mesh> warframeSkinMesh = new AssetReferenceT<Mesh>("e337a4fbb4dd5804db25a164153e34a1");
+        public static AssetReferenceT<Mesh> warframeSkinHatMesh = new AssetReferenceT<Mesh>("3d5eaa1d2364a08418b036895055447e");
+        public static AssetReferenceSprite warframeSkinIcon = new AssetReferenceSprite("b6f91ba019353654992c4a536e207a87");
         #endregion
         #endregion
         #region Items
@@ -98,7 +112,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             };
             Addressables.LoadAssetAsync<GameObject>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Loader.LoaderYankHook_prefab).Completed += x =>
             {
-                grappleProjectilePrefab = x.Result;
+                grappleProjectilePrefab = PrefabAPI.InstantiateClone(x.Result, "RorschachGrappleProjectile");
                 ProjectileGrappleController grappleController = grappleProjectilePrefab.GetComponent<ProjectileGrappleController>();
                 grappleController.yankMassLimit = 0;
                 grappleController.ownerHookStateType = new EntityStates.SerializableEntityStateType(typeof(UtilityHooking));

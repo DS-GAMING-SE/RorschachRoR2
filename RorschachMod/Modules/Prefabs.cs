@@ -336,7 +336,7 @@ namespace RorschachMod.Modules
                     Renderer rend = childLocator.FindChild(customInfos[i].childName).GetComponent<Renderer>();
                     if (rend)
                     {
-                        if (customInfos[i].materialReference.RuntimeKeyIsValid())
+                        if (customInfos[i].materialReference != null && customInfos[i].materialReference.RuntimeKeyIsValid())
                         {
                             rendererInfos.Add(new CharacterModel.RendererInfo
                             {
@@ -365,7 +365,7 @@ namespace RorschachMod.Modules
                             {
                                 renderer = rend,
                                 defaultMaterial = mat,
-                                defaultMaterialAddress = customInfos[i].materialReference,
+                                defaultMaterialAddress = null,
                                 ignoreOverlays = customInfos[i].ignoreOverlays,
                                 defaultShadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On
                             });
