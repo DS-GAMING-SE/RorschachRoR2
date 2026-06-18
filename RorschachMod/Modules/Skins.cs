@@ -19,6 +19,34 @@ namespace RorschachMod.Modules
         {
             List<SkinDef> skins = new List<SkinDef>();
 
+            #region Generic
+            AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.propsMaterial).Completed += x =>
+            {
+                x.Result.SetHopooMaterial().SetSpecular(0.4f, 1.5f).SpecularIgnoreAlpha();
+                AssetAsyncReferenceManager<Texture>.LoadAsset(RorschachAssets.propsFresnelMask).Completed += y =>
+                {
+                    x.Result.MetalFresnel(y.Result);
+                };
+            };
+            AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.pipeMaterial).Completed += x =>
+            {
+                x.Result.SetHopooMaterial().SetSpecular(0.7f, 2f);
+                AssetAsyncReferenceManager<Texture>.LoadAsset(RorschachAssets.pipeFresnelMask).Completed += y =>
+                {
+                    x.Result.MetalFresnel(y.Result, 2f, 0.5f);
+                };
+            };
+            /*AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.flameCanProjectileMaterial).Completed += x =>
+            {
+                x.Result.SetHopooMaterial().SetSpecular(0.4f, 1.5f).SpecularIgnoreAlpha();
+                AssetAsyncReferenceManager<Texture>.LoadAsset(RorschachAssets.propsFresnelMask).Completed += y =>
+                {
+                    x.Result.GoldFresnel(y.Result, 2.1f, 20f);
+                };
+            };*/
+
+            #endregion
+
             #region DefaultSkin
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.defaultSkinMaterial).Completed += x =>
             { x.Result.SetHopooMaterial().SetSpecular(0.15f, 2.5f).SpecularIgnoreAlpha(); };

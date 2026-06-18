@@ -149,64 +149,48 @@ MonoBehaviour:
     m_Address: Assets/RorschachAssets/RorschachBundle/mdlPipe.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: e337a4fbb4dd5804db25a164153e34a1
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachWarframe.mesh
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: ee1e4bcf8d27acc4593282ff2badeaeb
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachFuture.mesh
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 822bef3ef7e19554ba24e37bed51d699
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachDefault.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 5f4832150f25b3041a4ee59b3781a08d
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachBase.mesh
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 73f4e1e3829b7364f886976fe5274efe
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachDefaultArm.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: bcfbbd3f6cd900e488cbb1d96a995783
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachDefaultGlass.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 3d5eaa1d2364a08418b036895055447e
+  - m_GUID: 7c1947acc115f8d43ac7153c0a8f4f82
     m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachWarframeHat.mesh
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 9d3602ecaec00764ea0accf6e2bbfdb8
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshSpray.asset
+  - m_GUID: 3f08ca721a7f897459657a184428b62b
+    m_Address: Assets/RorschachAssets/RorschachBundle/Materials/matRorschachProps.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 2bfe43c3a094f484cba014c35311df48
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshCan.asset
+  - m_GUID: e621f8f419d8ad04d97aa0da34f43bcc
+    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachDefaultArm.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: caf828e277942d043b2aa2100a88bc7f
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshCleaver.asset
+  - m_GUID: 0b11538b5dababe40a1b6984b770f81f
+    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachWarframe.mesh
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 5dd7fcc9359a15c49bf796ce75802ed8
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshGrapplingGun.asset
+  - m_GUID: eea6538410b08774f933d0552c9c0953
+    m_Address: Assets/RorschachAssets/RorschachBundle/Materials/matRorschachPipe.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 80a6c3945074aea44b7614c6d67298e9
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshJournal.asset
+  - m_GUID: 3bdce6993e2b16e46a0fd25fea45cfa5
+    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachClassic.mesh
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 0cba971e57181b848bc74d25ab44b697
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshMatchBox.asset
+  - m_GUID: 7ec157145d7a694428a80d11e7f9dde2
+    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachFuture.mesh
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: ad0f78f4c71a62243a703e7cfb56e420
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshPipe.asset
+  - m_GUID: 33949338006f1a74192571a62910f38c
+    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachDefault.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 8aa2e2706a51e0b4b9467068e2ae8d2b
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshBat.asset
+  - m_GUID: fc0da765d454d7e4f86895ef76de0172
+    m_Address: Assets/RorschachAssets/RorschachBundle/RorschachFlameCanSpecialProjectileGhost.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4dcc2256131a72247a6f063f380aa674
+    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachDefaultGlass.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: df0433928261c9a4982e152b2e1b62c7
+    m_Address: Assets/RorschachAssets/RorschachBundle/Materials/matRorschachFlameCanProjectile.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 3952c852b06ed0b44a71c936e0236a86
@@ -215,6 +199,14 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 6af916c388c16a24ea7cda778e419f43
     m_Address: Assets/RorschachAssets/RorschachBundle/Animation/animRorschachMenu.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4085fc78a80a6ff44a57db70a0300b61
+    m_Address: Assets/RorschachAssets/RorschachBundle/Textures/texRorschachPropsFresnelMask.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b67430196d506cc48bc319fcfbef10fa
+    m_Address: Assets/RorschachAssets/RorschachBundle/Textures/texRorschachPipeFresnelMask.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

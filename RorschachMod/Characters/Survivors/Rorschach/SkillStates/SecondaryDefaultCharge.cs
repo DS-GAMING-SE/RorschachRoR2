@@ -52,6 +52,10 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
                 }
             }
         }
+        protected virtual void PlayAttackAnimation()
+        {
+            //PlayCrossfade("FullBody, Override", "SecondaryDefaultDash", "Slash.playbackRate", maxDuration / 3f, 0.1f * maxDuration);
+        }
 
         protected void SetNextState()
         {
