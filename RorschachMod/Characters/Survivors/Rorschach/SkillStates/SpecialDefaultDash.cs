@@ -63,12 +63,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             base.Update();
             if (base.isAuthority)
             {
-                float fadeTime = duration * (movementFadeEndPercentTime - movementFadeStartPercentTime);
-                Vector3 displacement = inputBank.aimDirection * characterBody.moveSpeed * 1.8f * Time.deltaTime * Mathf.Clamp01(age * (-1 / fadeTime) + ((duration * movementFadeEndPercentTime) / fadeTime));
-                if (!hit) displacement *= 2f;
-                if (characterMotor.isGrounded) displacement.y = 0;
-                characterMotor.AddDisplacement(displacement);
-                characterMotor.velocity.y = Mathf.Max(-1f, characterMotor.velocity.y);
+                SecondaryDefaultDash.UpdateDisplacement(inputBank, characterMotor, age, duration, movementFadeStartPercentTime, movementFadeEndPercentTime, characterBody.moveSpeed * 1.5f);
             }
         }
 

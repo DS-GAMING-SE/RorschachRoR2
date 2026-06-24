@@ -1,4 +1,5 @@
-﻿using R2API;
+﻿using HG;
+using R2API;
 using RoR2;
 using RoR2.Projectile;
 using RoR2.UI;
@@ -102,7 +103,7 @@ namespace RorschachMod.Modules
             return prefab;
         }
 
-        internal static GameObject CreateProjectileGhostPrefab(GameObject ghostPrefab)
+        internal static GameObject CreateProjectileGhostPrefab(GameObject ghostPrefab, VFXAttributes.VFXIntensity intensity = VFXAttributes.VFXIntensity.Low)
         {
             if (ghostPrefab == null)
             {
@@ -110,8 +111,7 @@ namespace RorschachMod.Modules
             }
             if (!ghostPrefab.GetComponent<NetworkIdentity>()) ghostPrefab.AddComponent<NetworkIdentity>();
             if (!ghostPrefab.GetComponent<ProjectileGhostController>()) ghostPrefab.AddComponent<ProjectileGhostController>();
-
-            Modules.Asset.ConvertAllRenderersToHopooShader(ghostPrefab);
+            ghostPrefab.EnsureComponent<VFXAttributes>().vfxIntensity = intensity;
 
             return ghostPrefab;
         }

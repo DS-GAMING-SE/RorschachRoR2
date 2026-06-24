@@ -108,7 +108,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             Language.Add(prefix + "SPECIAL_ON_KILL_BUFF_KEYWORD", $"<style=cKeywordName>BUFFNAME</style><style=cSub>Increases attack speed and movement speed by {specialOnKillBuffMultiplier*100f}% for 3s. Judgement increases this duration.</style>");
 
             Language.Add(prefix + "SPECIAL_FLAME_CAN_NAME", $"Homemade Explosive");
-            Language.Add(prefix + "SPECIAL_FLAME_CAN_DESCRIPTION", $"Prime your flame can to explode before throwing it forward, dealing {Tokens.DamageValueText(specialFlameCanDamageCoefficient)}. Kills grant {Tokens.UtilityText("BUFFNAME")}. {Tokens.RedText("Judgement")} gives {Tokens.DamageText($"{specialFlameCanJudgementDamageMultiplier*100f}% increased damage")} per stack. Using this move {Tokens.RedText("consumes")} your {Tokens.DamageText("flame can")}.");
+            Language.Add(prefix + "SPECIAL_FLAME_CAN_DESCRIPTION", $"Prime your flame can to explode before throwing it forward, dealing {Tokens.DamageValueText(specialFlameCanDamageCoefficient)}. Kills grant {Tokens.UtilityText("BUFFNAME")}. {Tokens.RedText("Judgement")} gives {Tokens.DamageText($"{specialFlameCanJudgementDamageMultiplier*100f}% increased damage")} and {Tokens.UtilityText($"{specialFlameCanJudgementExplosionRadiusMultiplier * 100f}% increased explosion radius")} per stack. Using this move {Tokens.RedText("consumes")} your {Tokens.DamageText("flame can")}.");
             #endregion
 
             #region Achievements

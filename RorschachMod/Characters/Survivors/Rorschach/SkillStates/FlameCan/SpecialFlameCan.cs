@@ -25,6 +25,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates.FlameCan
             maxDistance = 40f;
             rayRadius = 0.3f;
             base.OnEnter();
+            endpointVisualizerRadiusScale = Mathf.Lerp(RorschachStaticValues.specialFlameCanMinExplosionRadius, RorschachStaticValues.specialFlameCanMaxExplosionRadius, ((float)characterBody.GetBuffCount(RorschachBuffs.judgementBuff)) / RorschachStaticValues.judgementBuffCap);
         }
         public override void ModifyProjectile(ref FireProjectileInfo fireProjectileInfo)
         {

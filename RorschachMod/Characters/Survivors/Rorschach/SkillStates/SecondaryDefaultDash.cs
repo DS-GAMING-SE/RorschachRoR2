@@ -10,7 +10,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
     {
         private bool hit;
         public virtual Type chargeStateType { get { return typeof(SecondaryDefaultCharge); } }
-        protected float movementFadePercentTime = 0.75f;
+        protected float movementFadePercentTime = 0.8f;
 
         protected override void Prepare()
         {
@@ -76,13 +76,23 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             base.Update();
             if (base.isAuthority)
             {
-                float fadeTime = duration * (movementFadePercentTime - attackStartPercentTime);
-                Vector3 displacement = inputBank.aimDirection * characterBody.moveSpeed * 1.8f * Time.deltaTime * Mathf.Clamp01(age * (-1/fadeTime) + ((duration * movementFadePercentTime) / fadeTime));
-                if (!hit) displacement *= 2f;
-                if (characterMotor.isGrounded) displacement.y = 0;
-                characterMotor.AddDisplacement(displacement);
-                characterMotor.velocity.y = Mathf.Max(-1f, characterMotor.velocity.y);
+                UpdateDisplacement(inputBank, characterMotor, age, duration, attackStartPercentTime, movementFadePercentTime, characterBody.moveSpeed * (!hit ? 2f : 1f));
             }
+        }
+        public static void UpdateDisplacement(InputBankTest inputBank, CharacterMotor characterMotor, float age, float duration, float fadeStartPercentTime, float fadeEndPercentTime, float speedMult)
+        {
+            float fadeTime = duration * (fadeEndPercentTime - fadeStartPercentTime);
+            Vector3 displacement = inputBank.aimDirection * speedMult * 1.5f * Time.deltaTime * Mathf.Clamp01(age * (-1 / fadeTime) + ((duration * fadeEndPercentTime) / fadeTime));
+            Vector3 input = inputBank.moveVector.magnitude > 0.2f ? inputBank.moveVector.normalized : Vector3.zero;
+            if (!characterMotor.isFlying)
+            {
+                input.y = 0;
+                input = input.normalized;
+            }
+            displacement *= (Mathf.Max(0f, input.z) + 1);
+            if (characterMotor.isGrounded) displacement.y = 0;
+            characterMotor.AddDisplacement(displacement);
+            characterMotor.velocity.y = Mathf.Max(-1f, characterMotor.velocity.y);
         }
 
         protected override void OnHitEnemyAuthority()

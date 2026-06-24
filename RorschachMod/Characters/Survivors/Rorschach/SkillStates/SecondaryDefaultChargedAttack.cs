@@ -12,7 +12,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
     {
         public float charge;
         protected bool gainedJudgement;
-        protected float movementFadePercentTime = 0.5f;
+        protected float movementFadePercentTime = 0.7f;
         
         protected override void Prepare()
         {
@@ -60,11 +60,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             base.Update();
             if (base.isAuthority)
             {
-                float fadeTime = duration * (movementFadePercentTime - attackStartPercentTime);
-                Vector3 displacement = inputBank.aimDirection * characterBody.moveSpeed * 1.7f * Time.deltaTime * Mathf.Clamp01(age * (-1 / fadeTime) + ((duration * movementFadePercentTime) / fadeTime));
-                if (characterMotor.isGrounded) displacement.y = 0;
-                characterMotor.AddDisplacement(displacement);
-                characterMotor.velocity.y = Mathf.Max(-1f, characterMotor.velocity.y);
+                SecondaryDefaultDash.UpdateDisplacement(inputBank, characterMotor, age, duration, attackStartPercentTime, movementFadePercentTime, characterBody.moveSpeed * 1.3f);
             }
         }
 

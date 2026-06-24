@@ -8,11 +8,19 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using R2API;
 using RorschachMod.Characters.Survivors.Rorschach.SkillStates;
+using RorschachMod.Characters.Survivors.Rorschach.Components;
 
 namespace RorschachMod.Characters.Survivors.Rorschach
 {
     public static class RorschachAssets
     {
+        // common stuff
+        public static GameObject inkDecal;
+        public static Material ink;
+        public static Material fire;
+        public static Material fireOut;
+        public static Material inkTrail;
+
         // particle effects
         public static GameObject swordSwingEffect;
         public static GameObject swordHitImpactEffect;
@@ -86,7 +94,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public static AssetReferenceT<Texture> propsFresnelMask = new AssetReferenceT<Texture>("4085fc78a80a6ff44a57db70a0300b61");
         public static AssetReferenceT<Material> pipeMaterial = new AssetReferenceT<Material>("eea6538410b08774f933d0552c9c0953");
         public static AssetReferenceT<Texture> pipeFresnelMask = new AssetReferenceT<Texture>("b67430196d506cc48bc319fcfbef10fa");
-        public static AssetReferenceT<Material> flameCanProjectileMaterial = new AssetReferenceT<Material>("3f08ca721a7f897459657a184428b62b");
+        public static AssetReferenceT<Material> flameCanProjectileMaterial = new AssetReferenceT<Material>("df0433928261c9a4982e152b2e1b62c7");
 
         public static AssetReferenceT<GameObject> flameCanItemModel = new AssetReferenceT<GameObject>("2142cbcfebb888744983f02b83eb0dba");
         public static AssetReferenceT<GameObject> pipeItemModel = new AssetReferenceT<GameObject>("508bdaea945e3b8498a2d82f4825bc51");
@@ -111,7 +119,17 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         #region effects
         private static void CreateEffects()
         {
-            RorschachAssets.projectileExplodeEffect.LoadAssetAsync().Completed += delegate (AsyncOperationHandle<GameObject> x)
+            #region Common Materials
+            GameObject clayApothecaryVFXToDissect = AssetAsyncReferenceManager<GameObject>.LoadAsset(new AssetReferenceT<GameObject>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC1_ClayGrenadier.ClayGrenadierBarrelExplosion_prefab)).WaitForCompletion();
+            inkDecal = clayApothecaryVFXToDissect.transform.GetChild(0).gameObject;
+            ink = clayApothecaryVFXToDissect.transform.GetChild(1).GetChild(1).GetComponent<ParticleSystemRenderer>().sharedMaterial;
+
+            fire = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matMageFlamethrower_mat)).WaitForCompletion();
+            fireOut = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matOmniHitspark1_mat)).WaitForCompletion();
+            inkTrail = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC3_Tanker.matTankerAccelerantTrail_mat)).WaitForCompletion();
+            #endregion
+
+            RorschachAssets.projectileExplodeEffect.LoadAssetAsync().Completed += x =>
             { 
                 CreateBombExplosionEffect(x.Result);
                 CreateBombProjectile();
@@ -130,24 +148,23 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 grappleProjectilePrefab.GetComponent<ProjectileOverlapAttack>().damageCoefficient = 1f;
             };
 
-            RorschachAssets.swingEffect.LoadAssetAsync().Completed += delegate (AsyncOperationHandle<GameObject> x)
+            RorschachAssets.swingEffect.LoadAssetAsync().Completed += x =>
             { swordSwingEffect = Asset.CreateEffect(x.Result, 1f, true, ""); };
-            RorschachAssets.hitEffect.LoadAssetAsync().Completed += delegate (AsyncOperationHandle<GameObject> x)
+            RorschachAssets.hitEffect.LoadAssetAsync().Completed += x =>
             { swordHitImpactEffect = Asset.CreateEffect(x.Result, 1f); };
         }
 
         private static void CreateBombExplosionEffect(GameObject prefab)
         {
-            bombExplosionEffect = Asset.CreateEffect(prefab, 5f, false, "HenryBombExplosion");
-
-            if (!bombExplosionEffect)
-                return;
+            bombExplosionEffect = PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.OmniExplosionVFX_prefab).WaitForCompletion(), "RorschachFlameCanExplosionEffect");//Asset.CreateEffect(prefab, 5f, false, "HenryBombExplosion");
+            bombExplosionEffect.GetComponent<DestroyOnTimer>().duration = 3.5f;
+            AddInkDecal(bombExplosionEffect, 0.9f, 3.5f, Vector3.zero);
 
             ShakeEmitter shakeEmitter = bombExplosionEffect.AddComponent<ShakeEmitter>();
             shakeEmitter.amplitudeTimeDecay = true;
             shakeEmitter.duration = 0.5f;
-            shakeEmitter.radius = 200f;
-            shakeEmitter.scaleShakeRadiusWithLocalScale = false;
+            shakeEmitter.radius = 10f;
+            shakeEmitter.scaleShakeRadiusWithLocalScale = true;
 
             shakeEmitter.wave = new Wave
             {
@@ -155,7 +172,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 frequency = 40f,
                 cycleOffset = 0f
             };
-
+            Content.CreateAndAddEffectDef(bombExplosionEffect);
         }
         #endregion effects
 
@@ -170,7 +187,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             UnityEngine.Object.Destroy(bombProjectilePrefab.GetComponent<ProjectileImpactExplosion>());
             ProjectileImpactExplosion bombImpactExplosion = bombProjectilePrefab.AddComponent<ProjectileImpactExplosion>();
             
-            bombImpactExplosion.blastRadius = 12f;
+            bombImpactExplosion.blastRadius = RorschachStaticValues.specialFlameCanMinExplosionRadius;
             bombImpactExplosion.blastDamageCoefficient = 1f;
             bombImpactExplosion.falloffModel = BlastAttack.FalloffModel.None;
             bombImpactExplosion.destroyOnEnemy = true;
@@ -184,10 +201,16 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             damage.damageType = DamageTypeCombo.AnyFire;
             damage.damageType.damageSource = DamageSource.Special;
 
+            bombProjectilePrefab.AddComponent<ScaleImpactExplosionWithJudgement>();
+
             ProjectileController bombController = bombProjectilePrefab.GetComponent<ProjectileController>();
-            RorschachAssets.flameCanSpecialProjectileGhost.LoadAssetAsync().Completed += delegate (AsyncOperationHandle<GameObject> x)
+            RorschachAssets.flameCanSpecialProjectileGhost.LoadAssetAsync().Completed += x =>
             {
                 bombController.ghostPrefab = Asset.CreateProjectileGhostPrefab(x.Result);
+                x.Result.transform.GetChild(2).GetComponent<ParticleSystemRenderer>().sharedMaterial = fireOut;
+                var trail = x.Result.transform.GetChild(3).GetComponent<TrailRenderer>();
+                trail.sharedMaterial = inkTrail;
+                // detach trail?
             };
             
             bombController.startSound = "";
@@ -195,5 +218,13 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             Content.AddProjectilePrefab(bombProjectilePrefab);
         }
         #endregion projectiles
+
+        private static void AddInkDecal(GameObject prefab, float size, float duration, Vector3 positionOffset)
+        {
+            var decal = GameObject.Instantiate(inkDecal, prefab.transform);
+            decal.transform.localScale = new Vector3(size, size / 2, size);
+            decal.transform.SetPositionAndRotation(positionOffset, Quaternion.identity);
+            decal.GetComponent<AnimateShaderAlpha>().timeMax = duration;
+        }
     }
 }

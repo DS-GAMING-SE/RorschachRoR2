@@ -36,14 +36,14 @@ namespace RorschachMod.Modules
                     x.Result.MetalFresnel(y.Result, 2f, 0.5f);
                 };
             };
-            /*AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.flameCanProjectileMaterial).Completed += x =>
+            AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.flameCanProjectileMaterial).Completed += x =>
             {
                 x.Result.SetHopooMaterial().SetSpecular(0.4f, 1.5f).SpecularIgnoreAlpha();
                 AssetAsyncReferenceManager<Texture>.LoadAsset(RorschachAssets.propsFresnelMask).Completed += y =>
                 {
                     x.Result.GoldFresnel(y.Result, 2.1f, 20f);
                 };
-            };*/
+            };
 
             #endregion
 
