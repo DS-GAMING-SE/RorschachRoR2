@@ -32,11 +32,12 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             {
                 characterBody.AddBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
+            GetModelAnimator().SetBool("judgement", characterBody.HasBuff(RorschachBuffs.judgementBuff));
         }
 
         protected virtual void PlayAttackAnimation()
         {
-            PlayCrossfade("Gesture, Override", "Slash2", "Slash.playbackRate", duration, 0.1f * duration);
+            PlayCrossfade("FullBody, Override", "SpecialDefaultDash", "Slash.playbackRate", duration, 0.1f * duration);
         }
 
         public override void FixedUpdate()

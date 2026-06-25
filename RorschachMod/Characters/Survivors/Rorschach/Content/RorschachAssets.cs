@@ -20,6 +20,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public static Material fire;
         public static Material fireOut;
         public static Material inkTrail;
+        public static Material inkStreak;
 
         // particle effects
         public static GameObject swordSwingEffect;
@@ -96,6 +97,10 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public static AssetReferenceT<Texture> pipeFresnelMask = new AssetReferenceT<Texture>("b67430196d506cc48bc319fcfbef10fa");
         public static AssetReferenceT<Material> flameCanProjectileMaterial = new AssetReferenceT<Material>("df0433928261c9a4982e152b2e1b62c7");
 
+        public static AssetReferenceT<Sprite> flameCanItemIcon = new AssetReferenceT<Sprite>("3aeeaa5cf05fa474da51d6d67fe66ec2");
+        public static AssetReferenceT<Sprite> pipeItemIcon = new AssetReferenceT<Sprite>("ce52c093b0698164e878b9cdce9eb986");
+        public static AssetReferenceT<Sprite> cleaverItemIcon = new AssetReferenceT<Sprite>("885cc573c66c8ff44a27ee0c0899b244");
+
         public static AssetReferenceT<GameObject> flameCanItemModel = new AssetReferenceT<GameObject>("2142cbcfebb888744983f02b83eb0dba");
         public static AssetReferenceT<GameObject> pipeItemModel = new AssetReferenceT<GameObject>("508bdaea945e3b8498a2d82f4825bc51");
         public static AssetReferenceT<GameObject> cleaverItemModel = new AssetReferenceT<GameObject>("8dce5d1b37999f34faf5a6f53164427b");
@@ -127,6 +132,10 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             fire = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matMageFlamethrower_mat)).WaitForCompletion();
             fireOut = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matOmniHitspark1_mat)).WaitForCompletion();
             inkTrail = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC3_Tanker.matTankerAccelerantTrail_mat)).WaitForCompletion();
+            inkStreak = new Material(AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC1_VoidMegaCrab.matVoidCrabAntiMatterParticleStreak_mat)).WaitForCompletion());
+            inkStreak.name = "matRorschachInkStreak";
+            inkStreak.SetTexture("_RemapTex", AssetAsyncReferenceManager<Texture>.LoadAsset(new AssetReferenceT<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_ColorRamps.texClayGooRamp_png)).WaitForCompletion());
+            inkStreak.SetTexture("_MainTex", AssetAsyncReferenceManager<Texture>.LoadAsset(new AssetReferenceT<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Imp.texImpSwipeMask_png)).WaitForCompletion());
             #endregion
 
             RorschachAssets.projectileExplodeEffect.LoadAssetAsync().Completed += x =>

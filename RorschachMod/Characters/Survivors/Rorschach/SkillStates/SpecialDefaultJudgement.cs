@@ -87,7 +87,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 
         protected override void PlayAttackAnimation()
         {
-            PlayCrossfade("Gesture, Override", "Slash1", playbackRateParam, duration, 0.1f * duration);
+            PlayCrossfade("FullBody, Override", "SpecialDefaultJudgement", playbackRateParam, duration, 0.1f * duration);
         }
 
         protected override void PlaySwingEffect()

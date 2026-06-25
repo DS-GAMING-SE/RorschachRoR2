@@ -36,17 +36,17 @@ namespace RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons
 
             RorschachAssets.flameCanItemModel.LoadAssetAsync().Completed += x => { AddModelPanelParams(x.Result); };
             flameCan = AddNewItem("RorschachFlameCan", "FLAME_CAN",
-                Addressables.LoadAssetAsync<Sprite>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC1_Molotov.texMolotovIcon_png).WaitForCompletion(),
+                Addressables.LoadAssetAsync<Sprite>(RorschachAssets.flameCanItemIcon).WaitForCompletion(),
                 RorschachAssets.flameCanItemModel);
 
             RorschachAssets.pipeItemModel.LoadAssetAsync().Completed += x => { AddModelPanelParams(x.Result); };
             pipe = AddNewItem("RorschachPipe", "PIPE",
-                Addressables.LoadAssetAsync<Sprite>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_StunChanceOnHit.texStunGrenadeIcon_png).WaitForCompletion(),
+                Addressables.LoadAssetAsync<Sprite>(RorschachAssets.pipeItemIcon).WaitForCompletion(),
                 RorschachAssets.pipeItemModel);
 
             RorschachAssets.cleaverItemModel.LoadAssetAsync().Completed += x => { AddModelPanelParams(x.Result); };
             cleaver = AddNewItem("RorschachCleaver", "CLEAVER",
-                Addressables.LoadAssetAsync<Sprite>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_BleedOnHit.texTriTipIcon_png).WaitForCompletion(),
+                Addressables.LoadAssetAsync<Sprite>(RorschachAssets.cleaverItemIcon).WaitForCompletion(),
                 RorschachAssets.cleaverItemModel);
 
             ImprovisedWeaponManager.Initialize();

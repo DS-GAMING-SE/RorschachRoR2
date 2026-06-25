@@ -22,7 +22,7 @@ namespace RorschachMod.Modules
             #region Generic
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.propsMaterial).Completed += x =>
             {
-                x.Result.SetHopooMaterial().SetSpecular(0.4f, 1.5f).SpecularIgnoreAlpha();
+                x.Result.SetHopooMaterial().SetSpecular(0.25f, 1.5f).SpecularIgnoreAlpha();
                 AssetAsyncReferenceManager<Texture>.LoadAsset(RorschachAssets.propsFresnelMask).Completed += y =>
                 {
                     x.Result.MetalFresnel(y.Result);
@@ -30,7 +30,7 @@ namespace RorschachMod.Modules
             };
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.pipeMaterial).Completed += x =>
             {
-                x.Result.SetHopooMaterial().SetSpecular(0.7f, 2f);
+                x.Result.SetHopooMaterial().SetSpecular(0.5f, 3f);
                 AssetAsyncReferenceManager<Texture>.LoadAsset(RorschachAssets.pipeFresnelMask).Completed += y =>
                 {
                     x.Result.MetalFresnel(y.Result, 2f, 0.5f);

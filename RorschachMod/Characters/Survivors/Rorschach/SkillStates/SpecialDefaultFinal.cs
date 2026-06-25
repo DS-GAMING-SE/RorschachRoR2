@@ -23,7 +23,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             procCoefficient = 1f;
             pushForce = 0f;
             bonusForce = Vector3.zero;
-            baseDuration = 0.65f;
+            baseDuration = 0.75f + (judgementStacks > 0 ? 0.3f : 0f);
 
             //0-1 multiplier of baseduration, used to time when the hitbox is out (usually based on the run time of the animation)
             //for example, if attackStartPercentTime is 0.5, the attack will start hitting halfway through the ability. if baseduration is 3 seconds, the attack will start happening at 1.5 seconds
@@ -58,7 +58,14 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 
         protected override void PlayAttackAnimation()
         {
-            PlayCrossfade("Gesture, Override", "Slash1", playbackRateParam, duration, 0.1f * duration);
+            if (judgementStacks > 0)
+            {
+                PlayCrossfade("FullBody, Override", "SpecialDefaultJudgementEnd", playbackRateParam, 4 * duration, 0.1f * duration);
+            }
+            else
+            {
+                PlayCrossfade("FullBody, Override", "SpecialDefaultFinal", playbackRateParam, 3 * duration, 0.1f * duration);
+            }
         }
 
         protected override void PlaySwingEffect()
