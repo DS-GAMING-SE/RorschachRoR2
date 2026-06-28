@@ -37,7 +37,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             muzzleString = swingIndex % 2 == 0 ? "SwingLeft" : "SwingRight";
             playbackRateParam = "Slash.playbackRate";
             swingEffectPrefab = RorschachAssets.swordSwingEffect;
-            hitEffectPrefab = RorschachAssets.swordHitImpactEffect;
+            hitEffectPrefab = RorschachAssets.meleeHitEffect;
 
             impactSound = RorschachAssets.swordHitSoundEvent.index;
         }

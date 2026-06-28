@@ -17,14 +17,21 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         // common stuff
         public static GameObject inkDecal;
         public static Material ink;
-        public static Material fire;
-        public static Material fireOut;
+        public static Material inkDot;
         public static Material inkTrail;
         public static Material inkStreak;
+        public static Material inkVerticalGradient;
+
+        public static Material whiteInkSplat;
+        public static Material cleaverCut;
+
+        public static Material fire;
+        public static Material fireOut;
 
         // particle effects
         public static GameObject swordSwingEffect;
-        public static GameObject swordHitImpactEffect;
+        public static GameObject meleeHitEffect;
+        public static GameObject meleeHitDirectionalEffect;
 
         public static GameObject bombExplosionEffect;
 
@@ -110,7 +117,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
         public static AssetReferenceT<GameObject> projectileExplodeEffect = new AssetReferenceT<GameObject>("05b273758480af74a919e826c7b80a86");
         public static AssetReferenceT<GameObject> swingEffect = new AssetReferenceT<GameObject>("3534552e7829f9842ba3156065afc540");
-        public static AssetReferenceT<GameObject> hitEffect = new AssetReferenceT<GameObject>("48eebb9268b618943a4b60bb011fb96d");
+        public static AssetReferenceT<GameObject> meleeHit = new AssetReferenceT<GameObject>("9dc987e0064626645be61b151c52fb04");
+        public static AssetReferenceT<GameObject> meleeHitDirectional = new AssetReferenceT<GameObject>("974a977cf126bc14084058dfe44b53c6");
         #endregion
         #endregion
 
@@ -125,17 +133,37 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         private static void CreateEffects()
         {
             #region Common Materials
-            GameObject clayApothecaryVFXToDissect = AssetAsyncReferenceManager<GameObject>.LoadAsset(new AssetReferenceT<GameObject>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC1_ClayGrenadier.ClayGrenadierBarrelExplosion_prefab)).WaitForCompletion();
-            inkDecal = clayApothecaryVFXToDissect.transform.GetChild(0).gameObject;
-            ink = clayApothecaryVFXToDissect.transform.GetChild(1).GetChild(1).GetComponent<ParticleSystemRenderer>().sharedMaterial;
+            GameObject solusScorcherVFXToDissect = AssetAsyncReferenceManager<GameObject>.LoadAsset(new AssetReferenceT<GameObject>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC3_Tanker.TankerAccelerantPuddleBodyProjectileGhost_prefab)).WaitForCompletion();
+            inkDecal = solusScorcherVFXToDissect.transform.GetChild(0).gameObject;
+            ink = new Material(solusScorcherVFXToDissect.transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<ParticleSystemRenderer>().sharedMaterial).Inkify();
+            ink.name = "matRorschachInk";
+            inkDot = new Material(AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matBloodClaySingle_mat)).WaitForCompletion()).Inkify();
+            inkDot.name = "matRorschachInkDot";
 
-            fire = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matMageFlamethrower_mat)).WaitForCompletion();
-            fireOut = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matOmniHitspark1_mat)).WaitForCompletion();
             inkTrail = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC3_Tanker.matTankerAccelerantTrail_mat)).WaitForCompletion();
             inkStreak = new Material(AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC1_VoidMegaCrab.matVoidCrabAntiMatterParticleStreak_mat)).WaitForCompletion());
             inkStreak.name = "matRorschachInkStreak";
-            inkStreak.SetTexture("_RemapTex", AssetAsyncReferenceManager<Texture>.LoadAsset(new AssetReferenceT<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_ColorRamps.texClayGooRamp_png)).WaitForCompletion());
+            inkStreak.Inkify();
             inkStreak.SetTexture("_MainTex", AssetAsyncReferenceManager<Texture>.LoadAsset(new AssetReferenceT<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Imp.texImpSwipeMask_png)).WaitForCompletion());
+            inkVerticalGradient = new Material(AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC3_Tanker.matTankerAccelerantBall_mat)).WaitForCompletion());
+            inkVerticalGradient.name = "matRorschachInkVerticalGradient";
+            inkVerticalGradient.SetTexture("_MainTex", Addressables.LoadAssetAsync<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC2_Common.texRampVerticalSmoothFalloff_png).WaitForCompletion());
+            inkVerticalGradient.SetFloat("_AlphaBoost", 0.75f);
+            inkVerticalGradient.SetFloat("_Cutoff", 0.1f);
+            inkVerticalGradient.SetTextureScale("_Cloud1Tex", new Vector2(4f, 2f));
+            inkVerticalGradient.SetTextureScale("_Cloud2Tex", new Vector2(2f, 0.5f));
+
+            whiteInkSplat = new Material(AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matOmniHitspark2Generic_mat)).WaitForCompletion());
+            whiteInkSplat.SetFloat("_InvFade", 0.4f);
+            whiteInkSplat.SetFloat("_DepthOffset", -2f);
+            whiteInkSplat.SetInt("_ZTest", 8);
+            whiteInkSplat.name = "matRorschachWhiteInkSplat";
+            cleaverCut = new Material(whiteInkSplat);
+            cleaverCut.name = "matRorschachCleaverCut";
+            whiteInkSplat.SetTexture("_MainTex", Addressables.LoadAssetAsync<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.texOmniShockwave3Mask_png).WaitForCompletion());
+
+            fire = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matMageFlamethrower_mat)).WaitForCompletion();
+            fireOut = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matOmniHitspark1_mat)).WaitForCompletion();
             #endregion
 
             RorschachAssets.projectileExplodeEffect.LoadAssetAsync().Completed += x =>
@@ -154,13 +182,39 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 EntityStateMachine stateMachine = grappleProjectilePrefab.GetComponent<EntityStateMachine>();
                 stateMachine.initialStateType = new EntityStates.SerializableEntityStateType(typeof(UtilityGrappleFly));
                 stateMachine.mainStateType = new EntityStates.SerializableEntityStateType(typeof(UtilityGrappleFly));
-                grappleProjectilePrefab.GetComponent<ProjectileOverlapAttack>().damageCoefficient = 1f;
+                var overlap = grappleProjectilePrefab.GetComponent<ProjectileOverlapAttack>();
+                overlap.damageCoefficient = 1f;
+                overlap.impactEffect = meleeHitEffect;
             };
 
             RorschachAssets.swingEffect.LoadAssetAsync().Completed += x =>
             { swordSwingEffect = Asset.CreateEffect(x.Result, 1f, true, ""); };
-            RorschachAssets.hitEffect.LoadAssetAsync().Completed += x =>
-            { swordHitImpactEffect = Asset.CreateEffect(x.Result, 1f); };
+            RorschachAssets.meleeHit.LoadAssetAsync().Completed += x =>
+            { 
+                meleeHitEffect = Asset.CreateEffect(x.Result, 0.35f);
+                meleeHitEffect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().sharedMaterial = whiteInkSplat;
+                meleeHitEffect.transform.GetChild(1).GetComponent<ParticleSystemRenderer>().sharedMaterial = ink;
+                meleeHitEffect.transform.GetChild(2).GetComponent<ParticleSystemRenderer>().sharedMaterial = inkDot;
+                meleeHitEffect.transform.GetChild(3).GetComponent<ParticleSystemRenderer>().sharedMaterial = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matOmniRing2Generic_mat)).WaitForCompletion();
+            };
+            RorschachAssets.meleeHitDirectional.LoadAssetAsync().Completed += x =>
+            {
+                meleeHitDirectionalEffect = Asset.CreateEffect(x.Result, 0.65f, true, "", out var vfx, out _);
+                vfx.vfxIntensity = VFXAttributes.VFXIntensity.Medium;
+                var dome = AssetAsyncReferenceManager<Mesh>.LoadAsset(new AssetReferenceT<Mesh>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC2_Common.mdlVFXDome_fbx_mdVFXDome_)).WaitForCompletion();
+                var domeOuter = meleeHitDirectionalEffect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>();
+                var domeInner = meleeHitDirectionalEffect.transform.GetChild(1).GetComponent<ParticleSystemRenderer>();
+                domeOuter.sharedMaterial = new Material(inkVerticalGradient);
+                domeOuter.sharedMaterial.SetInt("_Cull", 2);
+                domeOuter.sharedMaterial.SetFloat("_AlphaBoost", 0.35f);
+                domeOuter.mesh = dome;
+                domeInner.sharedMaterial = new Material(inkVerticalGradient);
+                domeInner.sharedMaterial.SetInt("_Cull", 1);
+                domeInner.mesh = dome;
+                meleeHitDirectionalEffect.transform.GetChild(2).GetComponent<ParticleSystemRenderer>().sharedMaterial = inkDot;
+                meleeHitDirectionalEffect.transform.GetChild(3).GetComponent<ParticleSystemRenderer>().sharedMaterial = inkDot;
+                meleeHitDirectionalEffect.transform.GetChild(4).GetComponent<ParticleSystemRenderer>().sharedMaterial = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matOmniHitspark2Generic_mat)).WaitForCompletion();
+            };
         }
 
         private static void CreateBombExplosionEffect(GameObject prefab)
@@ -234,6 +288,13 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             decal.transform.localScale = new Vector3(size, size / 2, size);
             decal.transform.SetPositionAndRotation(positionOffset, Quaternion.identity);
             decal.GetComponent<AnimateShaderAlpha>().timeMax = duration;
+        }
+
+        private static Material Inkify(this Material material)
+        {
+            material.SetTexture("_RemapTex", AssetAsyncReferenceManager<Texture>.LoadAsset(new AssetReferenceT<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_ColorRamps.texRampMaulingRockHit_png)).WaitForCompletion());
+            material.SetColor("_TintColor", new Color(0.06f, 0.06f, 0.06f));
+            return material;
         }
     }
 }

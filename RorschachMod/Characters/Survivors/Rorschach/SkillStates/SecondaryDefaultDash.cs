@@ -39,7 +39,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             muzzleString = "SwingRight";
             playbackRateParam = "Slash.playbackRate";
             swingEffectPrefab = RorschachAssets.swordSwingEffect;
-            hitEffectPrefab = RorschachAssets.swordHitImpactEffect;
+            hitEffectPrefab = RorschachAssets.meleeHitEffect;
 
             impactSound = RorschachAssets.swordHitSoundEvent.index;
         }
@@ -54,7 +54,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 
         protected override void PlayAttackAnimation()
         {
-            PlayCrossfade("FullBody, Override", "SecondaryDefaultDash", playbackRateParam, duration, 0.1f * duration);
+            PlayCrossfade("FullBody, Override", "SecondaryDefaultDash", playbackRateParam, duration * 1.2f, 0.1f * duration);
         }
 
         protected override void PlaySwingEffect()
@@ -82,14 +82,14 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         public static void UpdateDisplacement(InputBankTest inputBank, CharacterMotor characterMotor, float age, float duration, float fadeStartPercentTime, float fadeEndPercentTime, float speedMult)
         {
             float fadeTime = duration * (fadeEndPercentTime - fadeStartPercentTime);
-            Vector3 displacement = inputBank.aimDirection * speedMult * 1.5f * Time.deltaTime * Mathf.Clamp01(age * (-1 / fadeTime) + ((duration * fadeEndPercentTime) / fadeTime));
+            Vector3 displacement = inputBank.aimDirection * speedMult * Time.deltaTime * Mathf.Clamp01(age * (-1 / fadeTime) + ((duration * fadeEndPercentTime) / fadeTime));
             Vector3 input = inputBank.moveVector.magnitude > 0.2f ? inputBank.moveVector.normalized : Vector3.zero;
             if (!characterMotor.isFlying)
             {
                 input.y = 0;
                 input = input.normalized;
             }
-            displacement *= (Mathf.Max(0f, Vector3.Dot(inputBank.aimDirection, input)) + 1);
+            displacement *= (Mathf.Max(0f, (Vector3.Dot(inputBank.aimDirection, input)) * 1.5f) + 1);
             if (characterMotor.isGrounded) displacement.y = 0;
             characterMotor.AddDisplacement(displacement);
             characterMotor.velocity.y = Mathf.Max(-1f, characterMotor.velocity.y);

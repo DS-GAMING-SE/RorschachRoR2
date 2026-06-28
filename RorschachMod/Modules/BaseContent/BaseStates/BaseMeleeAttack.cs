@@ -44,7 +44,7 @@ namespace RorschachMod.Modules.BaseStates
         private bool hasFired;
         private float hitPauseTimer;
         protected bool inHitPause;
-        private bool hasHopped;
+        public bool hit;
         protected float stopwatch;
         protected Animator animator;
         private HitStopCachedState hitStopCachedState;
@@ -108,14 +108,14 @@ namespace RorschachMod.Modules.BaseStates
         {
             Util.PlaySound(hitSoundString, gameObject);
 
-            if (!hasHopped)
+            if (!hit)
             {
                 if (characterMotor && !characterMotor.isGrounded && hitHopVelocity > 0f)
                 {
                     SmallHop(characterMotor, hitHopVelocity);
                 }
 
-                hasHopped = true;
+                hit = true;
             }
 
             ApplyHitstop();

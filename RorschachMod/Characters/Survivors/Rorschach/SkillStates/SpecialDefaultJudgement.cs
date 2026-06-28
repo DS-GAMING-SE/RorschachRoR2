@@ -16,7 +16,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         public virtual Type finalStateType { get { return typeof(SpecialDefaultFinal); } }
         public virtual Type judgementStateType { get { return typeof(SpecialDefaultJudgement); } }
         public float repeatedAttackDurationMultiplier = 1f;
-        public const float durationMultiplierPerRepeat = 0.9f;
+        public const float durationMultiplierPerRepeat = 0.87f;
         protected override void Prepare()
         {
             hitboxGroupName = "SwordGroup";
@@ -28,7 +28,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             procCoefficient = 1f;
             pushForce = 0f;
             bonusForce = Vector3.zero;
-            baseDuration = 0.5f * repeatedAttackDurationMultiplier;
+            baseDuration = 0.6f * repeatedAttackDurationMultiplier;
 
             //0-1 multiplier of baseduration, used to time when the hitbox is out (usually based on the run time of the animation)
             //for example, if attackStartPercentTime is 0.5, the attack will start hitting halfway through the ability. if baseduration is 3 seconds, the attack will start happening at 1.5 seconds
@@ -47,7 +47,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             muzzleString = "SwingLeft";
             playbackRateParam = "Slash.playbackRate";
             swingEffectPrefab = RorschachAssets.swordSwingEffect;
-            hitEffectPrefab = RorschachAssets.swordHitImpactEffect;
+            hitEffectPrefab = RorschachAssets.meleeHitEffect;
 
             impactSound = RorschachAssets.swordHitSoundEvent.index;
 
@@ -93,6 +93,14 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         protected override void PlaySwingEffect()
         {
             base.PlaySwingEffect();
+        }
+        protected override void OnHitEnemyAuthority()
+        {
+            if (!hit)
+            {
+                EffectManager.SimpleMuzzleFlash(RorschachAssets.meleeHitDirectionalEffect, gameObject, "SpecialDefaultJudgementHitTransform", true);
+            }
+            base.OnHitEnemyAuthority();
         }
 
         public override void OnExit()

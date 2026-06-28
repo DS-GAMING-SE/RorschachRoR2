@@ -30,6 +30,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             }
             maxDuration = baseMaxDuration / attackSpeedStat;
             characterBody.SetAimTimer(maxDuration);
+            PlayAttackAnimation();
         }
 
         public override void FixedUpdate()
@@ -54,7 +55,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         }
         protected virtual void PlayAttackAnimation()
         {
-            PlayCrossfade("FullBody, Override", "SecondaryDefaultCharge", "Slash.playbackRate", maxDuration / 3f, 0.1f * maxDuration);
+            PlayCrossfade("FullBody, Override", "SecondaryDefaultCharge", "Slash.playbackRate", maxDuration, 0.1f * maxDuration);
         }
 
         protected void SetNextState()
@@ -70,6 +71,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             {
                 characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
+            PlayAnimation("FullBody, Override", "BufferEmpty");
             base.OnExit();
         }
     }

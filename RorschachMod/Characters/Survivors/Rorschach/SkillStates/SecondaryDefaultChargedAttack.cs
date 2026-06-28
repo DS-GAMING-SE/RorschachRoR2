@@ -11,7 +11,6 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
     public class SecondaryDefaultChargedAttack : BaseMeleeAttack
     {
         public float charge;
-        protected bool gainedJudgement;
         protected float movementFadePercentTime = 0.7f;
         
         protected override void Prepare()
@@ -42,7 +41,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             muzzleString = "SwingLeft";
             playbackRateParam = "Slash.playbackRate";
             swingEffectPrefab = RorschachAssets.swordSwingEffect;
-            hitEffectPrefab = RorschachAssets.swordHitImpactEffect;
+            hitEffectPrefab = RorschachAssets.meleeHitEffect;
 
             impactSound = RorschachAssets.swordHitSoundEvent.index;
         }
@@ -66,7 +65,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 
         protected override void PlayAttackAnimation()
         {
-            PlayCrossfade("FullBody, Override", "SecondaryDefaultChargedAttack", playbackRateParam, duration * 2f, 0.1f * duration);
+            PlayCrossfade("FullBody, Override", "SecondaryDefaultChargedAttack", playbackRateParam, duration * 3f, 0.1f * duration);
         }
 
         protected override void PlaySwingEffect()
@@ -76,16 +75,15 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 
         protected override void OnHitEnemyAuthority()
         {
-            base.OnHitEnemyAuthority();
-            if (!gainedJudgement && charge == 1f)
+            if (!hit && charge == 1f)
             {
-                gainedJudgement = true;
-                if (characterBody.GetBuffCount(RorschachBuffs.judgementBuff.buffIndex) < RorschachStaticValues.judgementBuffCap)
+                EffectManager.SimpleMuzzleFlash(RorschachAssets.meleeHitDirectionalEffect, gameObject, "SecondaryDefaultHitTransform", true);
+                if (charge == 1f && characterBody.GetBuffCount(RorschachBuffs.judgementBuff.buffIndex) < RorschachStaticValues.judgementBuffCap)
                 {
                     new NetworkJudgement(characterBody.netId).Send(R2API.Networking.NetworkDestination.Clients);
                 }
-                
             }
+            base.OnHitEnemyAuthority();
         }
 
         public override void OnExit()

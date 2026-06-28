@@ -23,7 +23,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             procCoefficient = 1f;
             pushForce = 0f;
             bonusForce = Vector3.zero;
-            baseDuration = 0.75f + (judgementStacks > 0 ? 0.3f : 0f);
+            baseDuration = 0.9f + (judgementStacks > 0 ? 0.35f : 0f);
 
             //0-1 multiplier of baseduration, used to time when the hitbox is out (usually based on the run time of the animation)
             //for example, if attackStartPercentTime is 0.5, the attack will start hitting halfway through the ability. if baseduration is 3 seconds, the attack will start happening at 1.5 seconds
@@ -42,7 +42,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             muzzleString = "SwingLeft";
             playbackRateParam = "Slash.playbackRate";
             swingEffectPrefab = RorschachAssets.swordSwingEffect;
-            hitEffectPrefab = RorschachAssets.swordHitImpactEffect;
+            hitEffectPrefab = RorschachAssets.meleeHitEffect;
 
             impactSound = RorschachAssets.swordHitSoundEvent.index;
         }
@@ -60,7 +60,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         {
             if (judgementStacks > 0)
             {
-                PlayCrossfade("FullBody, Override", "SpecialDefaultJudgementEnd", playbackRateParam, 4 * duration, 0.1f * duration);
+                PlayCrossfade("FullBody, Override", "SpecialDefaultJudgementEnd", playbackRateParam, 3 * duration, 0.1f * duration);
             }
             else
             {
