@@ -22,13 +22,13 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public const float primaryPipeDamageCoefficient = primaryDefaultDamageCoefficient * 2f;
 
         public const float primaryCleaverDamageCoefficient = 2.4f;
-        public const float primaryCleaverBleedChance = 0.3f;
+        public const float primaryCleaverBleedChance = 30f;
 
         public const float primaryFlameCanDamagePerSecond = 6f;
         public const float primaryFlameCanAttacksPerSecond = 3.5f;
         public const float primaryFlameCanDamageCoefficient = primaryFlameCanDamagePerSecond / primaryFlameCanAttacksPerSecond;
         public const float primaryFlameCanProcCoefficient = 0.5f;
-        public const float primaryFlameCanRange = 20f;
+        public const float primaryFlameCanRange = 30f;
 
         #endregion
 
@@ -65,9 +65,10 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
         public const float specialCleaverJudgementDamageCoefficient = specialJudgementDamageCoefficient * 0.9f;
         public const float specialCleaverFinalDamageCoefficient = specialFinalDamageCoefficient * 0.9f;
+        public const int specialCleaverFinalBleedStacks = 5;
 
-        public const float specialPipeJudgementDamageCoefficient = specialJudgementDamageCoefficient * 2f;
-        public const float specialPipeFinalDamageCoefficient = specialFinalDamageCoefficient * 2f;
+        public const float specialPipeJudgementDamageCoefficient = specialJudgementDamageCoefficient * 2.5f;
+        public const float specialPipeFinalDamageCoefficient = specialFinalDamageCoefficient * 3f;
 
         public const float specialOnKillBuffMultiplier = 0.25f;
 
@@ -77,6 +78,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public const float specialFlameCanMinExplosionRadius = 10f;
         public const float specialFlameCanMaxExplosionRadius = 20f;
         public const float specialFlameCanJudgementExplosionRadiusMultiplier = ((specialFlameCanMaxExplosionRadius / specialFlameCanMinExplosionRadius) - 1) / judgementBuffCap;
+        public const int specialFlameCanFinalBurnStacks = 5;
 
         #endregion
     }

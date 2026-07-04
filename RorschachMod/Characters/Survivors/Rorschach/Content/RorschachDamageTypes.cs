@@ -12,12 +12,18 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public static DamageAPI.ModdedDamageType judgementStackBit0;
         public static DamageAPI.ModdedDamageType judgementStackBit1;
         public static DamageAPI.ModdedDamageType judgementStackBit2;
+        public static DamageAPI.ModdedDamageType cleaverBleedChance;
+        public static DamageAPI.ModdedDamageType cleaverFinalBleed;
+        public static DamageAPI.ModdedDamageType flameCanFinalBurn;
         public static void Initialize()
         {
             specialOnKillBuff = DamageAPI.ReserveDamageType();
             judgementStackBit0 = DamageAPI.ReserveDamageType();
             judgementStackBit1 = DamageAPI.ReserveDamageType();
             judgementStackBit2 = DamageAPI.ReserveDamageType();
+            cleaverBleedChance = DamageAPI.ReserveDamageType();
+            cleaverFinalBleed = DamageAPI.ReserveDamageType();
+            flameCanFinalBurn = DamageAPI.ReserveDamageType();
         }
         public static void AddJudgementStacks(this ref DamageTypeCombo damageTypeCombo, int judgementStacks)
         {

@@ -1,4 +1,5 @@
 ﻿using EntityStates;
+using R2API;
 using R2API.Networking.Interfaces;
 using RoR2;
 using RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons;
@@ -15,7 +16,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         {
             base.Prepare();
             damageCoefficient = RorschachStaticValues.specialCleaverFinalDamageCoefficient;
-            damageType |= DamageType.BleedOnHit;
+            damageType.damageType |= DamageType.BleedOnHit;
+            damageType.AddModdedDamageType(RorschachDamageTypes.cleaverFinalBleed);
         }
         public override void OnEnter()
         {

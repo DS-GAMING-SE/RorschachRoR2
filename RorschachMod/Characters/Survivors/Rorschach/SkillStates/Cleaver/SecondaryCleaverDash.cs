@@ -13,6 +13,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             base.Prepare();
             damageType |= DamageType.BleedOnHit;
             damageCoefficient = RorschachStaticValues.secondaryDashDamageCoefficient;
+            hitEffectPrefab = RorschachAssets.meleeHitCleaverEffect;
         }
     }
 }

@@ -31,6 +31,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         // particle effects
         public static GameObject swordSwingEffect;
         public static GameObject meleeHitEffect;
+        public static GameObject meleeHitPipeEffect;
+        public static GameObject meleeHitCleaverEffect;
         public static GameObject meleeHitDirectionalEffect;
 
         public static GameObject bombExplosionEffect;
@@ -55,7 +57,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public static AssetReferenceSprite passiveSkillIcon = new AssetReferenceSprite("0e4c80d73da34aa40b303eb595226e63");
 
         public static AssetReferenceSprite primarySkillIcon = new AssetReferenceSprite("01b09e98ee52574479b17c0349c88e29");
-        public static AssetReferenceSprite primaryFlameCanSkillIcon = new AssetReferenceSprite("6f0e7dc80d946bd489940eccc8c92f5b");
+        public static AssetReferenceSprite primaryFlameCanSkillIcon = new AssetReferenceSprite("ff108aab63a965446ab7dec24b1862ab");
         public static AssetReferenceSprite primaryPipeSkillIcon = new AssetReferenceSprite("1872c188be0e7fd4397142cd14cc8863");
         public static AssetReferenceSprite primaryCleaverSkillIcon = new AssetReferenceSprite("d79f886258b3bb74a90bd0d43ee60854");
 
@@ -114,10 +116,14 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         #endregion
         #region VFX
         public static AssetReferenceT<GameObject> flameCanSpecialProjectileGhost = new AssetReferenceT<GameObject>("fc0da765d454d7e4f86895ef76de0172");
-
         public static AssetReferenceT<GameObject> projectileExplodeEffect = new AssetReferenceT<GameObject>("05b273758480af74a919e826c7b80a86");
+
         public static AssetReferenceT<GameObject> swingEffect = new AssetReferenceT<GameObject>("3534552e7829f9842ba3156065afc540");
+
         public static AssetReferenceT<GameObject> meleeHit = new AssetReferenceT<GameObject>("9dc987e0064626645be61b151c52fb04");
+        public static AssetReferenceT<GameObject> meleeHitPipe = new AssetReferenceT<GameObject>("8c1b45118d0a20143b72f7cee5285454");
+        public static AssetReferenceT<GameObject> meleeHitCleaver = new AssetReferenceT<GameObject>("68ddfb3f59849ce4196d765297867f0a");
+
         public static AssetReferenceT<GameObject> meleeHitDirectional = new AssetReferenceT<GameObject>("974a977cf126bc14084058dfe44b53c6");
         #endregion
         #endregion
@@ -189,6 +195,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
             RorschachAssets.swingEffect.LoadAssetAsync().Completed += x =>
             { swordSwingEffect = Asset.CreateEffect(x.Result, 1f, true, ""); };
+
             RorschachAssets.meleeHit.LoadAssetAsync().Completed += x =>
             { 
                 meleeHitEffect = Asset.CreateEffect(x.Result, 0.35f);
@@ -197,6 +204,24 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 meleeHitEffect.transform.GetChild(2).GetComponent<ParticleSystemRenderer>().sharedMaterial = inkDot;
                 meleeHitEffect.transform.GetChild(3).GetComponent<ParticleSystemRenderer>().sharedMaterial = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matOmniRing2Generic_mat)).WaitForCompletion();
             };
+            RorschachAssets.meleeHitPipe.LoadAssetAsync().Completed += x =>
+            {
+                meleeHitPipeEffect = Asset.CreateEffect(x.Result, 0.35f);
+                meleeHitPipeEffect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().sharedMaterial = whiteInkSplat;
+                meleeHitPipeEffect.transform.GetChild(1).GetComponent<ParticleSystemRenderer>().sharedMaterial = ink;
+                meleeHitPipeEffect.transform.GetChild(2).GetComponent<ParticleSystemRenderer>().sharedMaterial = inkDot;
+                meleeHitPipeEffect.transform.GetChild(3).GetComponent<ParticleSystemRenderer>().sharedMaterial = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matOmniRing2Generic_mat)).WaitForCompletion();
+                meleeHitPipeEffect.transform.GetChild(4).GetComponent<ParticleSystemRenderer>().sharedMaterial = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matOmniHitspark1Generic_mat)).WaitForCompletion();
+            };
+            RorschachAssets.meleeHitCleaver.LoadAssetAsync().Completed += x =>
+            {
+                meleeHitCleaverEffect = Asset.CreateEffect(x.Result, 0.35f);
+                meleeHitCleaverEffect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().sharedMaterial = cleaverCut;
+                meleeHitCleaverEffect.transform.GetChild(1).GetComponent<ParticleSystemRenderer>().sharedMaterial = ink;
+                meleeHitCleaverEffect.transform.GetChild(2).GetComponent<ParticleSystemRenderer>().sharedMaterial = inkDot;
+                meleeHitCleaverEffect.transform.GetChild(3).GetComponent<ParticleSystemRenderer>().sharedMaterial = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matOmniRing2Generic_mat)).WaitForCompletion();
+            };
+
             RorschachAssets.meleeHitDirectional.LoadAssetAsync().Completed += x =>
             {
                 meleeHitDirectionalEffect = Asset.CreateEffect(x.Result, 0.65f, true, "", out var vfx, out _);

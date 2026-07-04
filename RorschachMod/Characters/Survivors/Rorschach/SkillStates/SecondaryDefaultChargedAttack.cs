@@ -75,7 +75,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 
         protected override void OnHitEnemyAuthority()
         {
-            if (!hit && charge == 1f)
+            if (!hit)
             {
                 EffectManager.SimpleMuzzleFlash(RorschachAssets.meleeHitDirectionalEffect, gameObject, "SecondaryDefaultHitTransform", true);
                 if (charge == 1f && characterBody.GetBuffCount(RorschachBuffs.judgementBuff.buffIndex) < RorschachStaticValues.judgementBuffCap)

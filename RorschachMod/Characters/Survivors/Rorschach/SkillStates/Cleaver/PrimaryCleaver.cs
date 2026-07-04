@@ -1,6 +1,7 @@
 ﻿using RorschachMod.Modules.BaseStates;
 using RoR2;
 using UnityEngine;
+using R2API;
 
 namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 {
@@ -9,12 +10,10 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         protected override void Prepare()
         {
             base.Prepare();
-            if (Util.CheckRoll0To1(RorschachStaticValues.primaryCleaverBleedChance, characterBody.master))
-            {
-                damageType |= DamageType.BleedOnHit;
-            }
+            damageType.AddModdedDamageType(RorschachDamageTypes.cleaverBleedChance);
             damageCoefficient = RorschachStaticValues.primaryCleaverDamageCoefficient;
             baseDuration = 0.84f;
+            hitEffectPrefab = RorschachAssets.meleeHitCleaverEffect;
         }
     }
 }

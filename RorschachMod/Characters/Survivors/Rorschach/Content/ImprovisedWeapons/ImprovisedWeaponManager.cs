@@ -1,13 +1,16 @@
-﻿using RoR2;
+﻿using HarmonyLib;
+using HG;
+using Mono.Cecil.Cil;
+using MonoMod.Cil;
+using R2API;
+using RoR2;
+using RoR2.Skills;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using UnityEngine;
-using HG;
-using System.Linq;
-using R2API;
 using UnityEngine.Networking;
-using RoR2.Skills;
 
 [assembly: HG.Reflection.SearchableAttribute.OptIn]
 namespace RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons
@@ -45,6 +48,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons
             GlobalEventManager.onCharacterDeathGlobal += OnCharacterDeath;
             CharacterBody.onBodyInventoryChangedGlobal += ImprovisedWeaponSkillOverrides;
             On.RoR2.GenericPickupController.BodyHasPickupPermission += RestrictImprovisedItemPickup;
+            IL.RoR2.GlobalEventManager.ProcessHitEnemy += SpecialFinalDot;
         }
         public static void OnCharacterDeath(DamageReport damageReport)
         {
@@ -55,6 +59,80 @@ namespace RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons
                     damageReport.attackerBody.AddTimedBuff(RorschachBuffs.specialOnKillBuff, 3f + damageReport.damageInfo.damageType.ReadJudgementStacks());
                 }
             }
+        }
+        public static void SpecialFinalDot(ILContext il)
+        {
+            ILCursor c = new ILCursor(il);
+            // Bleed
+            if (c.TryGotoNext(x => x.MatchLdarg(1),
+            x => x.MatchLdflda(typeof(DamageInfo), nameof(DamageInfo.procChainMask)),
+            x => x.MatchLdcI4((int)ProcType.BleedOnHit)) && c.TryGotoNext(MoveType.After, x => x.MatchLdarg(1)))
+            {
+                c.Emit(OpCodes.Ldarg_2);
+                // Right before normal bleed chance is handled. If cleaver final hit, apply multiple stacks of bleed and add bleed proc mask so it doesn't do normal bleed
+                c.EmitDelegate<Action<DamageInfo, GameObject>>((damageInfo, victim) =>
+                {
+                    if (damageInfo.damageType.HasModdedDamageType(RorschachDamageTypes.cleaverFinalBleed))
+                    {
+                        for (int i = 0; i < RorschachStaticValues.specialCleaverFinalBleedStacks - 1; i++)
+                        {
+                            DotController.InflictDot(victim, damageInfo.attacker, damageInfo.inflictedHurtbox, DotController.DotIndex.Bleed, damageInfo.procCoefficient * 3f);
+                        }
+                    }
+                });
+                c.Emit(OpCodes.Ldarg_1);
+                // Bleed chance for if bleed chance should be rolled at all
+                if (c.TryGotoNext(MoveType.After, x => x.MatchCallOrCallvirt(AccessTools.PropertyGetter(typeof(CharacterBody), nameof(CharacterBody.bleedChance)))))
+                {
+                    c.Emit(OpCodes.Ldarg_1);
+                    c.EmitDelegate<Func<float, DamageInfo, float>>((bleedChance, damageInfo) =>
+                    {
+                        return bleedChance + (damageInfo.damageType.HasModdedDamageType(RorschachDamageTypes.cleaverBleedChance) ? RorschachStaticValues.primaryCleaverBleedChance : 0);
+                    });
+                }
+                // Actual bleed chance
+                if (c.TryGotoNext(MoveType.After, x => x.MatchCallOrCallvirt(AccessTools.PropertyGetter(typeof(CharacterBody), nameof(CharacterBody.bleedChance)))))
+                {
+                    c.Emit(OpCodes.Ldarg_1);
+                    c.EmitDelegate<Func<float, DamageInfo, float>>((bleedChance, damageInfo) =>
+                    {
+                        return bleedChance + (damageInfo.damageType.HasModdedDamageType(RorschachDamageTypes.cleaverBleedChance) ? RorschachStaticValues.primaryCleaverBleedChance : 0);
+                    });
+                }
+            }
+            else
+            {
+                Log.Error("Bleed Dot IL Hook failed");
+            }
+
+            // Burn
+            // ???????????????????????????????????????????
+            /*ILLabel burnEnd = null;
+            if (c.TryGotoNext(x => x.MatchLdfld(typeof(DamageInfo), nameof(DamageInfo.damageType)),
+                x => x.MatchLdcI4((int)DamageType.IgniteOnHit)) &&
+                c.TryGotoNext(x => x.MatchCallOrCallvirt(AccessTools.Method(typeof(StrengthenBurnUtils), nameof(StrengthenBurnUtils.CheckDotForUpgrade))), 
+                x => x.MatchBr(out burnEnd)))
+            {
+                c.GotoLabel(burnEnd, MoveType.After);
+                // Intercept the dotinfo and use it to call burn a few times manually if it's flame can special
+                // Don't know how to match the DotController.InflictDot method overload with a ref param so I gotta match with this roundabout shit
+                c.Emit(OpCodes.Ldarg_1);
+                c.EmitDelegate<Func<InflictDotInfo, DamageInfo, InflictDotInfo>>((dot, damageInfo) =>
+                {
+                    if (damageInfo.damageType.HasModdedDamageType(RorschachDamageTypes.flameCanFinalBurn))
+                    {
+                        for (int i = 0; i < RorschachStaticValues.specialFlameCanFinalBurnStacks - 1; i++)
+                        {
+                            DotController.InflictDot(ref dot);
+                        }
+                    }
+                    return dot;
+                });
+            }
+            else
+            {
+                Log.Error("Burn Dot IL Hook failed");
+            }*/
         }
 
         public static void ImprovisedWeaponSkillOverrides(CharacterBody characterBody)
