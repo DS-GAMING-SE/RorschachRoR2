@@ -13,6 +13,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             damageCoefficient = RorschachStaticValues.primaryPipeDamageCoefficient;
             baseDuration = 1.2f;
             hitEffectPrefab = RorschachAssets.meleeHitPipeEffect;
+            attackRecoil *= 2f;
+            hitStopDuration *= 1.7f;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using EntityStates;
 using R2API.Networking.Interfaces;
 using RoR2;
+using RorschachMod.Characters.Survivors.Rorschach.Components;
 using RorschachMod.Modules.BaseStates;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -12,6 +13,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
     {
         public float charge;
         protected float movementFadePercentTime = 0.7f;
+        protected float sparkleStartPercentTime = 0.15f;
+        private bool sparkled;
         
         protected override void Prepare()
         {
@@ -62,6 +65,24 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
                 SecondaryDefaultDash.UpdateDisplacement(inputBank, characterMotor, age, duration, attackStartPercentTime, movementFadePercentTime, characterBody.moveSpeed * 1.3f);
             }
         }
+        public override void FixedUpdate()
+        {
+            base.FixedUpdate();
+            if (fixedAge >= duration * sparkleStartPercentTime && !sparkled)
+            {
+                sparkled = true;
+                ChildLocator child = GetModelChildLocator();
+                int index = child.FindChildIndex("SecondaryChargeHitSparkleTransform");
+                EffectData effectData = new EffectData
+                {
+                    origin = child.FindChild(index).position,
+                    scale = charge >= 1 ? 1.5f : 1f,
+                    color = charge >= 1 ? Color.red : Color.white
+                };
+                effectData.SetChildLocatorTransformReference(gameObject, index);
+                EffectManager.SpawnEffect(RorschachAssets.genericSparkleEffect, effectData, false);
+            }
+        }
 
         protected override void PlayAttackAnimation()
         {
@@ -106,15 +127,16 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             {
                 body.AddBuff(RorschachBuffs.judgementBuff);
             }
-            if (body.modelLocator && body.modelLocator.modelTransform && body.modelLocator.modelTransform.TryGetComponent<CharacterModel>(out var model))
+            if (body.modelLocator && body.modelLocator.modelTransform && body.modelLocator.modelTransform.TryGetComponent<OutlineComponent>(out var outline))
             {
-                TemporaryOverlayInstance overlay = TemporaryOverlayManager.AddOverlay(model.gameObject);
+                outline.StartFlash();
+                /*TemporaryOverlayInstance overlay = TemporaryOverlayManager.AddOverlay(model.gameObject);
                 overlay.duration = 0.2f;
                 overlay.animateShaderAlpha = true;
                 overlay.alphaCurve = AnimationCurve.EaseInOut(0f, 0.6f, 1f, 0f);
                 overlay.originalMaterial = Addressables.LoadAssetAsync<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_CritOnUse.matFullCrit_mat).WaitForCompletion();
                 overlay.destroyComponentOnEnd = true;
-                overlay.inspectorCharacterModel = model;
+                overlay.inspectorCharacterModel = model;*/
             }
         }
     }

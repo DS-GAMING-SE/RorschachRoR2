@@ -41,7 +41,11 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             Language.Add(prefix + "OUTRO_FAILURE", outroFailure);
 
             #region Skins
+            Language.Add(prefix + "DEFAULT_ALT_SKIN_NAME", "Default - Alternate");
             Language.Add(prefix + "CLASSIC_SKIN_NAME", "Classic");
+            Language.Add(prefix + "CLASSIC_ALT_SKIN_NAME", "Classic - Alternate");
+            Language.Add(prefix + "SPACE_SKIN_NAME", "Space");
+            Language.Add(prefix + "SPACE_ALT_SKIN_NAME", "Space - Alternate");
             Language.Add(prefix + "FUTURE_SKIN_NAME", "Future");
             Language.Add(prefix + "WARFRAME_SKIN_NAME", "Warframe");
             #endregion
@@ -106,7 +110,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             string specialOnKillBuffName = "BUFFNAME";
             Language.Add(prefix + "SPECIAL_DEFAULT_NAME", $"{HedgehogUtils.Helpers.wipIcon} Uncompromising");
             Language.Add(prefix + "SPECIAL_DEFAULT_DESCRIPTION", $"Grab the target and perform a double axe handle, dealing {Tokens.DamageValueText(specialFinalDamageCoefficient)}. Kills grant {Tokens.UtilityText(specialOnKillBuffName)}. {Tokens.RedText("Judgement")} gives an extra hit of {Tokens.DamageValueText(specialJudgementDamageCoefficient)} per stack. Using this move {Tokens.RedText("consumes")} any {Tokens.UtilityText("Improvised Weapons")}.");
-            Language.Add(prefix + "SPECIAL_ON_KILL_BUFF_KEYWORD", $"<style=cKeywordName>BUFFNAME</style><style=cSub>Increases attack speed and movement speed by {specialOnKillBuffMultiplier*100f}% for 3s. Judgement increases this duration.</style>");
+            Language.Add(prefix + "SPECIAL_ON_KILL_BUFF_KEYWORD", $"<style=cKeywordName>{specialOnKillBuffName}</style><style=cSub>Increases attack speed and movement speed by {specialOnKillBuffMultiplier*100f}% for 3s. Judgement increases this duration.</style>");
 
             Language.Add(prefix + "SPECIAL_FLAME_CAN_NAME", $"Homemade Explosive");
             Language.Add(prefix + "SPECIAL_FLAME_CAN_DESCRIPTION", $"{Tokens.DamageText("Ignite")}. Prime your flame can to explode before throwing it forward, dealing {Tokens.DamageValueText(specialFlameCanDamageCoefficient)}. Kills grant {Tokens.UtilityText(specialOnKillBuffName)}. {Tokens.RedText("Judgement")} gives {Tokens.DamageText($"{specialFlameCanJudgementDamageMultiplier*100f}% increased damage")} and {Tokens.UtilityText($"{specialFlameCanJudgementExplosionRadiusMultiplier * 100f}% increased explosion radius")} per stack. Using this move {Tokens.RedText("consumes")} your {Tokens.DamageText("flame can")}.");

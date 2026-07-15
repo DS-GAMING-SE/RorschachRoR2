@@ -241,6 +241,22 @@ MonoBehaviour:
     m_Address: Assets/RorschachAssets/RorschachBundle/VFX/Prefabs/Cleaver/RorschachMeleeHitCleaverEffect.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 8ec4f98e2d3d6034fa9ee2be6f47850e
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Default/matRorschachAlt.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e4d73585e9a9cb248a7dca6e41e784d3
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Classic/matRorschachClassicAlt.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3b854b20ca3a63a4eb9d48eb717a25f8
+    m_Address: Assets/RorschachAssets/RorschachBundle/VFX/Prefabs/Default/RorschachSecondaryChargeEffect.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8dd6a179250db5d458b896b7572f1266
+    m_Address: Assets/RorschachAssets/RorschachBundle/VFX/Prefabs/Default/RorschachGenericSparkleEffect.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 80780dc7c8eea2546b3509246a72a4ca, type: 2}
   m_SchemaSet:

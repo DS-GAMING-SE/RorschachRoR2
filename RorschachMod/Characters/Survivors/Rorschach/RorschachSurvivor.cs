@@ -129,7 +129,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         private void AdditionalBodySetup()
         {
             AddHitboxes();
-            bodyPrefab.AddComponent<Components.ImrovisedWeaponComponent>();
+            bodyPrefab.AddComponent<Components.ImprovisedWeaponComponent>();
             //bodyPrefab.AddComponent<HedgehogUtils.Boost.BoostLogic>();
             //anything else here
         }

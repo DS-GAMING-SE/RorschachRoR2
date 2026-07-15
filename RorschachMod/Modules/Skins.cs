@@ -50,6 +50,8 @@ namespace RorschachMod.Modules
             #region DefaultSkin
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.defaultSkinMaterial).Completed += x =>
             { x.Result.SetHopooMaterial().SetSpecular(0.15f, 2.5f).SpecularIgnoreAlpha(); };
+            AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.defaultAltSkinMaterial).Completed += x =>
+            { x.Result.SetHopooMaterial().SetSpecular(0.15f, 2.5f).SpecularIgnoreAlpha(); };
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.defaultSkinArmMaterial).Completed += x =>
             { x.Result.SetHopooMaterial().SetSpecular(0.4f, 1.5f).SpecularIgnoreAlpha(); };
 
@@ -70,10 +72,28 @@ namespace RorschachMod.Modules
             };
             SkinDef defaultSkin = R2API.Skins.CreateNewSkinDef(defaultSkinParamsInfo);
             skins.Add(defaultSkin);
+
+            SkinDefParams defaultAltSkinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
+            defaultAltSkinDefParams.rendererInfos = ArrayUtils.Clone(defaultSkinDefParams.rendererInfos);
+            defaultAltSkinDefParams.rendererInfos[0].defaultMaterialAddress = RorschachAssets.defaultAltSkinMaterial;
+            R2API.SkinDefParamsInfo defaultAltSkinParamsInfo = new R2API.SkinDefParamsInfo
+            {
+                Name = RORSCHACH_PREFIX + "DEFAULT_ALT_SKIN_NAME",
+                NameToken = RORSCHACH_PREFIX + "DEFAULT_ALT_SKIN_NAME",
+                Icon = Addressables.LoadAssetAsync<Sprite>(RorschachAssets.defaultSkinIcon).WaitForCompletion(),
+                //UnlockableDef = RorschachUnlockables.masterySkinUnlockableDef,
+                RootObject = prefabCharacterModel.gameObject,
+                SkinDefParams = defaultAltSkinDefParams,
+                BaseSkins = new SkinDef[] { defaultSkin }
+            };
+            SkinDef defaultAltSkin = R2API.Skins.CreateNewSkinDef(defaultAltSkinParamsInfo);
+            skins.Add(defaultAltSkin);
             #endregion
 
             #region MasterySkin
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.classicSkinMaterial).Completed += x =>
+            { x.Result.SetHopooMaterial().SetSpecular(0.15f, 2.5f).SpecularIgnoreAlpha(); };
+            AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.classicAltSkinMaterial).Completed += x =>
             { x.Result.SetHopooMaterial().SetSpecular(0.15f, 2.5f).SpecularIgnoreAlpha(); };
 
             SkinDefParams masterySkinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
@@ -91,12 +111,28 @@ namespace RorschachMod.Modules
                 Name = RORSCHACH_PREFIX + "CLASSIC_SKIN_NAME",
                 NameToken = RORSCHACH_PREFIX + "CLASSIC_SKIN_NAME",
                 Icon = Addressables.LoadAssetAsync<Sprite>(RorschachAssets.classicSkinIcon).WaitForCompletion(),
-                //UnlockableDef = RorschachUnlockables.masterySkinUnlockableDef,
+                UnlockableDef = RorschachUnlockables.masterySkinUnlockableDef,
                 RootObject = prefabCharacterModel.gameObject,
                 SkinDefParams = masterySkinDefParams
             };
             SkinDef masterySkin = R2API.Skins.CreateNewSkinDef(masterySkinParamsInfo);
             skins.Add(masterySkin);
+
+            SkinDefParams classicAltSkinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
+            classicAltSkinDefParams.rendererInfos = ArrayUtils.Clone(masterySkinDefParams.rendererInfos);
+            classicAltSkinDefParams.rendererInfos[0].defaultMaterialAddress = RorschachAssets.classicAltSkinMaterial;
+            R2API.SkinDefParamsInfo classicAltSkinParamsInfo = new R2API.SkinDefParamsInfo
+            {
+                Name = RORSCHACH_PREFIX + "CLASSIC_ALT_SKIN_NAME",
+                NameToken = RORSCHACH_PREFIX + "CLASSIC_ALT_SKIN_NAME",
+                Icon = Addressables.LoadAssetAsync<Sprite>(RorschachAssets.classicSkinIcon).WaitForCompletion(),
+                UnlockableDef = RorschachUnlockables.masterySkinUnlockableDef,
+                RootObject = prefabCharacterModel.gameObject,
+                SkinDefParams = classicAltSkinDefParams,
+                BaseSkins = new SkinDef[] { masterySkin }
+            };
+            SkinDef classicAltSkin = R2API.Skins.CreateNewSkinDef(classicAltSkinParamsInfo);
+            skins.Add(classicAltSkin);
             #endregion
 
             #region FutureSkin
@@ -118,7 +154,7 @@ namespace RorschachMod.Modules
                 Name = RORSCHACH_PREFIX + "FUTURE_SKIN_NAME",
                 NameToken = RORSCHACH_PREFIX + "FUTURE_SKIN_NAME",
                 Icon = Addressables.LoadAssetAsync<Sprite>(RorschachAssets.futureSkinIcon).WaitForCompletion(),
-                //UnlockableDef = RorschachUnlockables.masterySkinUnlockableDef,
+                UnlockableDef = RorschachUnlockables.masterySkinUnlockableDef,
                 RootObject = prefabCharacterModel.gameObject,
                 SkinDefParams = futureSkinDefParams
             };
@@ -147,7 +183,7 @@ namespace RorschachMod.Modules
                 Name = RORSCHACH_PREFIX + "WARFRAME_SKIN_NAME",
                 NameToken = RORSCHACH_PREFIX + "WARFRAME_SKIN_NAME",
                 Icon = Addressables.LoadAssetAsync<Sprite>(RorschachAssets.warframeSkinIcon).WaitForCompletion(),
-                //UnlockableDef = RorschachUnlockables.masterySkinUnlockableDef,
+                UnlockableDef = RorschachUnlockables.grandMasterySkinUnlockableDef,
                 RootObject = prefabCharacterModel.gameObject,
                 SkinDefParams = warframeSkinDefParams
             };

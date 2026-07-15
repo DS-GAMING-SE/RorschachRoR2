@@ -56,7 +56,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons
             {
                 if (damageReport.damageInfo.damageType.HasModdedDamageType(RorschachDamageTypes.specialOnKillBuff))
                 {
-                    damageReport.attackerBody.AddTimedBuff(RorschachBuffs.specialOnKillBuff, 3f + damageReport.damageInfo.damageType.ReadJudgementStacks());
+                    damageReport.attackerBody.AddTimedBuff(RorschachBuffs.specialOnKillBuff, RorschachStaticValues.specialOnKillBuffDuration + (RorschachStaticValues.specialOnKillBuffDurationPerJudgement * damageReport.damageInfo.damageType.ReadJudgementStacks()));
                 }
             }
         }

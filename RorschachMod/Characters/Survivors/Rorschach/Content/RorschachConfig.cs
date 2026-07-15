@@ -11,7 +11,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
         public static void Init()
         {
-            string section = "Rorschach";
+            /*string section = "Rorschach";
 
             someConfigBool = Config.BindAndOptions(
                 section,
@@ -30,7 +30,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 5f,
                 0,
                 50,
-                "if a custom range is not passed in, a float will default to a slider with range 0-20. risk of options only has sliders");
+                "if a custom range is not passed in, a float will default to a slider with range 0-20. risk of options only has sliders");*/
         }
     }
 }

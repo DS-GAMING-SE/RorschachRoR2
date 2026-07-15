@@ -71,6 +71,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public const float specialPipeFinalDamageCoefficient = specialFinalDamageCoefficient * 3f;
 
         public const float specialOnKillBuffMultiplier = 0.25f;
+        public const float specialOnKillBuffDuration = 4f;
+        public const float specialOnKillBuffDurationPerJudgement = 2f;
 
         public const float specialFlameCanDamageCoefficient = 25f;
         public const float specialFlameCanMaxJudgementDamageMultiplier = 0.8f;

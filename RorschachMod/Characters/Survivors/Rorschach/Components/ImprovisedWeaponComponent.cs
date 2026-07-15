@@ -5,7 +5,7 @@ using static RorschachMod.Characters.Survivors.Rorschach.RorschachStaticValues;
 
 namespace RorschachMod.Characters.Survivors.Rorschach.Components
 {
-    public class ImrovisedWeaponComponent : MonoBehaviour, IOnKilledOtherServerReceiver
+    public class ImprovisedWeaponComponent : MonoBehaviour, IOnKilledOtherServerReceiver
     {
         public float progress = startProgress;
         public const float maxProgress = 100f;

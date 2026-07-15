@@ -16,6 +16,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         public float baseMaxDuration = RorschachStaticValues.secondaryChargeDuration;
         public float maxDuration;
 
+        private EffectManagerHelper chargeEffect;
+
         public virtual void Prepare()
         {
 
@@ -56,6 +58,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         protected virtual void PlayAttackAnimation()
         {
             PlayCrossfade("FullBody, Override", "SecondaryDefaultCharge", "Slash.playbackRate", maxDuration, 0.1f * maxDuration);
+            chargeEffect = EffectManager.GetAndActivatePooledEffect(RorschachAssets.secondaryChargeEffect, FindModelChild("HandL"), true);
+            chargeEffect.GetComponent<ScaleParticleSystemDuration>().newDuration = maxDuration;
         }
 
         protected void SetNextState()
@@ -71,6 +75,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             {
                 characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
+            chargeEffect.ReturnToPool();
             PlayAnimation("FullBody, Override", "BufferEmpty");
             base.OnExit();
         }

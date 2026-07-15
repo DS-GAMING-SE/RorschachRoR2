@@ -18,6 +18,9 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
                 pushForce = 0f;
             }
             damageCoefficient = Mathf.Lerp(RorschachStaticValues.secondaryPipeChargeMinDamageCoefficient, RorschachStaticValues.secondaryPipeChargeMaxDamageCoefficient, charge);
+            hitEffectPrefab = RorschachAssets.meleeHitPipeEffect;
+            attackRecoil *= 2f;
+            hitStopDuration *= 1.7f;
         }
 
         protected override void FireAttack()

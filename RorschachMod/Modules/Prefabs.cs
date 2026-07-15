@@ -11,6 +11,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using static Rewired.Controller;
 using static RoR2.CharacterAI.AISkillDriver;
+using RorschachMod.Characters.Survivors.Rorschach.Components;
 
 namespace RorschachMod.Modules
 {
@@ -37,6 +38,7 @@ namespace RorschachMod.Modules
                 characterModel = display.AddComponent<CharacterModel>();
             }
             characterModel.baseRendererInfos = bodyPrefab.GetComponentInChildren<CharacterModel>().baseRendererInfos;
+            characterModel.gameObject.AddComponent<OutlineComponent>();
 
             Modules.Asset.ConvertAllRenderersToHopooShader(display);
 
@@ -278,6 +280,8 @@ namespace RorschachMod.Modules
             characterModel.autoPopulateLightInfos = true;
             characterModel.invisibilityCount = 0;
             characterModel.temporaryOverlays = new List<TemporaryOverlayInstance>();
+
+            characterModel.gameObject.AddComponent<OutlineComponent>();
 
             if (!preattached)
             {

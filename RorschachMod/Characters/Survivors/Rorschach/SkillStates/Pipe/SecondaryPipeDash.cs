@@ -14,6 +14,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             damageType |= DamageType.Stun1s;
             damageCoefficient = RorschachStaticValues.secondaryDashDamageCoefficient;
             hitEffectPrefab = RorschachAssets.meleeHitPipeEffect;
+            attackRecoil *= 2f;
+            hitStopDuration *= 1.7f;
         }
     }
 }

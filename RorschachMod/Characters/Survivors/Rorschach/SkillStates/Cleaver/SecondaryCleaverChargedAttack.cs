@@ -12,6 +12,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             base.Prepare();
             if (charge == 1) damageType |= DamageType.BleedOnHit;
             damageCoefficient = Mathf.Lerp(RorschachStaticValues.secondaryCleaverChargeMinDamageCoefficient, RorschachStaticValues.secondaryCleaverChargeMaxDamageCoefficient, charge);
+            hitEffectPrefab = RorschachAssets.meleeHitCleaverEffect;
         }
     }
 }

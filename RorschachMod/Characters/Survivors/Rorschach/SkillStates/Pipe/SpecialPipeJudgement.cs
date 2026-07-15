@@ -18,6 +18,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         {
             base.Prepare();
             damageCoefficient = RorschachStaticValues.specialPipeJudgementDamageCoefficient;
+            attackRecoil *= 2f;
+            hitStopDuration *= 1.7f;
         }
     }
 }

@@ -17,6 +17,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             damageType |= DamageType.Stun1s;
             damageCoefficient = RorschachStaticValues.specialPipeFinalDamageCoefficient;
             hitStopDuration = 0.11f;
+            attackRecoil *= 2f;
+            hitStopDuration *= 1.7f;
         }
         public override void OnEnter()
         {
