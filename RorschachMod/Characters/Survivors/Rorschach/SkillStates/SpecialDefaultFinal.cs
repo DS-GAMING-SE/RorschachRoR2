@@ -33,7 +33,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             //this is the point at which the attack can be interrupted by itself, continuing a combo
             earlyExitPercentTime = 1f;
 
-            hitStopDuration = 0.08f;
+            hitStopDuration = 0.1f;
             attackRecoil = 0.8f;
             hitHopVelocity = 6f;
 
@@ -41,7 +41,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             hitSoundString = "";
             muzzleString = "SwingLeft";
             playbackRateParam = "Slash.playbackRate";
-            swingEffectPrefab = RorschachAssets.swordSwingEffect;
+            //swingEffectPrefab = RorschachAssets.swordSwingEffect;
             hitEffectPrefab = RorschachAssets.meleeHitEffect;
 
             impactSound = RorschachAssets.swordHitSoundEvent.index;
@@ -50,6 +50,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         public override void OnEnter()
         {
             base.OnEnter();
+            characterBody.bodyFlags |= CharacterBody.BodyFlags.Unmovable;
             if (NetworkServer.active)
             {
                 characterBody.AddBuff(RoR2Content.Buffs.SmallArmorBoost);
@@ -60,11 +61,11 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         {
             if (judgementStacks > 0)
             {
-                PlayCrossfade("FullBody, Override", "SpecialDefaultJudgementEnd", playbackRateParam, 3 * duration, 0.1f * duration);
+                PlayCrossfade("FullBody, Override", "SpecialDefaultJudgementEnd", playbackRateParam, 0.15f * duration, 0.1f * duration);
             }
             else
             {
-                PlayCrossfade("FullBody, Override", "SpecialDefaultFinal", playbackRateParam, 3 * duration, 0.1f * duration);
+                PlayCrossfade("FullBody, Override", "SpecialDefaultFinal", playbackRateParam, 3.3f * duration, 0.1f * duration);
             }
         }
 
@@ -79,6 +80,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             {
                 characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
+            characterBody.bodyFlags &= ~CharacterBody.BodyFlags.Unmovable;
             base.OnExit();
         }
         public override void OnSerialize(NetworkWriter writer)

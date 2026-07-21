@@ -30,6 +30,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             {
                 characterBody.AddBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
+            characterBody.bodyFlags |= CharacterBody.BodyFlags.Unmovable;
             maxDuration = baseMaxDuration / attackSpeedStat;
             characterBody.SetAimTimer(maxDuration);
             PlayAttackAnimation();
@@ -59,7 +60,6 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         {
             PlayCrossfade("FullBody, Override", "SecondaryDefaultCharge", "Slash.playbackRate", maxDuration, 0.1f * maxDuration);
             chargeEffect = EffectManager.GetAndActivatePooledEffect(RorschachAssets.secondaryChargeEffect, FindModelChild("HandL"), true);
-            chargeEffect.GetComponent<ScaleParticleSystemDuration>().newDuration = maxDuration;
         }
 
         protected void SetNextState()
@@ -75,6 +75,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             {
                 characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
+            characterBody.bodyFlags &= ~CharacterBody.BodyFlags.Unmovable;
             chargeEffect.ReturnToPool();
             PlayAnimation("FullBody, Override", "BufferEmpty");
             base.OnExit();

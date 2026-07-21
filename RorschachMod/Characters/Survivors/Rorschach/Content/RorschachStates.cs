@@ -28,12 +28,15 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             Modules.Content.AddEntityState(typeof(UtilityGrapplePull));
 
             Modules.Content.AddEntityState(typeof(SpecialDefaultDash));
+            Modules.Content.AddEntityState(typeof(SpecialDefaultGrab));
             Modules.Content.AddEntityState(typeof(SpecialDefaultJudgement));
             Modules.Content.AddEntityState(typeof(SpecialDefaultFinal));
             Modules.Content.AddEntityState(typeof(SpecialPipeDash));
+            Modules.Content.AddEntityState(typeof(SpecialPipeGrab));
             Modules.Content.AddEntityState(typeof(SpecialPipeJudgement));
             Modules.Content.AddEntityState(typeof(SpecialPipeFinal));
             Modules.Content.AddEntityState(typeof(SpecialCleaverDash));
+            Modules.Content.AddEntityState(typeof(SpecialCleaverGrab));
             Modules.Content.AddEntityState(typeof(SpecialCleaverJudgement));
             Modules.Content.AddEntityState(typeof(SpecialCleaverFinal));
             Modules.Content.AddEntityState(typeof(SpecialFlameCan));

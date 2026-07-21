@@ -262,6 +262,37 @@ Transform:
   m_Father: {fileID: 2002892679675044044}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -89.98021, y: -179.99998, z: 0}
+--- !u!1 &79894117447572659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2179539554553699330}
+  m_Layer: 0
+  m_Name: SpecialJudgementSparkleTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2179539554553699330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79894117447572659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.986, y: 2.071, z: -0.057}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1297573221175108903}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &82217883619617131
 GameObject:
   m_ObjectHideFlags: 0
@@ -5681,6 +5712,8 @@ Transform:
   - {fileID: 2673431593707919614}
   - {fileID: 5333424483119266579}
   - {fileID: 5111858533128814898}
+  - {fileID: 2179539554553699330}
+  - {fileID: 2773584590296699218}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5766,6 +5799,10 @@ MonoBehaviour:
     transform: {fileID: 2277394471443984358}
   - name: HandL
     transform: {fileID: 7935613107862709174}
+  - name: SpecialJudgementSparkleTransform
+    transform: {fileID: 2179539554553699330}
+  - name: SpecialGrabTransform
+    transform: {fileID: 2773584590296699218}
 --- !u!1 &1834374537123385978
 GameObject:
   m_ObjectHideFlags: 0
@@ -24759,6 +24796,37 @@ Transform:
   m_Father: {fileID: 3107342670116675858}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.6593024, y: -0.6129993, z: 2.1819537}
+--- !u!1 &7565701112748896559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2773584590296699218}
+  m_Layer: 0
+  m_Name: SpecialGrabTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2773584590296699218
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7565701112748896559}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 2.17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1297573221175108903}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7572552535274844279
 GameObject:
   m_ObjectHideFlags: 0

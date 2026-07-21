@@ -10,6 +10,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.Components
     {
         private EffectManagerHelper emh;
         public bool copyRotation;
+        public float scale = 1.2f;
         private void Awake()
         {
             emh = GetComponent<EffectManagerHelper>();
@@ -21,7 +22,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.Components
             EffectData effectData = new EffectData
             {
                 origin = emh.effectComponent.effectData.origin,
-                scale = emh.effectComponent.effectData.scale * 1.2f
+                scale = emh.effectComponent.effectData.scale * scale
             };
             if (copyRotation)
             {

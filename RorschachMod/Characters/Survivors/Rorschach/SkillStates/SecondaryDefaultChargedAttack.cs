@@ -43,7 +43,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             hitSoundString = "";
             muzzleString = "SwingLeft";
             playbackRateParam = "Slash.playbackRate";
-            swingEffectPrefab = RorschachAssets.swordSwingEffect;
+            //swingEffectPrefab = RorschachAssets.swordSwingEffect;
             hitEffectPrefab = RorschachAssets.meleeHitEffect;
 
             impactSound = RorschachAssets.swordHitSoundEvent.index;
@@ -52,6 +52,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         public override void OnEnter()
         {
             base.OnEnter();
+            characterBody.bodyFlags |= CharacterBody.BodyFlags.Unmovable;
             if (NetworkServer.active)
             {
                 characterBody.AddBuff(RoR2Content.Buffs.SmallArmorBoost);
@@ -62,7 +63,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             base.Update();
             if (base.isAuthority)
             {
-                SecondaryDefaultDash.UpdateDisplacement(inputBank, characterMotor, age, duration, attackStartPercentTime, movementFadePercentTime, characterBody.moveSpeed * 1.3f);
+                SecondaryDefaultDash.UpdateDisplacement(inputBank, characterMotor, age, baseDuration, duration, attackStartPercentTime, movementFadePercentTime, characterBody.moveSpeed * 1.3f);
             }
         }
         public override void FixedUpdate()
@@ -113,6 +114,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             {
                 characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
+            characterBody.bodyFlags &= ~CharacterBody.BodyFlags.Unmovable;
             base.OnExit();
         }
 

@@ -2,6 +2,7 @@
 using RoR2;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -11,13 +12,15 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
     public class SpecialDefaultDash : BaseState
     {
         private bool hit;
-        public virtual Type finalStateType { get { return typeof(SpecialDefaultFinal); } }
-        public virtual Type judgementStateType { get { return typeof(SpecialDefaultJudgement); } }
+        public virtual Type grabStateType { get { return typeof(SpecialDefaultGrab); } }
         protected float baseDuration = 0.7f;
         protected float duration;
-        protected float movementFadeStartPercentTime = 0.25f;
-        protected float movementFadeEndPercentTime = 0.75f;
-        protected bool target = true;
+        protected float durationPercentAfterGrab = 0.25f;
+        protected float movementFadeStartPercentTime = 0.4f;
+        protected float movementFadeEndPercentTime = 1f;
+        protected HurtBox target;
+        protected SphereSearch grabSearch;
+        private Transform grabTransform;
 
         protected virtual void Prepare()
         {
@@ -27,12 +30,23 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         {
             base.OnEnter();
             Prepare();
+            StartAimMode(0.5f + duration, true);
             duration = baseDuration / attackSpeedStat;
             if (NetworkServer.active)
             {
                 characterBody.AddBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
-            GetModelAnimator().SetBool("judgement", characterBody.HasBuff(RorschachBuffs.judgementBuff));
+            characterBody.bodyFlags |= CharacterBody.BodyFlags.Unmovable;
+            if (isAuthority)
+            {
+                grabSearch = new SphereSearch();
+                grabSearch.mask = LayerIndex.entityPrecise.mask;
+                grabTransform = FindModelChild("SpecialGrabTransform");
+                if (!grabTransform) return;
+                grabSearch.origin = grabTransform.position;
+                grabSearch.radius = 4f;
+            }
+            PlayAttackAnimation();
         }
 
         protected virtual void PlayAttackAnimation()
@@ -43,19 +57,36 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            if (base.isAuthority && fixedAge > duration && target)
+            if (isAuthority)
             {
-                if (characterBody.HasBuff(RorschachBuffs.judgementBuff))
+                if (grabTransform && !target)
                 {
-                    SpecialDefaultJudgement judgementState = (SpecialDefaultJudgement)EntityStateCatalog.InstantiateState(judgementStateType);
-                    judgementState.judgementStacks = characterBody.GetBuffCount(RorschachBuffs.judgementBuff);
-                    this.outer.SetNextState(judgementState);
-                    return;
+                    grabSearch.origin = grabTransform.position;
+                    grabSearch.RefreshCandidates();
+                    grabSearch.FilterCandidatesByDistinctHurtBoxEntities();
+                    grabSearch.FilterCandidatesByHurtBoxTeam(TeamMask.GetEnemyTeams(characterBody.teamComponent.teamIndex));
+                    grabSearch.OrderCandidatesByDistance();
+                    target = grabSearch.GetHurtBoxes().FirstOrDefault(x => { return x.healthComponent; });
+                    if (target)
+                    {
+                        duration = Mathf.Min(duration, fixedAge + (duration * durationPercentAfterGrab));
+                    }
                 }
-                SpecialDefaultFinal finalState = (SpecialDefaultFinal)EntityStateCatalog.InstantiateState(finalStateType);
-                finalState.judgementStacks = 0;
-                this.outer.SetNextState(EntityStateCatalog.InstantiateState(finalStateType));
-                return;
+
+                if (fixedAge > duration)
+                {
+                    if (target)
+                    {
+                        SpecialDefaultGrab grab = (SpecialDefaultGrab)EntityStateCatalog.InstantiateState(grabStateType);
+                        grab.target = target;
+                        this.outer.SetNextState(grab);
+                        return;
+                    }
+                    else
+                    {
+                        this.outer.SetNextStateToMain();
+                    }
+                }
             }
         }
 
@@ -64,7 +95,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             base.Update();
             if (base.isAuthority)
             {
-                SecondaryDefaultDash.UpdateDisplacement(inputBank, characterMotor, age, duration, movementFadeStartPercentTime, movementFadeEndPercentTime, characterBody.moveSpeed * 1.5f);
+                SecondaryDefaultDash.UpdateDisplacement(inputBank, characterMotor, age, baseDuration, duration, movementFadeStartPercentTime, movementFadeEndPercentTime, characterBody.moveSpeed * 2f);
             }
         }
 
@@ -74,6 +105,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             {
                 characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
+            characterBody.bodyFlags &= ~CharacterBody.BodyFlags.Unmovable;
             base.OnExit();
         }
     }

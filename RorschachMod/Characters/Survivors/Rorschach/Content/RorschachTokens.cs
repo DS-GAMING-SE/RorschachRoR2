@@ -65,11 +65,11 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             Language.Add(prefix + "IMPROVISED_WEAPON_FLAME_CAN_PICKUP", flameCanDesc);
             Language.Add(prefix + "IMPROVISED_WEAPON_FLAME_CAN_DESC", flameCanDesc);
 
-            Language.Add(prefix + "IMPROVISED_WEAPON_PIPE", $"{HedgehogUtils.Helpers.wipIcon} Pipe");
+            Language.Add(prefix + "IMPROVISED_WEAPON_PIPE", $"Pipe");
             Language.Add(prefix + "IMPROVISED_WEAPON_PIPE_PICKUP", pipeDesc);
             Language.Add(prefix + "IMPROVISED_WEAPON_PIPE_DESC", pipeDesc);
 
-            Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER", $"{HedgehogUtils.Helpers.wipIcon} Cleaver");
+            Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER", $"Cleaver");
             Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER_PICKUP", cleaverDesc);
             Language.Add(prefix + "IMPROVISED_WEAPON_CLEAVER_DESC", cleaverDesc);
             #endregion
@@ -108,17 +108,17 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
             #region Special
             string specialOnKillBuffName = "BUFFNAME";
-            Language.Add(prefix + "SPECIAL_DEFAULT_NAME", $"{HedgehogUtils.Helpers.wipIcon} Uncompromising");
+            Language.Add(prefix + "SPECIAL_DEFAULT_NAME", $"Uncompromising");
             Language.Add(prefix + "SPECIAL_DEFAULT_DESCRIPTION", $"Grab the target and perform a double axe handle, dealing {Tokens.DamageValueText(specialFinalDamageCoefficient)}. Kills grant {Tokens.UtilityText(specialOnKillBuffName)}. {Tokens.RedText("Judgement")} gives an extra hit of {Tokens.DamageValueText(specialJudgementDamageCoefficient)} per stack. Using this move {Tokens.RedText("consumes")} any {Tokens.UtilityText("Improvised Weapons")}.");
             Language.Add(prefix + "SPECIAL_ON_KILL_BUFF_KEYWORD", $"<style=cKeywordName>{specialOnKillBuffName}</style><style=cSub>Increases attack speed and movement speed by {specialOnKillBuffMultiplier*100f}% for 3s. Judgement increases this duration.</style>");
 
             Language.Add(prefix + "SPECIAL_FLAME_CAN_NAME", $"Homemade Explosive");
             Language.Add(prefix + "SPECIAL_FLAME_CAN_DESCRIPTION", $"{Tokens.DamageText("Ignite")}. Prime your flame can to explode before throwing it forward, dealing {Tokens.DamageValueText(specialFlameCanDamageCoefficient)}. Kills grant {Tokens.UtilityText(specialOnKillBuffName)}. {Tokens.RedText("Judgement")} gives {Tokens.DamageText($"{specialFlameCanJudgementDamageMultiplier*100f}% increased damage")} and {Tokens.UtilityText($"{specialFlameCanJudgementExplosionRadiusMultiplier * 100f}% increased explosion radius")} per stack. Using this move {Tokens.RedText("consumes")} your {Tokens.DamageText("flame can")}.");
 
-            Language.Add(prefix + "SPECIAL_PIPE_NAME", $"{HedgehogUtils.Helpers.wipIcon} Final Verdict");
+            Language.Add(prefix + "SPECIAL_PIPE_NAME", $"Final Verdict");
             Language.Add(prefix + "SPECIAL_PIPE_DESCRIPTION", $"Grab the target and stab the pipe into them, dealing {Tokens.DamageValueText(specialPipeFinalDamageCoefficient)}. Kills grant {Tokens.UtilityText(specialOnKillBuffName)}. {Tokens.RedText("Judgement")} gives an extra hit of {Tokens.DamageValueText(specialPipeJudgementDamageCoefficient)} per stack. Using this move {Tokens.RedText("consumes")} your {Tokens.UtilityText("pipe")}.");
 
-            Language.Add(prefix + "SPECIAL_CLEAVER_NAME", $"{HedgehogUtils.Helpers.wipIcon} Butchering End");
+            Language.Add(prefix + "SPECIAL_CLEAVER_NAME", $"Butchering End");
             Language.Add(prefix + "SPECIAL_CLEAVER_DESCRIPTION", $"Grab the target and embed the cleaver into them, dealing {Tokens.DamageValueText(specialCleaverFinalDamageCoefficient)} and inflicting {Tokens.DamageText($"{specialCleaverFinalBleedStacks} bleeds")}. Kills grant {Tokens.UtilityText(specialOnKillBuffName)}. {Tokens.RedText("Judgement")} gives an extra hit of {Tokens.DamageValueText(specialCleaverJudgementDamageCoefficient)} and {Tokens.DamageText("bleed")} per stack. Using this move {Tokens.RedText("consumes")} your {Tokens.UtilityText("cleaver")}.");
             #endregion
 

@@ -10,7 +10,6 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 {
     public class SpecialPipeDash : SpecialDefaultDash
     {
-        public override Type finalStateType { get { return typeof(SpecialPipeFinal); } }
-        public override Type judgementStateType { get { return typeof(SpecialPipeJudgement); } }
+        public override Type grabStateType { get { return typeof(SpecialPipeGrab); } }
     }
 }

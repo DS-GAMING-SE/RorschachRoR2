@@ -46,10 +46,13 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         public override void OnEnter()
         {
             base.OnEnter();
+            StartAimMode(0.5f + duration, true);
+            characterBody.bodyFlags |= CharacterBody.BodyFlags.Unmovable;
             if (NetworkServer.active)
             {
                 characterBody.AddBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
+            
         }
 
         protected override void PlayAttackAnimation()
@@ -76,13 +79,14 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             base.Update();
             if (base.isAuthority)
             {
-                UpdateDisplacement(inputBank, characterMotor, age, duration, attackStartPercentTime, movementFadePercentTime, characterBody.moveSpeed * (!hit ? 1.5f : 1f));
+                UpdateDisplacement(inputBank, characterMotor, age, baseDuration, duration, attackStartPercentTime, movementFadePercentTime, characterBody.moveSpeed * (!hit ? 1.6f : 1f));
             }
         }
-        public static void UpdateDisplacement(InputBankTest inputBank, CharacterMotor characterMotor, float age, float duration, float fadeStartPercentTime, float fadeEndPercentTime, float speedMult)
+        // LOWER DURATION MEANS LOWER DISTANCE. FIX!!!!!!!!!!!!!!
+        public static void UpdateDisplacement(InputBankTest inputBank, CharacterMotor characterMotor, float age, float baseDuration, float duration, float fadeStartPercentTime, float fadeEndPercentTime, float speedMult)
         {
             float fadeTime = duration * (fadeEndPercentTime - fadeStartPercentTime);
-            Vector3 displacement = inputBank.aimDirection * speedMult * Time.deltaTime * Mathf.Clamp01(age * (-1 / fadeTime) + ((duration * fadeEndPercentTime) / fadeTime));
+            Vector3 displacement = inputBank.aimDirection * speedMult * (baseDuration / duration) * Time.deltaTime * Mathf.Clamp01(age * (-1 / fadeTime) + ((duration * fadeEndPercentTime) / fadeTime));
             Vector3 input = inputBank.moveVector.magnitude > 0.2f ? inputBank.moveVector.normalized : Vector3.zero;
             if (!characterMotor.isFlying)
             {
@@ -107,6 +111,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             {
                 characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
+            characterBody.bodyFlags &= ~CharacterBody.BodyFlags.Unmovable;
             base.OnExit();
         }
     }

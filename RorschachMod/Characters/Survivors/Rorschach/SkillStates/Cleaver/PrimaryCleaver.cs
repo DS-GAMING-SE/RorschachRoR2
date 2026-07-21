@@ -14,6 +14,9 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             damageCoefficient = RorschachStaticValues.primaryCleaverDamageCoefficient;
             baseDuration = 0.84f;
             hitEffectPrefab = RorschachAssets.meleeHitCleaverEffect;
+            swingEffectPrefab = RorschachAssets.cleaverSwingEffect;
+            muzzleString = "MainHurtbox";
+            scaleSwingDuration = true;
         }
     }
 }

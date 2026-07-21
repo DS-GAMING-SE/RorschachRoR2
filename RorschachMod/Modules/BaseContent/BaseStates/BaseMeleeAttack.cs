@@ -22,8 +22,12 @@ namespace RorschachMod.Modules.BaseStates
         protected Vector3 bonusForce = Vector3.zero;
         protected float baseDuration = 1f;
 
+        protected float swingStartPercentMultiplier = 0.8f;
+        protected float swingStartPercentTime;
         protected float attackStartPercentTime = 0.2f;
         protected float attackEndPercentTime = 0.4f;
+        protected float swingEndPercentMultiplier = 2f;
+        protected float swingEndPercentTime;
 
         protected float earlyExitPercentTime = 0.4f;
 
@@ -34,8 +38,10 @@ namespace RorschachMod.Modules.BaseStates
         protected string swingSoundString = "";
         protected string hitSoundString = "";
         protected string muzzleString = "SwingCenter";
+        protected bool scaleSwingDuration = false;
         protected string playbackRateParam = "Slash.playbackRate";
         protected GameObject swingEffectPrefab;
+        private EffectManagerHelper swingEffectInstance;
         protected GameObject hitEffectPrefab;
         protected NetworkSoundEventIndex impactSound = NetworkSoundEventIndex.Invalid;
         protected OverlapAttack attack;
@@ -55,6 +61,8 @@ namespace RorschachMod.Modules.BaseStates
         {
             base.OnEnter();
             Prepare();
+            swingStartPercentTime = attackStartPercentTime * swingStartPercentMultiplier;
+            swingEndPercentTime = attackEndPercentTime * swingEndPercentMultiplier;
             duration = baseDuration / attackSpeedStat;
             animator = GetModelAnimator();
             StartAimMode(0.5f + duration, false);
@@ -101,7 +109,19 @@ namespace RorschachMod.Modules.BaseStates
 
         protected virtual void PlaySwingEffect()
         {
-            //EffectManager.SimpleMuzzleFlash(swingEffectPrefab, gameObject, muzzleString, false);
+            if (!swingEffectPrefab) return;
+            if (scaleSwingDuration)
+            {
+                swingEffectInstance = EffectManager.GetAndActivatePooledEffect(swingEffectPrefab, FindModelChild(muzzleString), true);
+                if (swingEffectInstance.TryGetComponent<ScaleParticleSystemDuration>(out var scale))
+                {
+                    scale.newDuration = duration * (swingEndPercentTime - swingStartPercentTime);
+                }
+            }
+            else
+            {
+                EffectManager.SimpleMuzzleFlash(swingEffectPrefab, gameObject, muzzleString, false);
+            }
         }
 
         protected virtual void OnHitEnemyAuthority()
@@ -179,14 +199,13 @@ namespace RorschachMod.Modules.BaseStates
 
             bool fireStarted = stopwatch >= duration * attackStartPercentTime;
             bool fireEnded = stopwatch >= duration * attackEndPercentTime;
-
+            if (stopwatch >= duration * swingStartPercentTime && !hasFired)
+            {
+                EnterAttack();
+            }
             //to guarantee attack comes out if at high attack speed the stopwatch skips past the firing duration between frames
             if (fireStarted && !fireEnded || fireStarted && fireEnded && !hasFired)
             {
-                if (!hasFired)
-                {
-                    EnterAttack();
-                }
                 FireAttack();
             }
 

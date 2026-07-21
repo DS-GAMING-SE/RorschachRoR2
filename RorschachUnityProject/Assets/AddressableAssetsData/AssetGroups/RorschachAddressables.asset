@@ -257,6 +257,18 @@ MonoBehaviour:
     m_Address: Assets/RorschachAssets/RorschachBundle/VFX/Prefabs/Default/RorschachGenericSparkleEffect.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 5a48c603bbbc48640b6dc9c8a7cad9c1
+    m_Address: Assets/RorschachAssets/RorschachBundle/VFX/Prefabs/RorschachJudgementFlashEffect.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d06dd27480f9f064ab51ee765fc4de20
+    m_Address: Assets/RorschachAssets/RorschachBundle/VFX/Prefabs/Cleaver/RorschachCleaverSwingEffect.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b1e80758290eaf5478dd973a3734f867
+    m_Address: Assets/RorschachAssets/RorschachBundle/VFX/Prefabs/Pipe/RorschachPipeSwingEffect.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 80780dc7c8eea2546b3509246a72a4ca, type: 2}
   m_SchemaSet:

@@ -17,11 +17,16 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         public virtual Type judgementStateType { get { return typeof(SpecialDefaultJudgement); } }
         public float repeatedAttackDurationMultiplier = 1f;
         public const float durationMultiplierPerRepeat = 0.87f;
+        protected Transform grabTransform;
+        public HurtBox target;
+
+        private bool sparkled;
         protected override void Prepare()
         {
             hitboxGroupName = "SwordGroup";
 
             damageType = DamageTypeCombo.GenericSpecial;
+            damageType |= DamageType.Stun1s;
             damageType.AddModdedDamageType(RorschachDamageTypes.specialOnKillBuff);
             damageType.AddJudgementStacks(judgementStacks);
             damageCoefficient = RorschachStaticValues.specialJudgementDamageCoefficient;
@@ -38,7 +43,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             //this is the point at which the attack can be interrupted by itself, continuing a combo
             earlyExitPercentTime = 1f;
 
-            hitStopDuration = 0.03f;
+            hitStopDuration = 0.05f;
             attackRecoil = 0.5f;
             hitHopVelocity = 4f;
 
@@ -46,7 +51,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             hitSoundString = "";
             muzzleString = "SwingLeft";
             playbackRateParam = "Slash.playbackRate";
-            swingEffectPrefab = RorschachAssets.swordSwingEffect;
+            //swingEffectPrefab = RorschachAssets.swordSwingEffect;
             hitEffectPrefab = RorschachAssets.meleeHitEffect;
 
             impactSound = RorschachAssets.swordHitSoundEvent.index;
@@ -57,6 +62,13 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         public override void OnEnter()
         {
             base.OnEnter();
+            grabTransform = FindModelChild("SpecialGrabTransform");
+            characterBody.bodyFlags |= CharacterBody.BodyFlags.Unmovable;
+            EffectManager.SpawnEffect(RorschachAssets.judgementConsumeEffect, new EffectData
+            {
+                origin = characterBody.corePosition,
+                color = new Color(1f, 0f, 0.05f)
+            }, false);
             if (NetworkServer.active)
             {
                 characterBody.AddBuff(RoR2Content.Buffs.SmallArmorBoost);
@@ -67,6 +79,23 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         public override void FixedUpdate()
         {
             base.FixedUpdate();
+            if (stopwatch >= duration * attackStartPercentTime * 0.5f && !sparkled)
+            {
+                sparkled = true;
+                ChildLocator child = GetModelChildLocator();
+                int index = child.FindChildIndex("SpecialJudgementSparkleTransform");
+                EffectData effectData = new EffectData
+                {
+                    origin = child.FindChild(index).position,
+                    color = new Color(1f, 0f, 0.05f)
+                };
+                effectData.SetChildLocatorTransformReference(gameObject, index);
+                EffectManager.SpawnEffect(RorschachAssets.genericSparkleEffect, effectData, false);
+            }
+            if (grabTransform)
+            {
+                SpecialDefaultGrab.Grab(grabTransform.position, target);
+            }
             if (stopwatch >= duration && isAuthority)
             {
                 if (characterBody.HasBuff(RorschachBuffs.judgementBuff))
@@ -74,13 +103,14 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
                     SpecialDefaultJudgement judgementState = (SpecialDefaultJudgement)EntityStateCatalog.InstantiateState(judgementStateType);
                     judgementState.judgementStacks = judgementStacks;
                     judgementState.repeatedAttackDurationMultiplier = repeatedAttackDurationMultiplier * durationMultiplierPerRepeat;
+                    judgementState.target = target;
                     this.outer.SetNextState(judgementState);
                 }
                 else
                 {
                     SpecialDefaultFinal finalState = (SpecialDefaultFinal)EntityStateCatalog.InstantiateState(finalStateType);
                     finalState.judgementStacks = judgementStacks;
-                    this.outer.SetNextState(EntityStateCatalog.InstantiateState(finalStateType));
+                    this.outer.SetNextState(finalState);
                 }
             }
         }
@@ -109,6 +139,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             {
                 characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
+            characterBody.bodyFlags &= ~CharacterBody.BodyFlags.Unmovable;
             base.OnExit();
         }
 
@@ -117,12 +148,14 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             base.OnSerialize(writer);
             writer.Write(repeatedAttackDurationMultiplier);
             writer.WritePackedIndex32(judgementStacks);
+            writer.Write(HurtBoxReference.FromHurtBox(target));
         }
         public override void OnDeserialize(NetworkReader reader)
         {
             base.OnDeserialize(reader);
             repeatedAttackDurationMultiplier = reader.ReadSingle();
             judgementStacks = reader.ReadPackedIndex32();
+            target = reader.ReadHurtBoxReference().ResolveHurtBox();
         }
         public override InterruptPriority GetMinimumInterruptPriority()
         {
