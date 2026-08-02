@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using static RorschachMod.Characters.Survivors.Rorschach.RorschachDamageTypes;
 using R2API;
+using UnityEngine.Networking;
 
 namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates.FlameCan
 {
@@ -21,7 +22,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates.FlameCan
             endpointVisualizerPrefab = Addressables.LoadAssetAsync<GameObject>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Huntress.HuntressArrowRainIndicator_prefab).WaitForCompletion();
             damageCoefficient = RorschachStaticValues.specialFlameCanDamageCoefficient;
             setFuse = false;
-            baseMinimumDuration = 0.8f;
+            baseMinimumDuration = 0.55f;
             maxDistance = 40f;
             rayRadius = 0.3f;
             base.OnEnter();
@@ -41,8 +42,11 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates.FlameCan
         public override void OnExit()
         {
             base.OnExit();
-            characterBody.inventory.RemoveItemTemp(ImprovisedWeaponItemDefs.flameCan.itemIndex);
-            characterBody.SetBuffCount(RorschachBuffs.judgementBuff.buffIndex, 0);
+            if (NetworkServer.active)
+            {
+                characterBody.inventory.RemoveItemTemp(ImprovisedWeaponItemDefs.flameCan.itemIndex);
+                characterBody.SetBuffCount(RorschachBuffs.judgementBuff.buffIndex, 0);
+            }
         }
     }
 }

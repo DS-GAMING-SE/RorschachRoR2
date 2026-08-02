@@ -8,7 +8,6 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 {
     public class SecondaryDefaultDash : BaseMeleeAttack
     {
-        private bool hit;
         public virtual Type chargeStateType { get { return typeof(SecondaryDefaultCharge); } }
         protected float movementFadePercentTime = 0.8f;
 
@@ -82,7 +81,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
                 UpdateDisplacement(inputBank, characterMotor, age, baseDuration, duration, attackStartPercentTime, movementFadePercentTime, characterBody.moveSpeed * (!hit ? 1.6f : 1f));
             }
         }
-        // LOWER DURATION MEANS LOWER DISTANCE. FIX!!!!!!!!!!!!!!
+
         public static void UpdateDisplacement(InputBankTest inputBank, CharacterMotor characterMotor, float age, float baseDuration, float duration, float fadeStartPercentTime, float fadeEndPercentTime, float speedMult)
         {
             float fadeTime = duration * (fadeEndPercentTime - fadeStartPercentTime);
@@ -97,12 +96,6 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             if (characterMotor.isGrounded) displacement.y = 0;
             characterMotor.AddDisplacement(displacement);
             characterMotor.velocity.y = Mathf.Max(-1f, characterMotor.velocity.y);
-        }
-
-        protected override void OnHitEnemyAuthority()
-        {
-            base.OnHitEnemyAuthority();
-            hit = true;
         }
 
         public override void OnExit()

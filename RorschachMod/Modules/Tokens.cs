@@ -27,6 +27,10 @@ namespace RorschachMod.Modules
         {
             return $"<style=cIsHealth>{text}</style>";
         }
+        public static string HealingText(string text)
+        {
+            return $"<style=cIsHealing>{text}</style>";
+        }
         public static string KeywordText(string keyword, string sub)
         {
             return $"<style=cKeywordName>{keyword}</style><style=cSub>{sub}</style>";

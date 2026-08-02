@@ -6,6 +6,7 @@ using RoR2;
 
 namespace RorschachMod.Characters.Survivors.Rorschach.Components
 {
+    [RequireComponent(typeof(EffectManagerHelper))]
     internal class SpawnInkDecal : MonoBehaviour
     {
         private EffectManagerHelper emh;
@@ -14,7 +15,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.Components
         private void Awake()
         {
             emh = GetComponent<EffectManagerHelper>();
-            emh.OnEffectActivated += SpawnDecal;
+            if (emh) emh.OnEffectActivated += SpawnDecal;
         }
 
         private void SpawnDecal()

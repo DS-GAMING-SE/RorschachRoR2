@@ -49,11 +49,11 @@ namespace RorschachMod.Modules
 
             #region DefaultSkin
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.defaultSkinMaterial).Completed += x =>
-            { x.Result.SetHopooMaterial().SetSpecular(0.15f, 2.5f).SpecularIgnoreAlpha(); };
+            { x.Result.SetHopooMaterial().SetSpecular(0.00f, 5f).SpecularIgnoreAlpha(); };
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.defaultAltSkinMaterial).Completed += x =>
-            { x.Result.SetHopooMaterial().SetSpecular(0.15f, 2.5f).SpecularIgnoreAlpha(); };
+            { x.Result.SetHopooMaterial().SetSpecular(0.08f, 5f).SpecularIgnoreAlpha(); };
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.defaultSkinArmMaterial).Completed += x =>
-            { x.Result.SetHopooMaterial().SetSpecular(0.4f, 1.5f).SpecularIgnoreAlpha(); };
+            { x.Result.SetHopooMaterial().SetSpecular(0.4f, 3f).SpecularIgnoreAlpha(); };
 
             SkinDefParams defaultSkinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
             defaultSkinDefParams.rendererInfos = ArrayUtils.Clone(defaultRendererinfos);
@@ -92,9 +92,9 @@ namespace RorschachMod.Modules
 
             #region MasterySkin
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.classicSkinMaterial).Completed += x =>
-            { x.Result.SetHopooMaterial().SetSpecular(0.15f, 2.5f).SpecularIgnoreAlpha(); };
+            { x.Result.SetHopooMaterial().SetSpecular(0.1f, 4f).SpecularIgnoreAlpha(); };
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.classicAltSkinMaterial).Completed += x =>
-            { x.Result.SetHopooMaterial().SetSpecular(0.15f, 2.5f).SpecularIgnoreAlpha(); };
+            { x.Result.SetHopooMaterial().SetSpecular(0.1f, 4f).SpecularIgnoreAlpha(); };
 
             SkinDefParams masterySkinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
             masterySkinDefParams.rendererInfos = ArrayUtils.Clone(defaultRendererinfos);
@@ -137,7 +137,12 @@ namespace RorschachMod.Modules
 
             #region FutureSkin
             AssetAsyncReferenceManager<Material>.LoadAsset(RorschachAssets.futureSkinMaterial).Completed += x =>
-            { x.Result.SetHopooMaterial().SetSpecular(0.15f, 2.5f).SpecularIgnoreAlpha().SetEmission(0.5f); };
+            { x.Result.SetHopooMaterial().SetSpecular(0.15f, 4f).SpecularIgnoreAlpha().SetEmission(0.2f);
+                AssetAsyncReferenceManager<Texture>.LoadAsset(RorschachAssets.futureSkinFresnelMask).Completed += y =>
+                {
+                    x.Result.FresnelEmission(AssetAsyncReferenceManager<Texture>.LoadAsset(new AssetReferenceT<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_ColorRamps.texRampHuntressSoft_png)).WaitForCompletion(), y.Result, 1.5f, 5f);
+                };
+            };
 
             SkinDefParams futureSkinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
             futureSkinDefParams.rendererInfos = ArrayUtils.Clone(defaultRendererinfos);

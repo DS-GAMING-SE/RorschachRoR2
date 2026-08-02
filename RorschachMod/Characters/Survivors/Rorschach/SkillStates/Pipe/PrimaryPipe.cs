@@ -17,6 +17,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             hitStopDuration *= 1.7f;
             swingEffectPrefab = RorschachAssets.pipeSwingEffect;
             muzzleString = "MainHurtbox";
+            hitboxGroupName = "PipeGroup";
             scaleSwingDuration = true;
         }
     }

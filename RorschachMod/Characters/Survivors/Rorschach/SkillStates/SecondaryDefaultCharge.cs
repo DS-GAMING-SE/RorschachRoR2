@@ -76,7 +76,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
                 characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
             characterBody.bodyFlags &= ~CharacterBody.BodyFlags.Unmovable;
-            chargeEffect.ReturnToPool();
+            if (chargeEffect) chargeEffect.ReturnToPool();
             PlayAnimation("FullBody, Override", "BufferEmpty");
             base.OnExit();
         }

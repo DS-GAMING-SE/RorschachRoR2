@@ -10,6 +10,7 @@ using R2API;
 using RorschachMod.Characters.Survivors.Rorschach.SkillStates;
 using RorschachMod.Characters.Survivors.Rorschach.Components;
 using ThreeEyedGames;
+using UnityEngine.Rendering.PostProcessing;
 
 namespace RorschachMod.Characters.Survivors.Rorschach
 {
@@ -51,6 +52,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public static GameObject meleeHitDirectionalEffect;
 
         public static GameObject judgementConsumeEffect;
+        public static GameObject specialDefaultHitEffect;
+        public static GameObject specialPostProcessVolumeEffect;
 
         public static GameObject bombExplosionEffect;
 
@@ -67,7 +70,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 
         public static AssetReferenceT<RuntimeAnimatorController> animator = new AssetReferenceT<RuntimeAnimatorController>("3952c852b06ed0b44a71c936e0236a86");
         public static AssetReferenceT<RuntimeAnimatorController> displayAnimator = new AssetReferenceT<RuntimeAnimatorController>("6af916c388c16a24ea7cda778e419f43");
-        public static AssetReferenceT<Avatar> animatorAvatar = new AssetReferenceT<Avatar>("3f55d8352b2212743b809db2974cdd5e"); // commented out of where its used
+        public static AssetReferenceT<Avatar> animatorAvatar = new AssetReferenceT<Avatar>("2d566176183833f4b957b8bbb155dfda");
         #region Icons
         public static AssetReferenceTexture characterIcon = new AssetReferenceTexture("33c89ac909113894280a0cfd14c99f2e");
 
@@ -85,7 +88,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public static AssetReferenceSprite utilitySkillIcon = new AssetReferenceSprite("575453e0e8deed8488330e8cd804dbab");
 
         public static AssetReferenceSprite specialSkillIcon = new AssetReferenceSprite("0f8fafa204cb2764ea1a9555ae161057");
-        public static AssetReferenceSprite specialFlameCanSkillIcon = new AssetReferenceSprite("6f0e7dc80d946bd489940eccc8c92f5b");
+        public static AssetReferenceSprite specialFlameCanSkillIcon = new AssetReferenceSprite("70e9a6ae682aede469c23ec9b79a181d");
         public static AssetReferenceSprite specialPipeSkillIcon = new AssetReferenceSprite("1872c188be0e7fd4397142cd14cc8863");
         public static AssetReferenceSprite specialCleaverSkillIcon = new AssetReferenceSprite("d79f886258b3bb74a90bd0d43ee60854");
         #endregion
@@ -107,6 +110,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         #endregion
         #region Future Skin
         public static AssetReferenceT<Material> futureSkinMaterial = new AssetReferenceT<Material>("b0f8af76c50b18d44a0102da35b23dc3");
+        public static AssetReferenceT<Texture> futureSkinFresnelMask = new AssetReferenceT<Texture>("4e5d8ec185ae8674caa695c73cf3c4f7");
         public static AssetReferenceT<Mesh> futureSkinMesh = new AssetReferenceT<Mesh>("7ec157145d7a694428a80d11e7f9dde2");
         public static AssetReferenceSprite futureSkinIcon = new AssetReferenceSprite("b6f91ba019353654992c4a536e207a87");
         #endregion
@@ -152,6 +156,9 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public static AssetReferenceT<GameObject> meleeHitDirectional = new AssetReferenceT<GameObject>("974a977cf126bc14084058dfe44b53c6");
 
         public static AssetReferenceT<GameObject> judgementConsume = new AssetReferenceT<GameObject>("5a48c603bbbc48640b6dc9c8a7cad9c1");
+        public static AssetReferenceT<GameObject> specialDefaultHit = new AssetReferenceT<GameObject>("5f33ae1c57392d74489392a73d2cb6c3");
+        public static AssetReferenceT<GameObject> specialPostProcessVolume = new AssetReferenceT<GameObject>("1cde781a8e6fd40488dd4ae7e68514f5");
+        public static AssetReferenceT<PostProcessProfile> specialPostProcessProfile = new AssetReferenceT<PostProcessProfile>("ebbf7b50b1bef5a4499c9746a4d69515");
         #endregion
         #endregion
 
@@ -184,6 +191,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             inkDecalEffect.applyScale = true;
 
             Mesh donut2 = AssetAsyncReferenceManager<Mesh>.LoadAsset(new AssetReferenceT<Mesh>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.mdlVFXDonut2_fbx_donut2Mesh_)).WaitForCompletion();
+            Mesh donut5 = AssetAsyncReferenceManager<Mesh>.LoadAsset(new AssetReferenceT<Mesh>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.mdlVFXDonut5_fbx_donut5Mesh_)).WaitForCompletion();
 
             ink = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC3_Tanker.matTankerGreasePuddleStreaks_mat)).WaitForCompletion();
             inkDot = new Material(AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matBloodClaySingle_mat)).WaitForCompletion()).Inkify();
@@ -218,8 +226,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             judgementFlash.SetFloat("_InvFade", 2f);
             judgementFlash.SetFloat("_DepthOffset", -2f);
             judgementFlash.SetFloat("_Boost", 5f);
-            judgementFlash.SetFloat("_AlphaBoost", 1f);
-            judgementFlash.SetFloat("_AlphaBias", 0.23f);
+            judgementFlash.SetFloat("_AlphaBoost", 1.5f);
+            judgementFlash.SetFloat("_AlphaBias", 0f);
             judgementFlash.SetTexture("_MainTex", AssetAsyncReferenceManager<Texture>.LoadAsset(new AssetReferenceT<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.texOmniExplosion2Mask_png)).WaitForCompletion());
             judgementFlash.SetTexture("_RemapTex", AssetAsyncReferenceManager<Texture>.LoadAsset(new AssetReferenceT<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_ColorRamps.texRampDefault_png)).WaitForCompletion());
             judgementFlash.SetTexture("_Cloud1Tex", AssetAsyncReferenceManager<Texture>.LoadAsset(new AssetReferenceT<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_DLC3_Drone_Tech.texNanoScanLines_png)).WaitForCompletion());
@@ -401,6 +409,46 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 var color = judgementConsumeEffect.AddComponent<ParticleSystemColorFromEffectData>();
                 color.particleSystems = new ParticleSystem[] { judgementConsumeEffect.transform.GetChild(0).GetComponent<ParticleSystem>(), judgementConsumeEffect.transform.GetChild(1).GetComponent<ParticleSystem>(), judgementConsumeEffect.transform.GetChild(2).GetComponent<ParticleSystem>() };
                 color.effectComponent = effect;
+            };
+            RorschachAssets.specialDefaultHit.LoadAssetAsync().Completed += x =>
+            {
+                specialDefaultHitEffect = Asset.CreateEffect(x.Result, 1f, true, "", out var vfx, out var effect);
+                specialDefaultHitEffect.AddComponent<SpawnInkDecal>().scale = 8f;
+                vfx.vfxIntensity = VFXAttributes.VFXIntensity.Medium;
+                effect.applyScale = true;
+                var particleColor = specialDefaultHitEffect.AddComponent<ParticleSystemColorFromEffectData>();
+                particleColor.particleSystems = new ParticleSystem[] { specialDefaultHitEffect.transform.GetChild(0).GetComponent<ParticleSystem>(), specialDefaultHitEffect.transform.GetChild(5).GetComponent<ParticleSystem>() };
+                particleColor.effectComponent = effect;
+                specialDefaultHitEffect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().sharedMaterial = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matOmniHitspark2Generic_mat)).WaitForCompletion();
+                specialDefaultHitEffect.transform.GetChild(1).GetComponent<ParticleSystemRenderer>().sharedMaterial = cleaverCut;
+                specialDefaultHitEffect.transform.GetChild(2).GetComponent<ParticleSystemRenderer>().sharedMaterial = cleaverCut;
+                var inkDonut5 = specialDefaultHitEffect.transform.GetChild(3).GetComponent<ParticleSystemRenderer>();
+                inkDonut5.mesh = donut5;
+                inkDonut5.sharedMaterial = inkTrail;
+                specialDefaultHitEffect.transform.GetChild(4).GetComponent<ParticleSystemRenderer>().sharedMaterial = ink;
+                specialDefaultHitEffect.transform.GetChild(5).GetComponent<ParticleSystemRenderer>().sharedMaterial = AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matOmniHitspark3Generic_mat)).WaitForCompletion();
+                specialDefaultHitEffect.transform.GetChild(6).GetComponent<ParticleSystemRenderer>().sharedMaterial = whiteInkSplat;
+                specialDefaultHitEffect.transform.GetChild(7).GetComponent<ParticleSystemRenderer>().sharedMaterial = ink;
+            };
+            RorschachAssets.specialPostProcessVolume.LoadAssetAsync().Completed += x =>
+            {
+                specialPostProcessVolumeEffect = Asset.CreateEffect(x.Result, -1f, true, "", out var vfx, out var effect);
+                var postProcessController = specialPostProcessVolumeEffect.AddComponent<RorschachSpecialPostProcessController>();
+                postProcessController.localCameraEffect = specialPostProcessVolumeEffect.AddComponent<LocalCameraEffect>();
+                postProcessController.localCameraEffect.effectRoot = specialPostProcessVolumeEffect.transform.GetChild(0).gameObject;
+                postProcessController.ppVolume = specialPostProcessVolumeEffect.transform.GetChild(0).GetComponent<PostProcessVolume>();
+            };
+            RorschachAssets.specialPostProcessProfile.LoadAssetAsync().Completed += x =>
+            {
+                RampFog rampFogSettings = ScriptableObject.CreateInstance<RampFog>();
+                rampFogSettings.enabled.Override(true);
+                rampFogSettings.skyboxStrength.Override(0f);
+                rampFogSettings.fogIntensity.Override(0.7f);
+                rampFogSettings.fogColorStart.Override(new Color(0.75f, 0.75f, 0.75f, 0f));
+                rampFogSettings.fogColorMid.Override(new Color(1f, 1f, 1f, 0.4f));
+                rampFogSettings.fogColorEnd.Override(Color.white);
+                rampFogSettings.fogZero.Override(0.2f);
+                x.Result.AddSettings(rampFogSettings);
             };
         }
 

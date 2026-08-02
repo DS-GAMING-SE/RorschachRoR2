@@ -138,6 +138,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         {
             //example of how to create a HitBoxGroup. see summary for more details
             Prefabs.SetupHitBoxGroup(characterModelObject, "SwordGroup", "MeleeHitbox");
+            Prefabs.SetupHitBoxGroup(characterModelObject, "PipeGroup", "PipeHitbox");
         }
 
         public override void InitializeEntityStateMachines() 
@@ -492,9 +493,9 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             ModelSkinController skinController = prefabCharacterModel.gameObject.AddComponent<ModelSkinController>();
             ModelSkinController skinController2 = displayPrefab.gameObject.AddComponent<ModelSkinController>();
             skinController._animatorControllerAddress = RorschachAssets.animator;
-            //skinController._avatarAddress = RorschachAssets.animatorAvatar;
+            skinController._avatarAddress = RorschachAssets.animatorAvatar;
             skinController2._animatorControllerAddress = RorschachAssets.displayAnimator;
-            //skinController2._avatarAddress = RorschachAssets.animatorAvatar;
+            skinController2._avatarAddress = RorschachAssets.animatorAvatar;
 
             skinController.skins = Skins.InitializeSkins(prefabCharacterModel, prefabCharacterModel.baseRendererInfos);
             skinController2.skins = ArrayUtils.Clone(skinController.skins);

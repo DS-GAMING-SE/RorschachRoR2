@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Rendering.PostProcessing;
 
 namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 {
@@ -20,6 +21,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         private const float pullRadius = 5.5f;
         private const float pullWeakenRadius = 0.7f;
 
+        public Components.RorschachSpecialPostProcessController postProcess;
+
         public override void OnEnter()
         {
             base.OnEnter();
@@ -32,6 +35,11 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
                 {
                     stun.SetStun(baseMaxDuration * 1.5f);
                 }
+            }
+            if (isAuthority)
+            {
+                postProcess = Components.RorschachSpecialPostProcessController.GetPooledPostProcessVolume(characterBody);
+                postProcess.LerpToWeight(RorschachStaticValues.specialPostProcessWeightStart + RorschachStaticValues.specialPostProcessWeightPerAction, maxDuration);
             }
             PlayAttackAnimation();
         }
@@ -47,20 +55,27 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             {
                 Grab(grabTransform.position, target);
             }
-            if (fixedAge > maxDuration)
+            if (fixedAge > maxDuration && isAuthority)
             {
                 if (characterBody.HasBuff(RorschachBuffs.judgementBuff))
                 {
                     SpecialDefaultJudgement judgementState = (SpecialDefaultJudgement)EntityStateCatalog.InstantiateState(judgementStateType);
                     judgementState.judgementStacks = characterBody.GetBuffCount(RorschachBuffs.judgementBuff);
                     judgementState.target = target;
+                    judgementState.postProcess = postProcess;
                     this.outer.SetNextState(judgementState);
                     return;
                 }
                 SpecialDefaultFinal finalState = (SpecialDefaultFinal)EntityStateCatalog.InstantiateState(finalStateType);
                 finalState.judgementStacks = 0;
+                finalState.postProcess = postProcess;
                 this.outer.SetNextState(finalState);
             }
+        }
+        public override void OnExit()
+        {
+            if (postProcess) postProcess.BeginFade();
+            base.OnExit();
         }
         public static void Grab(Vector3 grabPosition, HurtBox target)
         {

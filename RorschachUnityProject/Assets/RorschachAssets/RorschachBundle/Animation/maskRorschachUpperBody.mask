@@ -1,0 +1,1501 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: maskRorschachUpperBody
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: MainHurtbox
+    m_Weight: 0
+  - m_Path: MeleeHitbox
+    m_Weight: 0
+  - m_Path: MeleeHitbox/Cube
+    m_Weight: 0
+  - m_Path: char_grp
+    m_Weight: 0
+  - m_Path: char_grp/rig
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_arms_pole.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_arms_pole.l/c_arms_pole.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_arms_pole.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_arms_pole.r/c_arms_pole.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_foot_ik.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/c_p_foot_ik.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/c_p_foot_ik.l/c_p_foot_ik.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_bank_01.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_bank_01.l/foot_bank_02.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_bank_01.l/foot_bank_02.l/foot_heel.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_bank_01.l/foot_bank_02.l/foot_heel.l/toes_end.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_bank_01.l/foot_bank_02.l/foot_heel.l/toes_end.l/c_foot_01.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_bank_01.l/foot_bank_02.l/foot_heel.l/toes_end.l/c_foot_01.l/foot_01_pole.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_bank_01.l/foot_bank_02.l/foot_heel.l/toes_end.l/c_foot_01.l/foot_01_pole.l/foot_01_pole.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_bank_01.l/foot_bank_02.l/foot_heel.l/toes_end.l/c_foot_01.l/foot_ik_target.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_bank_01.l/foot_bank_02.l/foot_heel.l/toes_end.l/c_foot_01.l/foot_ik_target.l/foot_ik_target.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_bank_01.l/foot_bank_02.l/foot_heel.l/toes_end.l/c_toes_ik.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_bank_01.l/foot_bank_02.l/foot_heel.l/toes_end.l/c_toes_ik.l/c_toes_ik.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_bank_01.l/foot_bank_02.l/foot_heel.l/toes_end.l/toes_end_01.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_bank_01.l/foot_bank_02.l/foot_heel.l/toes_end.l/toes_end_01.l/toes_end_01.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_ik.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_ik.l/foot_snap_fk.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_ik.l/foot_snap_fk.l/foot_snap_fk.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_ik.l/toes_track.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_ik.l/toes_track.l/toes_01_ik.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_ik.l/toes_track.l/toes_01_ik.l/toes_02.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_ik.l/toes_track.l/toes_01_ik.l/toes_02.l/toes_02.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_roll.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_roll.l/c_foot_roll_cursor.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.l/foot_roll.l/c_foot_roll_cursor.l/c_foot_roll_cursor.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/c_p_foot_ik.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/c_p_foot_ik.r/c_p_foot_ik.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_bank_01.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_bank_01.r/foot_bank_02.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_bank_01.r/foot_bank_02.r/foot_heel.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_bank_01.r/foot_bank_02.r/foot_heel.r/toes_end.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_bank_01.r/foot_bank_02.r/foot_heel.r/toes_end.r/c_foot_01.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_bank_01.r/foot_bank_02.r/foot_heel.r/toes_end.r/c_foot_01.r/foot_01_pole.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_bank_01.r/foot_bank_02.r/foot_heel.r/toes_end.r/c_foot_01.r/foot_01_pole.r/foot_01_pole.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_bank_01.r/foot_bank_02.r/foot_heel.r/toes_end.r/c_foot_01.r/foot_ik_target.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_bank_01.r/foot_bank_02.r/foot_heel.r/toes_end.r/c_foot_01.r/foot_ik_target.r/foot_ik_target.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_bank_01.r/foot_bank_02.r/foot_heel.r/toes_end.r/c_toes_ik.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_bank_01.r/foot_bank_02.r/foot_heel.r/toes_end.r/c_toes_ik.r/c_toes_ik.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_bank_01.r/foot_bank_02.r/foot_heel.r/toes_end.r/toes_end_01.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_bank_01.r/foot_bank_02.r/foot_heel.r/toes_end.r/toes_end_01.r/toes_end_01.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_ik.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_ik.r/foot_snap_fk.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_ik.r/foot_snap_fk.r/foot_snap_fk.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_ik.r/toes_track.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_ik.r/toes_track.r/toes_01_ik.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_ik.r/toes_track.r/toes_01_ik.r/toes_02.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_ik.r/toes_track.r/toes_01_ik.r/toes_02.r/toes_02.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_roll.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_roll.r/c_foot_roll_cursor.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_foot_ik.r/foot_roll.r/c_foot_roll_cursor.r/c_foot_roll_cursor.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_hand_ik.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_hand_ik.l/c_hand_ik.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_hand_ik.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_hand_ik.r/c_hand_ik.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_leg_pole.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_leg_pole.l/c_leg_pole.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_leg_pole.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_leg_pole.r/c_leg_pole.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Bat
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Bat/Bat.003
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Bat/Bat.003/Bat.002
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Bat/Bat.003/Bat.002/Bat.004
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Bat/Bat.003/Bat.002/Bat.004/Bat.004_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Bat/Bat.003/Bat.002/Smear_Bat.001
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Bat/Bat.003/Bat.002/Smear_Bat.001/Smear_Bat.001_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Bat/Bat.003/Bat.002/Smear_Bat.L
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Bat/Bat.003/Bat.002/Smear_Bat.L/Smear_Bat.L_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Bat/Bat.003/Bat.002/Smear_Bat.L.001
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Bat/Bat.003/Bat.002/Smear_Bat.L.001/Smear_Bat.L.001_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Bat/Bat.003/Bat.002/Smear_Bat.R
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Bat/Bat.003/Bat.002/Smear_Bat.R/Smear_Bat.R_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Book_Body
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Book_Body/Book_Page
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Book_Body/Book_Page/Book_Page_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Book_Body/Book_Pen
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Book_Body/Book_Pen/Book_Pen_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_stretch_arm_pin.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_stretch_arm_pin.l/c_stretch_arm_pin.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_stretch_arm_pin.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_stretch_arm_pin.r/c_stretch_arm_pin.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_stretch_leg_pin.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_stretch_leg_pin.l/c_stretch_leg_pin.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_stretch_leg_pin.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_stretch_leg_pin.r/c_stretch_leg_pin.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/arm_stretch.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/arm_stretch.l/arm_stretch.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/arm_stretch.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/arm_stretch.r/arm_stretch.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_p_root_master.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_p_root_master.x/c_p_root_master.x_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_01_dt.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_01_dt.l/c_kilt_01_01.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_01_dt.l/c_kilt_01_01.l/c_kilt_01_02.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_01_dt.l/c_kilt_01_01.l/c_kilt_01_02.l/c_kilt_01_02.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_01_dt.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_01_dt.r/c_kilt_01_01.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_01_dt.r/c_kilt_01_01.r/c_kilt_01_02.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_01_dt.r/c_kilt_01_01.r/c_kilt_01_02.r/c_kilt_01_02.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_01_tar.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_01_tar.l/kilt_01_tar.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_01_tar.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_01_tar.r/kilt_01_tar.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_02_dt.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_02_dt.l/c_kilt_02_01.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_02_dt.l/c_kilt_02_01.l/c_kilt_02_02.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_02_dt.l/c_kilt_02_01.l/c_kilt_02_02.l/c_kilt_02_02.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_02_dt.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_02_dt.r/c_kilt_02_01.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_02_dt.r/c_kilt_02_01.r/c_kilt_02_02.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_02_dt.r/c_kilt_02_01.r/c_kilt_02_02.r/c_kilt_02_02.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_02_tar.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_02_tar.l/kilt_02_tar.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_02_tar.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_02_tar.r/kilt_02_tar.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_03_dt.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_03_dt.l/c_kilt_03_01.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_03_dt.l/c_kilt_03_01.l/c_kilt_03_02.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_03_dt.l/c_kilt_03_01.l/c_kilt_03_02.l/c_kilt_03_02.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_03_dt.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_03_dt.r/c_kilt_03_01.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_03_dt.r/c_kilt_03_01.r/c_kilt_03_02.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_03_dt.r/c_kilt_03_01.r/c_kilt_03_02.r/c_kilt_03_02.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_03_tar.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_03_tar.l/kilt_03_tar.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_03_tar.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_03_tar.r/kilt_03_tar.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_04_dt.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_04_dt.l/c_kilt_04_01.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_04_dt.l/c_kilt_04_01.l/c_kilt_04_02.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_04_dt.l/c_kilt_04_01.l/c_kilt_04_02.l/c_kilt_04_02.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_04_dt.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_04_dt.r/c_kilt_04_01.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_04_dt.r/c_kilt_04_01.r/c_kilt_04_02.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_04_dt.r/c_kilt_04_01.r/c_kilt_04_02.r/c_kilt_04_02.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_04_tar.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_04_tar.l/kilt_04_tar.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_04_tar.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_04_tar.r/kilt_04_tar.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_05_dt.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_05_dt.l/c_kilt_05_01.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_05_dt.l/c_kilt_05_01.l/c_kilt_05_02.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_05_dt.l/c_kilt_05_01.l/c_kilt_05_02.l/c_kilt_05_02.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_05_dt.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_05_dt.r/c_kilt_05_01.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_05_dt.r/c_kilt_05_01.r/c_kilt_05_02.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_05_dt.r/c_kilt_05_01.r/c_kilt_05_02.r/c_kilt_05_02.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_05_tar.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_05_tar.l/kilt_05_tar.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_05_tar.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_05_tar.r/kilt_05_tar.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_06_dt.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_06_dt.l/c_kilt_06_01.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_06_dt.l/c_kilt_06_01.l/c_kilt_06_02.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_06_dt.l/c_kilt_06_01.l/c_kilt_06_02.l/c_kilt_06_02.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_06_dt.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_06_dt.r/c_kilt_06_01.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_06_dt.r/c_kilt_06_01.r/c_kilt_06_02.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_06_dt.r/c_kilt_06_01.r/c_kilt_06_02.r/c_kilt_06_02.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_06_tar.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_06_tar.l/kilt_06_tar.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_06_tar.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/kilt_06_tar.r/kilt_06_tar.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg0_proj.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg0_proj.x/leg0_proj.x_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg1_proj.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg1_proj.x/leg1_proj.x_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_01.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_01.l/leg_proj_rot_01.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_01.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_01.r/leg_proj_rot_01.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_02.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_02.l/leg_proj_rot_02.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_02.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_02.r/leg_proj_rot_02.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_03.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_03.l/leg_proj_rot_03.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_03.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_03.r/leg_proj_rot_03.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_04.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_04.l/leg_proj_rot_04.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_04.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_04.r/leg_proj_rot_04.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_05.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_05.l/leg_proj_rot_05.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_05.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_05.r/leg_proj_rot_05.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_06.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_06.l/leg_proj_rot_06.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_06.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_kilt_master.x/leg_proj_rot_06.r/leg_proj_rot_06.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_p_root.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_p_root.x/c_p_root.x_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_p_spine_00.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_p_spine_00.x/c_p_spine_00.x_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_root_bend.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_root_bend.x/c_root_bend.x_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/foot_fk_scale_fix.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/foot_fk_scale_fix.l/c_foot_fk.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/foot_fk_scale_fix.l/c_foot_fk.l/c_p_foot_fk.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/foot_fk_scale_fix.l/c_foot_fk.l/c_p_foot_fk.l/c_p_foot_fk.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/foot_fk_scale_fix.l/c_foot_fk.l/foot_fk.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/foot_fk_scale_fix.l/c_foot_fk.l/foot_fk.l/c_toes_fk.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/foot_fk_scale_fix.l/c_foot_fk.l/foot_fk.l/c_toes_fk.l/c_toes_fk.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk.l/foot.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk.l/foot.l/foot_pole.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk.l/foot.l/foot_pole.l/foot_pole.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk.l/foot.l/Smear_Feet.001.L.002
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk.l/foot.l/Smear_Feet.001.L.002/Smear_Feet.001.L.002_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk.l/foot.l/Smear_Feet.001.L.003
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk.l/foot.l/Smear_Feet.001.L.003/Smear_Feet.001.L.003_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk.l/foot.l/Smear_Feet.001.L.004
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk.l/foot.l/Smear_Feet.001.L.004/Smear_Feet.001.L.004_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk.l/foot.l/Smear_Feet.001.L.005
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk.l/foot.l/Smear_Feet.001.L.005/Smear_Feet.001.L.005_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk.l/foot.l/toes_01.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk.l/foot.l/toes_01.l/toes_01.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk_pre_pole.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk_pre_pole.l/leg_fk_pole.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/c_leg_fk.l/leg_fk_pre_pole.l/leg_fk_pole.l/leg_fk_pole.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/thigh_fk.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_fk.l/thigh_fk.l/thigh_fk.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_ik.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/c_thigh_ik.l/c_thigh_ik.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/thigh.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/thigh.l/c_stretch_leg.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/thigh.l/c_stretch_leg.l/leg_pole_line.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/thigh.l/c_stretch_leg.l/leg_pole_line.l/leg_pole_line.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/thigh.l/leg.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/thigh.l/leg.l/leg.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/thigh_ik.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/thigh_ik.l/leg_ik.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/thigh_ik.l/leg_ik.l/leg_ik.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/thigh_ik_nostr.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/thigh_ik_nostr.l/leg_ik_nostr.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/thigh_ik_nostr.l/leg_ik_nostr.l/leg_ik_nostr.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/thigh_twist.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.l/thigh_twist.l/thigh_twist.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/foot_fk_scale_fix.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/foot_fk_scale_fix.r/c_foot_fk.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/foot_fk_scale_fix.r/c_foot_fk.r/c_p_foot_fk.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/foot_fk_scale_fix.r/c_foot_fk.r/c_p_foot_fk.r/c_p_foot_fk.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/foot_fk_scale_fix.r/c_foot_fk.r/foot_fk.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/foot_fk_scale_fix.r/c_foot_fk.r/foot_fk.r/c_toes_fk.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/foot_fk_scale_fix.r/c_foot_fk.r/foot_fk.r/c_toes_fk.r/c_toes_fk.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk.r/foot.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk.r/foot.r/foot_pole.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk.r/foot.r/foot_pole.r/foot_pole.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk.r/foot.r/Smear_Feet.001.R.002
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk.r/foot.r/Smear_Feet.001.R.002/Smear_Feet.001.R.002_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk.r/foot.r/Smear_Feet.001.R.003
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk.r/foot.r/Smear_Feet.001.R.003/Smear_Feet.001.R.003_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk.r/foot.r/Smear_Feet.001.R.004
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk.r/foot.r/Smear_Feet.001.R.004/Smear_Feet.001.R.004_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk.r/foot.r/Smear_Feet.001.R.005
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk.r/foot.r/Smear_Feet.001.R.005/Smear_Feet.001.R.005_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk.r/foot.r/toes_01.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk.r/foot.r/toes_01.r/toes_01.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk_pre_pole.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk_pre_pole.r/leg_fk_pole.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/c_leg_fk.r/leg_fk_pre_pole.r/leg_fk_pole.r/leg_fk_pole.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/thigh_fk.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_fk.r/thigh_fk.r/thigh_fk.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_ik.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/c_thigh_ik.r/c_thigh_ik.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/thigh.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/thigh.r/c_stretch_leg.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/thigh.r/c_stretch_leg.r/leg_pole_line.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/thigh.r/c_stretch_leg.r/leg_pole_line.r/leg_pole_line.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/thigh.r/leg.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/thigh.r/leg.r/leg.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/thigh_ik.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/thigh_ik.r/leg_ik.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/thigh_ik.r/leg_ik.r/leg_ik.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/thigh_ik_nostr.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/thigh_ik_nostr.r/leg_ik_nostr.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/thigh_ik_nostr.r/leg_ik_nostr.r/leg_ik_nostr.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/thigh_twist.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/c_thigh_b.r/thigh_twist.r/thigh_twist.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/leg0_dt.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/leg0_dt.x/kilt_leg0_floortar.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/leg0_dt.x/kilt_leg0_floortar.x/kilt_leg0_floortar_off.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/leg0_dt.x/kilt_leg0_floortar.x/kilt_leg0_floortar_off.x/kilt_leg0_floortar_off.x_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/leg0_dtrest.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/leg0_dtrest.x/leg0_dtrest.x_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/leg1_dt.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/leg1_dt.x/kilt_leg1_floortar.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/leg1_dt.x/kilt_leg1_floortar.x/kilt_leg1_floortar_off.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/leg1_dt.x/kilt_leg1_floortar.x/kilt_leg1_floortar_off.x/kilt_leg1_floortar_off.x_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/leg1_dtrest.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_root.x/root.x/leg1_dtrest.x/leg1_dtrest.x_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_p_neck_01.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_p_neck_01.x/c_p_neck_01.x_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.l/arm_fk.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.l/arm_fk.l/arm_fk.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.l/arm_fk_pre_pole.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.l/arm_fk_pre_pole.l/arm_fk_pole.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.l/arm_fk_pre_pole.l/arm_fk_pole.l/arm_fk_pole.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.l/c_forearm_fk.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.l/c_forearm_fk.l/forearm_fk.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.l/c_forearm_fk.l/forearm_fk.l/hand_fk_scale_fix.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.l/c_forearm_fk.l/forearm_fk.l/hand_fk_scale_fix.l/c_hand_fk.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.l/c_forearm_fk.l/forearm_fk.l/hand_fk_scale_fix.l/c_hand_fk.l/c_hand_fk.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.r/arm_fk.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.r/arm_fk.r/arm_fk.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.r/arm_fk_pre_pole.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.r/arm_fk_pre_pole.r/arm_fk_pole.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.r/arm_fk_pre_pole.r/arm_fk_pole.r/arm_fk_pole.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.r/c_forearm_fk.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.r/c_forearm_fk.r/forearm_fk.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.r/c_forearm_fk.r/forearm_fk.r/hand_fk_scale_fix.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.r/c_forearm_fk.r/forearm_fk.r/hand_fk_scale_fix.r/c_hand_fk.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_arm_fk.r/c_forearm_fk.r/forearm_fk.r/hand_fk_scale_fix.r/c_hand_fk.r/c_hand_fk.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_neck.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_neck.x/c_p_neck.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_neck.x/c_p_neck.x/c_p_neck.x_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_neck.x/neck.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_neck.x/neck.x/neck_twist.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_neck.x/neck.x/neck_twist.x/neck_twist.x_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_p_spine_03.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_p_spine_03.x/c_p_spine_03.x_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/arm.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/arm.l/c_stretch_arm.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/arm.l/c_stretch_arm.l/arm_pole_line.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/arm.l/c_stretch_arm.l/arm_pole_line.l/arm_pole_line.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/arm_ik.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/arm_ik.l/forearm_ik.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/arm_ik.l/forearm_ik.l/forearm_ik.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/arm_ik_nostr_scale_fix.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/arm_ik_nostr_scale_fix.l/arm_ik_nostr.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/arm_ik_nostr_scale_fix.l/arm_ik_nostr.l/forearm_ik_nostr.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/arm_ik_nostr_scale_fix.l/arm_ik_nostr.l/forearm_ik_nostr.l/forearm_ik_nostr.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/arm_twist.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/arm_twist.l/c_arm_twist_offset.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/arm_twist.l/c_arm_twist_offset.l/c_arm_twist_offset.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/c_arm_ik.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/c_arm_ik.l/c_arm_ik.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/shoulder.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/shoulder.l/arm_twist_twk.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/shoulder.l/arm_twist_twk.l/arm_twist_twk.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/shoulder.l/shoulder_track_pole.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/shoulder.l/shoulder_track_pole.l/shoulder_pole.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.l/shoulder.l/shoulder_track_pole.l/shoulder_pole.l/shoulder_pole.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/arm.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/arm.r/c_stretch_arm.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/arm.r/c_stretch_arm.r/arm_pole_line.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/arm.r/c_stretch_arm.r/arm_pole_line.r/arm_pole_line.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/arm_ik.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/arm_ik.r/forearm_ik.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/arm_ik.r/forearm_ik.r/forearm_ik.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/arm_ik_nostr_scale_fix.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/arm_ik_nostr_scale_fix.r/arm_ik_nostr.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/arm_ik_nostr_scale_fix.r/arm_ik_nostr.r/forearm_ik_nostr.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/arm_ik_nostr_scale_fix.r/arm_ik_nostr.r/forearm_ik_nostr.r/forearm_ik_nostr.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/arm_twist.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/arm_twist.r/c_arm_twist_offset.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/arm_twist.r/c_arm_twist_offset.r/c_arm_twist_offset.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/c_arm_ik.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/c_arm_ik.r/c_arm_ik.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/shoulder.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/shoulder.r/arm_twist_twk.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/shoulder.r/arm_twist_twk.r/arm_twist_twk.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/shoulder.r/shoulder_track_pole.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/shoulder.r/shoulder_track_pole.r/shoulder_pole.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/c_shoulder.r/shoulder.r/shoulder_track_pole.r/shoulder_pole.r/shoulder_pole.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/Collar.001.L
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/Collar.001.L/Collar.001.L_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/Collar.001.R
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/Collar.001.R/Collar.001.R_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/Collar.L
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/Collar.L/Collar.L_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/Collar.R
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/c_spine_03.x/spine_03.x/Collar.R/Collar.R_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/spine_02.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/spine_02.x/c_p_spine_02.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/c_spine_02.x/spine_02.x/c_p_spine_02.x/c_p_spine_02.x_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/spine_01.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/spine_01.x/c_p_spine_01.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/c_root_master.x/c_spine_01.x/spine_01.x/c_p_spine_01.x/c_p_spine_01.x_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_index1_base.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_index1_base.l/c_index1.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_index1_base.l/c_index1.l/index1.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_index1_base.l/c_index1.l/index1.l/index2_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_index1_base.l/c_index1.l/index1.l/index2_rot.l/c_index2.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_index1_base.l/c_index1.l/index1.l/index2_rot.l/c_index2.l/index3_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_index1_base.l/c_index1.l/index1.l/index2_rot.l/c_index2.l/index3_rot.l/c_index3.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_index1_base.l/c_index1.l/index1.l/index2_rot.l/c_index2.l/index3_rot.l/c_index3.l/c_index3.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_index1_base.l/index1_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_index1_base.l/index1_rot.l/index1_rot.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_index1_base.l/index_bend_all.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_index1_base.l/index_bend_all.l/index_bend_all.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_middle1_base.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_middle1_base.l/middle1_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_middle1_base.l/middle1_rot.l/c_middle1.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_middle1_base.l/middle1_rot.l/c_middle1.l/middle1.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_middle1_base.l/middle1_rot.l/c_middle1.l/middle1.l/middle2_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_middle1_base.l/middle1_rot.l/c_middle1.l/middle1.l/middle2_rot.l/c_middle2.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_middle1_base.l/middle1_rot.l/c_middle1.l/middle1.l/middle2_rot.l/c_middle2.l/middle3_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_middle1_base.l/middle1_rot.l/c_middle1.l/middle1.l/middle2_rot.l/c_middle2.l/middle3_rot.l/c_middle3.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_middle1_base.l/middle1_rot.l/c_middle1.l/middle1.l/middle2_rot.l/c_middle2.l/middle3_rot.l/c_middle3.l/c_middle3.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_middle1_base.l/middle_bend_all.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_middle1_base.l/middle_bend_all.l/middle_bend_all.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_pinky1_base.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_pinky1_base.l/pinky1_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_pinky1_base.l/pinky1_rot.l/c_pinky1.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_pinky1_base.l/pinky1_rot.l/c_pinky1.l/pinky1.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_pinky1_base.l/pinky1_rot.l/c_pinky1.l/pinky1.l/pinky2_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_pinky1_base.l/pinky1_rot.l/c_pinky1.l/pinky1.l/pinky2_rot.l/c_pinky2.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_pinky1_base.l/pinky1_rot.l/c_pinky1.l/pinky1.l/pinky2_rot.l/c_pinky2.l/pinky3_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_pinky1_base.l/pinky1_rot.l/c_pinky1.l/pinky1.l/pinky2_rot.l/c_pinky2.l/pinky3_rot.l/c_pinky3.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_pinky1_base.l/pinky1_rot.l/c_pinky1.l/pinky1.l/pinky2_rot.l/c_pinky2.l/pinky3_rot.l/c_pinky3.l/c_pinky3.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_pinky1_base.l/pinky_bend_all.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_pinky1_base.l/pinky_bend_all.l/pinky_bend_all.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_ring1_base.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_ring1_base.l/c_ring1.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_ring1_base.l/c_ring1.l/ring1.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_ring1_base.l/c_ring1.l/ring1.l/ring2_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_ring1_base.l/c_ring1.l/ring1.l/ring2_rot.l/c_ring2.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_ring1_base.l/c_ring1.l/ring1.l/ring2_rot.l/c_ring2.l/ring3_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_ring1_base.l/c_ring1.l/ring1.l/ring2_rot.l/c_ring2.l/ring3_rot.l/c_ring3.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_ring1_base.l/c_ring1.l/ring1.l/ring2_rot.l/c_ring2.l/ring3_rot.l/c_ring3.l/c_ring3.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_ring1_base.l/ring1_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_ring1_base.l/ring1_rot.l/ring1_rot.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_ring1_base.l/ring_bend_all.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_ring1_base.l/ring_bend_all.l/ring_bend_all.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_thumb1_base.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_thumb1_base.l/thumb1_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_thumb1_base.l/thumb1_rot.l/c_thumb1.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_thumb1_base.l/thumb1_rot.l/c_thumb1.l/thumb1.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_thumb1_base.l/thumb1_rot.l/c_thumb1.l/thumb1.l/thumb2_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_thumb1_base.l/thumb1_rot.l/c_thumb1.l/thumb1.l/thumb2_rot.l/c_thumb2.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_thumb1_base.l/thumb1_rot.l/c_thumb1.l/thumb1.l/thumb2_rot.l/c_thumb2.l/thumb3_rot.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_thumb1_base.l/thumb1_rot.l/c_thumb1.l/thumb1.l/thumb2_rot.l/c_thumb2.l/thumb3_rot.l/c_thumb3.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_thumb1_base.l/thumb1_rot.l/c_thumb1.l/thumb1.l/thumb2_rot.l/c_thumb2.l/thumb3_rot.l/c_thumb3.l/c_thumb3.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_thumb1_base.l/thumb_bend_all.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/c_thumb1_base.l/thumb_bend_all.l/thumb_bend_all.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/hand_rot_twist.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/hand_rot_twist.l/hand_rot_twist.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/Smear_Hand.L
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.l/hand.l/Smear_Hand.L/Smear_Hand.L_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_index1_base.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_index1_base.r/c_index1.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_index1_base.r/c_index1.r/index1.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_index1_base.r/c_index1.r/index1.r/index2_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_index1_base.r/c_index1.r/index1.r/index2_rot.r/c_index2.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_index1_base.r/c_index1.r/index1.r/index2_rot.r/c_index2.r/index3_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_index1_base.r/c_index1.r/index1.r/index2_rot.r/c_index2.r/index3_rot.r/c_index3.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_index1_base.r/c_index1.r/index1.r/index2_rot.r/c_index2.r/index3_rot.r/c_index3.r/c_index3.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_index1_base.r/index1_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_index1_base.r/index1_rot.r/index1_rot.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_index1_base.r/index_bend_all.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_index1_base.r/index_bend_all.r/index_bend_all.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_middle1_base.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_middle1_base.r/middle1_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_middle1_base.r/middle1_rot.r/c_middle1.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_middle1_base.r/middle1_rot.r/c_middle1.r/middle1.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_middle1_base.r/middle1_rot.r/c_middle1.r/middle1.r/middle2_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_middle1_base.r/middle1_rot.r/c_middle1.r/middle1.r/middle2_rot.r/c_middle2.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_middle1_base.r/middle1_rot.r/c_middle1.r/middle1.r/middle2_rot.r/c_middle2.r/middle3_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_middle1_base.r/middle1_rot.r/c_middle1.r/middle1.r/middle2_rot.r/c_middle2.r/middle3_rot.r/c_middle3.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_middle1_base.r/middle1_rot.r/c_middle1.r/middle1.r/middle2_rot.r/c_middle2.r/middle3_rot.r/c_middle3.r/c_middle3.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_middle1_base.r/middle_bend_all.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_middle1_base.r/middle_bend_all.r/middle_bend_all.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_pinky1_base.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_pinky1_base.r/pinky1_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_pinky1_base.r/pinky1_rot.r/c_pinky1.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_pinky1_base.r/pinky1_rot.r/c_pinky1.r/pinky1.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_pinky1_base.r/pinky1_rot.r/c_pinky1.r/pinky1.r/pinky2_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_pinky1_base.r/pinky1_rot.r/c_pinky1.r/pinky1.r/pinky2_rot.r/c_pinky2.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_pinky1_base.r/pinky1_rot.r/c_pinky1.r/pinky1.r/pinky2_rot.r/c_pinky2.r/pinky3_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_pinky1_base.r/pinky1_rot.r/c_pinky1.r/pinky1.r/pinky2_rot.r/c_pinky2.r/pinky3_rot.r/c_pinky3.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_pinky1_base.r/pinky1_rot.r/c_pinky1.r/pinky1.r/pinky2_rot.r/c_pinky2.r/pinky3_rot.r/c_pinky3.r/c_pinky3.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_pinky1_base.r/pinky_bend_all.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_pinky1_base.r/pinky_bend_all.r/pinky_bend_all.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_ring1_base.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_ring1_base.r/c_ring1.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_ring1_base.r/c_ring1.r/ring1.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_ring1_base.r/c_ring1.r/ring1.r/ring2_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_ring1_base.r/c_ring1.r/ring1.r/ring2_rot.r/c_ring2.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_ring1_base.r/c_ring1.r/ring1.r/ring2_rot.r/c_ring2.r/ring3_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_ring1_base.r/c_ring1.r/ring1.r/ring2_rot.r/c_ring2.r/ring3_rot.r/c_ring3.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_ring1_base.r/c_ring1.r/ring1.r/ring2_rot.r/c_ring2.r/ring3_rot.r/c_ring3.r/c_ring3.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_ring1_base.r/ring1_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_ring1_base.r/ring1_rot.r/ring1_rot.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_ring1_base.r/ring_bend_all.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_ring1_base.r/ring_bend_all.r/ring_bend_all.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_thumb1_base.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_thumb1_base.r/thumb1_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_thumb1_base.r/thumb1_rot.r/c_thumb1.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_thumb1_base.r/thumb1_rot.r/c_thumb1.r/thumb1.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_thumb1_base.r/thumb1_rot.r/c_thumb1.r/thumb1.r/thumb2_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_thumb1_base.r/thumb1_rot.r/c_thumb1.r/thumb1.r/thumb2_rot.r/c_thumb2.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_thumb1_base.r/thumb1_rot.r/c_thumb1.r/thumb1.r/thumb2_rot.r/c_thumb2.r/thumb3_rot.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_thumb1_base.r/thumb1_rot.r/c_thumb1.r/thumb1.r/thumb2_rot.r/c_thumb2.r/thumb3_rot.r/c_thumb3.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_thumb1_base.r/thumb1_rot.r/c_thumb1.r/thumb1.r/thumb2_rot.r/c_thumb2.r/thumb3_rot.r/c_thumb3.r/c_thumb3.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_thumb1_base.r/thumb_bend_all.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/c_thumb1_base.r/thumb_bend_all.r/thumb_bend_all.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/hand_rot_twist.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/hand_rot_twist.r/hand_rot_twist.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/Smear_Hand.R
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm.r/hand.r/Smear_Hand.R/Smear_Hand.R_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm_stretch.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm_stretch.l/forearm_twist.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm_stretch.l/forearm_twist.l/Smear_Arm.L
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm_stretch.l/forearm_twist.l/Smear_Arm.L/Smear_Arm.L_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm_stretch.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm_stretch.r/forearm_twist.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm_stretch.r/forearm_twist.r/Smear_Arm.R
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/forearm_stretch.r/forearm_twist.r/Smear_Arm.R/Smear_Arm.R_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/head_scale_fix.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/head_scale_fix.x/c_head.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/head_scale_fix.x/c_head.x/head.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/head_scale_fix.x/c_head.x/head.x/head.x_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.l/leg_twist.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.l/leg_twist.l/Smear_Feet.L
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.l/leg_twist.l/Smear_Feet.L/Smear_Feet.L_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.l/leg_twist.l/Smear_Feet.L.001
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.l/leg_twist.l/Smear_Feet.L.001/Smear_Feet.L.001_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.l/leg_twist.l/Smear_Feet.L.002
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.l/leg_twist.l/Smear_Feet.L.002/Smear_Feet.L.002_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.l/leg_twist.l/Smear_Feet.L.003
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.l/leg_twist.l/Smear_Feet.L.003/Smear_Feet.L.003_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.r/leg_twist.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.r/leg_twist.r/Smear_Feet.R
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.r/leg_twist.r/Smear_Feet.R/Smear_Feet.R_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.r/leg_twist.r/Smear_Feet.R.001
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.r/leg_twist.r/Smear_Feet.R.001/Smear_Feet.R.001_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.r/leg_twist.r/Smear_Feet.R.002
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.r/leg_twist.r/Smear_Feet.R.002/Smear_Feet.R.002_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.r/leg_twist.r/Smear_Feet.R.003
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/leg_stretch.r/leg_twist.r/Smear_Feet.R.003/Smear_Feet.R.003_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/thigh_stretch.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/thigh_stretch.l/thigh_stretch.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/thigh_stretch.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/c_traj/thigh_stretch.r/thigh_stretch.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/c_pos/Can
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Can_Base
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Can_Base/Can_Lid
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Can_Base/Can_Lid/Can_Lid_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Can_Base/Can_Smear
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Can_Base/Can_Smear/Can_Smear_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Cleaver
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Cleaver_Handle
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Cleaver_Handle/Smear
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Cleaver_Handle/Smear/Smear_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Cleaver_Handle/Smear.001
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Cleaver_Handle/Smear.001/Smear.001_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Grappling_Gun
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/End_Thread
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/End_Thread/Thread
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/End_Thread/Thread/Thread.001
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/End_Thread/Thread/Thread.001/Thread.001_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/Grapple_Constraint
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/Grapple_Constraint/Grapple
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/Grapple_Constraint/Grapple/Claw
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/Grapple_Constraint/Grapple/Claw/Claw_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/Grapple_Constraint/Grapple/Claw.001
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/Grapple_Constraint/Grapple/Claw.001/Claw.001_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/Grapple_Constraint/Grapple/Claw.002
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/Grapple_Constraint/Grapple/Claw.002/Claw.002_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/Thread_Control
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/Thread_Control/Thread_Control_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/Thread_Main
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/Thread_Main/Thread_Main_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/Trigger
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Gun_Handle/Trigger/Trigger_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Journal
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Match
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Match/Match.001
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Match/Match.001/Match.001_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Match/Match.002
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Match/Match.002/Match.002_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Match_Box
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Pipe
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Pipe.001
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Pipe.001/Pipe.005
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Pipe.001/Pipe.005/Pipe.006
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Pipe.001/Pipe.005/Pipe.006/Pipe.007
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Pipe.001/Pipe.005/Pipe.006/Pipe.007/Pipe.007_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Pipe_2
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Spray
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Spray.001
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Spray_Base
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Spray_Base/Spray_Smear
+    m_Weight: 1
+  - m_Path: char_grp/rig/c_pos/Spray_Base/Spray_Smear/Spray_Smear_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_01_01_ref.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_01_01_ref.l/kilt_01_01_ref.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_01_01_ref.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_01_01_ref.r/kilt_01_01_ref.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_02_01_ref.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_02_01_ref.l/kilt_02_01_ref.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_02_01_ref.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_02_01_ref.r/kilt_02_01_ref.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_03_01_ref.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_03_01_ref.l/kilt_03_01_ref.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_03_01_ref.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_03_01_ref.r/kilt_03_01_ref.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_04_01_ref.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_04_01_ref.l/kilt_04_01_ref.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_04_01_ref.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_04_01_ref.r/kilt_04_01_ref.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_05_01_ref.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_05_01_ref.l/kilt_05_01_ref.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_05_01_ref.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_05_01_ref.r/kilt_05_01_ref.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_06_01_ref.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_06_01_ref.l/kilt_06_01_ref.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_06_01_ref.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/kilt_master_ref.x/kilt_06_01_ref.r/kilt_06_01_ref.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/neck_ref.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/neck_ref.x/head_ref.x
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/neck_ref.x/head_ref.x/head_ref.x_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/index1_base_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/index1_base_ref.l/index1_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/index1_base_ref.l/index1_ref.l/index2_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/index1_base_ref.l/index1_ref.l/index2_ref.l/index3_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/index1_base_ref.l/index1_ref.l/index2_ref.l/index3_ref.l/index3_ref.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/middle1_base_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/middle1_base_ref.l/middle1_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/middle1_base_ref.l/middle1_ref.l/middle2_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/middle1_base_ref.l/middle1_ref.l/middle2_ref.l/middle3_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/middle1_base_ref.l/middle1_ref.l/middle2_ref.l/middle3_ref.l/middle3_ref.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/pinky1_base_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/pinky1_base_ref.l/pinky1_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/pinky1_base_ref.l/pinky1_ref.l/pinky2_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/pinky1_base_ref.l/pinky1_ref.l/pinky2_ref.l/pinky3_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/pinky1_base_ref.l/pinky1_ref.l/pinky2_ref.l/pinky3_ref.l/pinky3_ref.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/ring1_base_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/ring1_base_ref.l/ring1_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/ring1_base_ref.l/ring1_ref.l/ring2_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/ring1_base_ref.l/ring1_ref.l/ring2_ref.l/ring3_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/ring1_base_ref.l/ring1_ref.l/ring2_ref.l/ring3_ref.l/ring3_ref.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/thumb1_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/thumb1_ref.l/thumb2_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/thumb1_ref.l/thumb2_ref.l/thumb3_ref.l
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.l/arm_ref.l/forearm_ref.l/hand_ref.l/thumb1_ref.l/thumb2_ref.l/thumb3_ref.l/thumb3_ref.l_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/index1_base_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/index1_base_ref.r/index1_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/index1_base_ref.r/index1_ref.r/index2_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/index1_base_ref.r/index1_ref.r/index2_ref.r/index3_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/index1_base_ref.r/index1_ref.r/index2_ref.r/index3_ref.r/index3_ref.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/middle1_base_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/middle1_base_ref.r/middle1_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/middle1_base_ref.r/middle1_ref.r/middle2_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/middle1_base_ref.r/middle1_ref.r/middle2_ref.r/middle3_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/middle1_base_ref.r/middle1_ref.r/middle2_ref.r/middle3_ref.r/middle3_ref.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/pinky1_base_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/pinky1_base_ref.r/pinky1_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/pinky1_base_ref.r/pinky1_ref.r/pinky2_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/pinky1_base_ref.r/pinky1_ref.r/pinky2_ref.r/pinky3_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/pinky1_base_ref.r/pinky1_ref.r/pinky2_ref.r/pinky3_ref.r/pinky3_ref.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/ring1_base_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/ring1_base_ref.r/ring1_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/ring1_base_ref.r/ring1_ref.r/ring2_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/ring1_base_ref.r/ring1_ref.r/ring2_ref.r/ring3_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/ring1_base_ref.r/ring1_ref.r/ring2_ref.r/ring3_ref.r/ring3_ref.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/thumb1_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/thumb1_ref.r/thumb2_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/thumb1_ref.r/thumb2_ref.r/thumb3_ref.r
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/spine_01_ref.x/spine_02_ref.x/spine_03_ref.x/shoulder_ref.r/arm_ref.r/forearm_ref.r/hand_ref.r/thumb1_ref.r/thumb2_ref.r/thumb3_ref.r/thumb3_ref.r_end
+    m_Weight: 1
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.l/leg_ref.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.l/leg_ref.l/foot_bank_01_ref.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.l/leg_ref.l/foot_bank_01_ref.l/foot_bank_01_ref.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.l/leg_ref.l/foot_bank_02_ref.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.l/leg_ref.l/foot_bank_02_ref.l/foot_bank_02_ref.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.l/leg_ref.l/foot_heel_ref.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.l/leg_ref.l/foot_heel_ref.l/foot_heel_ref.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.l/leg_ref.l/foot_ref.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.l/leg_ref.l/foot_ref.l/toes_ref.l
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.l/leg_ref.l/foot_ref.l/toes_ref.l/toes_ref.l_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.r/leg_ref.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.r/leg_ref.r/foot_bank_01_ref.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.r/leg_ref.r/foot_bank_01_ref.r/foot_bank_01_ref.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.r/leg_ref.r/foot_bank_02_ref.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.r/leg_ref.r/foot_bank_02_ref.r/foot_bank_02_ref.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.r/leg_ref.r/foot_heel_ref.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.r/leg_ref.r/foot_heel_ref.r/foot_heel_ref.r_end
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.r/leg_ref.r/foot_ref.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.r/leg_ref.r/foot_ref.r/toes_ref.r
+    m_Weight: 0
+  - m_Path: char_grp/rig/root_ref.x/thigh_ref.r/leg_ref.r/foot_ref.r/toes_ref.r/toes_ref.r_end
+    m_Weight: 0
+  - m_Path: Rorified_Black
+    m_Weight: 0
+  - m_Path: RorschachAccessoryModel1
+    m_Weight: 0
+  - m_Path: RorschachAccessoryModel2
+    m_Weight: 0
+  - m_Path: SecondaryDefaultHitTransform
+    m_Weight: 0
+  - m_Path: SpecialDefaultJudgementHitTransform
+    m_Weight: 0
+  - m_Path: SecondaryChargeHitSparkleTransform
+    m_Weight: 0
+  - m_Path: SpecialJudgementSparkleTransform
+    m_Weight: 0
+  - m_Path: SpecialGrabTransform
+    m_Weight: 0
+  - m_Path: PipeHitbox
+    m_Weight: 0
+  - m_Path: PipeHitbox/Cube
+    m_Weight: 0

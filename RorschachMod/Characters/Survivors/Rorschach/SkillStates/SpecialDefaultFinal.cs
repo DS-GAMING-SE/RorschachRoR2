@@ -6,15 +6,17 @@ using RorschachMod.Modules.BaseStates;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Networking;
+using UnityEngine.Rendering.PostProcessing;
 
 namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 {
     public class SpecialDefaultFinal : BaseMeleeAttack
     {
         public int judgementStacks;
+        public Components.RorschachSpecialPostProcessController postProcess;
         protected override void Prepare()
         {
-            hitboxGroupName = "SwordGroup";
+            hitboxGroupName = "PipeGroup";
 
             damageType = DamageTypeCombo.GenericSpecial;
             damageType.AddModdedDamageType(RorschachDamageTypes.specialOnKillBuff);
@@ -55,13 +57,14 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             {
                 characterBody.AddBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
+            if (postProcess) postProcess.CancelFade();
         }
 
         protected override void PlayAttackAnimation()
         {
             if (judgementStacks > 0)
             {
-                PlayCrossfade("FullBody, Override", "SpecialDefaultJudgementEnd", playbackRateParam, 0.15f * duration, 0.1f * duration);
+                PlayCrossfade("FullBody, Override", "SpecialDefaultJudgementEnd", playbackRateParam, 0.2f * duration, 0.1f * duration);
             }
             else
             {
@@ -69,9 +72,28 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             }
         }
 
+        protected override void OnHitEnemyAuthority()
+        {
+            if (!hit)
+            {
+                ChildLocator child = GetModelChildLocator();
+                int index = child.FindChildIndex("SpecialHitTransform");
+                EffectData effect = new EffectData
+                {
+                    origin = child.FindChild(index).position,
+                    color = new Color(1f, 0f, 0.05f),
+                    scale = 1 + (0.1f * judgementStacks)
+                };
+                effect.SetChildLocatorTransformReference(gameObject, index);
+                EffectManager.SpawnEffect(RorschachAssets.specialDefaultHitEffect, effect, true);
+            }
+            base.OnHitEnemyAuthority();
+        }
+
         protected override void PlaySwingEffect()
         {
             base.PlaySwingEffect();
+            if (postProcess) postProcess.BeginFade();
         }
 
         public override void OnExit()

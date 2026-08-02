@@ -23,6 +23,7 @@ namespace RorschachMod.Modules
                 {
                     stats.attackSpeedMultAdd += RorschachStaticValues.specialOnKillBuffMultiplier;
                     stats.moveSpeedMultAdd += RorschachStaticValues.specialOnKillBuffMultiplier;
+                    stats.regenMultAdd += RorschachStaticValues.specialOnKillBuffRegenMultAdd;
                 }
             }
         }

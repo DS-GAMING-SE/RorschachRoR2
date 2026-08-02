@@ -32,7 +32,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             swingSoundString = "HenrySwordSwing";
             hitSoundString = "";
             muzzleString = swingIndex % 2 == 0 ? "SwingLeft" : "SwingRight";
-            playbackRateParam = "Slash.playbackRate";
+            playbackRateParam = "ShootGun.playbackRate";
             //swingEffectPrefab = RorschachAssets.swordSwingEffect; // basemeleeattack swing effect use is commented out currently
             hitEffectPrefab = RorschachAssets.meleeHitEffect;
 
@@ -41,7 +41,24 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 
         protected override void PlayAttackAnimation()
         {
-            PlayCrossfade("Gesture, Override", swingIndex % 2 == 0 ? "Slash1" : "Slash2", playbackRateParam, duration, 0.1f * duration);
+            string animation;
+            switch (swingIndex)
+            {
+                case 0: 
+                    animation = "BufferEmpty";
+                    break;
+                case 1:
+                    animation = "PrimaryDefaultRight";
+                    break;
+                case 2:
+                    animation = "BufferEmpty";
+                    break;
+                default:
+                    animation = "BufferEmpty";
+                    break;
+            }
+            PlayCrossfade("FullBody, Override", animation, playbackRateParam, duration * 2.5f, 0.1f * duration);
+            PlayCrossfade("UpperBody, Override", animation, playbackRateParam, duration * 2.5f, 0.1f * duration);
         }
 
         protected override void PlaySwingEffect()

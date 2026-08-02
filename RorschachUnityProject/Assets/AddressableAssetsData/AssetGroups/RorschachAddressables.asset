@@ -45,8 +45,8 @@ MonoBehaviour:
     m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texUtilityDefaultSkillIcon.png
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 6f0e7dc80d946bd489940eccc8c92f5b
-    m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texFlameCanIcon.png
+  - m_GUID: 4e5d8ec185ae8674caa695c73cf3c4f7
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Future/texRorschachFutureFresnelMask.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 0e4c80d73da34aa40b303eb595226e63
@@ -267,6 +267,26 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: b1e80758290eaf5478dd973a3734f867
     m_Address: Assets/RorschachAssets/RorschachBundle/VFX/Prefabs/Pipe/RorschachPipeSwingEffect.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 70e9a6ae682aede469c23ec9b79a181d
+    m_Address: Assets/RorschachAssets/RorschachBundle/Icons/texSpecialFlameCanSkillIcon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2d566176183833f4b957b8bbb155dfda
+    m_Address: Assets/RorschachAssets/RorschachBundle/Animation/avatarRorschach.ht
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5f33ae1c57392d74489392a73d2cb6c3
+    m_Address: Assets/RorschachAssets/RorschachBundle/VFX/Prefabs/Default/RorschachSpecialDefaultHit.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ebbf7b50b1bef5a4499c9746a4d69515
+    m_Address: Assets/RorschachAssets/RorschachBundle/VFX/ppRorschachSpecial.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1cde781a8e6fd40488dd4ae7e68514f5
+    m_Address: Assets/RorschachAssets/RorschachBundle/VFX/RorschachSpecialPostProcessing.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

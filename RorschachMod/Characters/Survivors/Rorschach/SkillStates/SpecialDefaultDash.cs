@@ -69,7 +69,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
                     target = grabSearch.GetHurtBoxes().FirstOrDefault(x => { return x.healthComponent; });
                     if (target)
                     {
-                        duration = Mathf.Min(duration, fixedAge + (duration * durationPercentAfterGrab));
+                        fixedAge = Mathf.Max(fixedAge, duration * (1 - durationPercentAfterGrab));
                     }
                 }
 

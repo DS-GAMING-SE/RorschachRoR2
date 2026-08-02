@@ -7,6 +7,7 @@ using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Networking;
+using UnityEngine.Rendering.PostProcessing;
 
 namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
 {
@@ -21,6 +22,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         public HurtBox target;
 
         private bool sparkled;
+
+        public Components.RorschachSpecialPostProcessController postProcess;
         protected override void Prepare()
         {
             hitboxGroupName = "SwordGroup";
@@ -64,15 +67,21 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             base.OnEnter();
             grabTransform = FindModelChild("SpecialGrabTransform");
             characterBody.bodyFlags |= CharacterBody.BodyFlags.Unmovable;
-            EffectManager.SpawnEffect(RorschachAssets.judgementConsumeEffect, new EffectData
+            EffectData effect = new EffectData
             {
                 origin = characterBody.corePosition,
                 color = new Color(1f, 0f, 0.05f)
-            }, false);
+            };
+            effect.SetNetworkedObjectReference(gameObject);
+            EffectManager.SpawnEffect(RorschachAssets.judgementConsumeEffect, effect, false);
             if (NetworkServer.active)
             {
                 characterBody.AddBuff(RoR2Content.Buffs.SmallArmorBoost);
                 characterBody.RemoveBuff(RorschachBuffs.judgementBuff);
+            }
+            if (isAuthority)
+            {
+                postProcess.LerpToWeight(RorschachStaticValues.specialPostProcessWeightStart + (RorschachStaticValues.specialPostProcessWeightPerAction * (1 + swingIndex)), duration);
             }
         }
 
@@ -104,12 +113,15 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
                     judgementState.judgementStacks = judgementStacks;
                     judgementState.repeatedAttackDurationMultiplier = repeatedAttackDurationMultiplier * durationMultiplierPerRepeat;
                     judgementState.target = target;
+                    judgementState.postProcess = postProcess;
+                    judgementState.swingIndex = this.swingIndex + 1;
                     this.outer.SetNextState(judgementState);
                 }
                 else
                 {
                     SpecialDefaultFinal finalState = (SpecialDefaultFinal)EntityStateCatalog.InstantiateState(finalStateType);
                     finalState.judgementStacks = judgementStacks;
+                    finalState.postProcess = postProcess;
                     this.outer.SetNextState(finalState);
                 }
             }
@@ -140,6 +152,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
                 characterBody.RemoveBuff(RoR2Content.Buffs.SmallArmorBoost);
             }
             characterBody.bodyFlags &= ~CharacterBody.BodyFlags.Unmovable;
+            if (postProcess) postProcess.BeginFade();
             base.OnExit();
         }
 
