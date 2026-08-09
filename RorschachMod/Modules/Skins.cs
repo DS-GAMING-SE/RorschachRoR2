@@ -10,6 +10,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using static HedgehogUtils.Helpers;
 using static RorschachMod.Characters.Survivors.Rorschach.RorschachSurvivor;
+using static RorschachMod.Characters.Survivors.Rorschach.RorschachSkinEffects;
 
 namespace RorschachMod.Modules
 {
@@ -165,6 +166,7 @@ namespace RorschachMod.Modules
             };
             SkinDef futureSkin = R2API.Skins.CreateNewSkinDef(futureSkinParamsInfo);
             skins.Add(futureSkin);
+            futureSkin.AddSkinColor(new Color(0f, 0.5f, 0.95f));
             #endregion
 
             #region WarframeSkin
@@ -194,6 +196,7 @@ namespace RorschachMod.Modules
             };
             SkinDef warframeSkin = R2API.Skins.CreateNewSkinDef(warframeSkinParamsInfo);
             skins.Add(warframeSkin);
+            warframeSkin.AddSkinColor(new Color(0.2f, 0.87f, 0.55f));
             #endregion
 
             return skins.ToArray();

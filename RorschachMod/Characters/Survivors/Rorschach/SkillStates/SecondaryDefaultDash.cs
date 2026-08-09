@@ -85,8 +85,11 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         public static void UpdateDisplacement(InputBankTest inputBank, CharacterMotor characterMotor, float age, float baseDuration, float duration, float fadeStartPercentTime, float fadeEndPercentTime, float speedMult)
         {
             float fadeTime = duration * (fadeEndPercentTime - fadeStartPercentTime);
-            Vector3 displacement = inputBank.aimDirection * speedMult * (baseDuration / duration) * Time.deltaTime * Mathf.Clamp01(age * (-1 / fadeTime) + ((duration * fadeEndPercentTime) / fadeTime));
             Vector3 input = inputBank.moveVector.magnitude > 0.2f ? inputBank.moveVector.normalized : Vector3.zero;
+            Vector3 displacement = inputBank.aimDirection * 
+                (input == Vector3.zero ? Mathf.Min(RorschachStaticValues.genericDashStationarySpeedCap, speedMult) : speedMult) * 
+                (baseDuration / duration) * Time.deltaTime * 
+                Mathf.Clamp01(age * (-1 / fadeTime) + ((duration * fadeEndPercentTime) / fadeTime));
             if (!characterMotor.isFlying)
             {
                 input.y = 0;

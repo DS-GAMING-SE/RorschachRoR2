@@ -81,7 +81,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
                 EffectData effect = new EffectData
                 {
                     origin = child.FindChild(index).position,
-                    color = new Color(1f, 0f, 0.05f),
+                    color = RorschachSkinEffects.GetSkinColor(characterBody),
                     scale = 1 + (0.1f * judgementStacks)
                 };
                 effect.SetChildLocatorTransformReference(gameObject, index);

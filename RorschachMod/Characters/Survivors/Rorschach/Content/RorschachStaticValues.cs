@@ -4,6 +4,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
 {
     public static class RorschachStaticValues
     {
+        public const float genericDashStationarySpeedCap = 10f;
+        
         #region Passive
 
         public const float passiveMaxProgress = 100f;
@@ -81,10 +83,10 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public const float specialFlameCanMinExplosionRadius = 10f;
         public const float specialFlameCanMaxExplosionRadius = 20f;
         public const float specialFlameCanJudgementExplosionRadiusMultiplier = ((specialFlameCanMaxExplosionRadius / specialFlameCanMinExplosionRadius) - 1) / judgementBuffCap;
-        public const int specialFlameCanFinalBurnStacks = 5;
+        public const int specialFlameCanFinalBurnStacks = 3;
 
-        public const float specialPostProcessWeightStart = 0f;
-        public const float specialPostProcessWeightPerAction = 0.08f;
+        public const float specialPostProcessWeightStart = 0.04f;
+        public const float specialPostProcessWeightPerAction = 0.06f;
 
         #endregion
     }

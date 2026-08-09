@@ -78,7 +78,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
                 {
                     origin = child.FindChild(index).position,
                     scale = charge >= 1 ? 1.5f : 1f,
-                    color = charge >= 1 ? Color.red : Color.white
+                    color = charge >= 1 ? RorschachSkinEffects.GetSkinColor(characterBody) : Color.white
                 };
                 effectData.SetChildLocatorTransformReference(gameObject, index);
                 EffectManager.SpawnEffect(RorschachAssets.genericSparkleEffect, effectData, false);

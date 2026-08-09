@@ -70,7 +70,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
             EffectData effect = new EffectData
             {
                 origin = characterBody.corePosition,
-                color = new Color(1f, 0f, 0.05f)
+                color = RorschachSkinEffects.GetSkinColor(characterBody)
             };
             effect.SetNetworkedObjectReference(gameObject);
             EffectManager.SpawnEffect(RorschachAssets.judgementConsumeEffect, effect, false);
@@ -96,7 +96,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
                 EffectData effectData = new EffectData
                 {
                     origin = child.FindChild(index).position,
-                    color = new Color(1f, 0f, 0.05f)
+                    color = RorschachSkinEffects.GetSkinColor(characterBody)
                 };
                 effectData.SetChildLocatorTransformReference(gameObject, index);
                 EffectManager.SpawnEffect(RorschachAssets.genericSparkleEffect, effectData, false);

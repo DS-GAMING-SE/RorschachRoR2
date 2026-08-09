@@ -106,33 +106,67 @@ namespace RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons
             }
 
             // Burn
-            // ???????????????????????????????????????????
-            /*ILLabel burnEnd = null;
+            ILLabel burnForStart = null;
+            ILLabel burnEnd = null;
+            VariableDefinition forIterator = new VariableDefinition(il.Import(typeof(int)));
+            il.Body.Variables.Add(forIterator);
+            VariableDefinition forMax = new VariableDefinition(il.Import(typeof(int)));
+            il.Body.Variables.Add(forMax);
             if (c.TryGotoNext(x => x.MatchLdfld(typeof(DamageInfo), nameof(DamageInfo.damageType)),
-                x => x.MatchLdcI4((int)DamageType.IgniteOnHit)) &&
-                c.TryGotoNext(x => x.MatchCallOrCallvirt(AccessTools.Method(typeof(StrengthenBurnUtils), nameof(StrengthenBurnUtils.CheckDotForUpgrade))), 
-                x => x.MatchBr(out burnEnd)))
+                x => x.MatchLdcI4((int)DamageType.IgniteOnHit)) && 
+                c.TryGotoNext(x => x.MatchBrtrue(out burnForStart)) &&
+                c.TryGotoNext(x => x.MatchBrfalse(out burnEnd)))
             {
-                c.GotoLabel(burnEnd, MoveType.After);
-                // Intercept the dotinfo and use it to call burn a few times manually if it's flame can special
-                // Don't know how to match the DotController.InflictDot method overload with a ref param so I gotta match with this roundabout shit
+                // Wrapping the whole igniteOnHit burn stuff in a for loop
+
+                c.Goto(burnForStart.Target, MoveType.AfterLabel);
+                int forMaxIndex = il.Body.Variables.Count - 2;
                 c.Emit(OpCodes.Ldarg_1);
-                c.EmitDelegate<Func<InflictDotInfo, DamageInfo, InflictDotInfo>>((dot, damageInfo) =>
+                c.Emit<DamageInfo>(OpCodes.Ldfld, nameof(DamageInfo.damageType));
+                c.EmitDelegate<Func<DamageTypeCombo, bool>>((damageTypeCombo) =>
                 {
-                    if (damageInfo.damageType.HasModdedDamageType(RorschachDamageTypes.flameCanFinalBurn))
-                    {
-                        for (int i = 0; i < RorschachStaticValues.specialFlameCanFinalBurnStacks - 1; i++)
-                        {
-                            DotController.InflictDot(ref dot);
-                        }
-                    }
-                    return dot;
+                    return damageTypeCombo.HasModdedDamageType(RorschachDamageTypes.flameCanFinalBurn);
                 });
+                // insert brtrue to special flame can stacks
+                c.Emit(OpCodes.Ldc_I4_1); // 1 max
+                // insert br to store local
+                c.Emit(OpCodes.Ldc_I4, RorschachStaticValues.specialFlameCanFinalBurnStacks); // burn stacks
+                Instruction ldFlameCanStacks = c.Prev;
+                c.Emit(OpCodes.Stloc, forMaxIndex);
+                Instruction storeForMax = c.Prev;
+                c.Index -= 2;
+                c.Emit(OpCodes.Br, storeForMax);
+                c.Index -= 2;
+                c.Emit(OpCodes.Brtrue, ldFlameCanStacks);
+
+
+                c.Goto(storeForMax, MoveType.After);
+                int forIteratorIndex = il.Body.Variables.Count - 1;
+                c.Emit(OpCodes.Ldc_I4_0); // int i = 0
+                c.Emit(OpCodes.Stloc, forIteratorIndex);
+                Instruction burnStart = c.Next;
+                /*c.Emit(OpCodes.Ldloc, forIteratorIndex);
+                c.Emit(OpCodes.Ldloc, forMaxIndex);
+                c.EmitDelegate<Action<int, int>> ((iterator, max) =>
+                {
+                    Log.Warning("for (int i = "+iterator + "; i < " + max+"; i++)");
+                });*/
+
+                c.Goto(burnEnd.Target);
+                c.Emit(OpCodes.Ldloc, forIteratorIndex); // i
+                c.Emit(OpCodes.Ldc_I4_1); // 1
+                c.Emit(OpCodes.Add);// i + 1
+                c.Emit(OpCodes.Stloc, forIteratorIndex); // i = i + 1
+                c.Emit(OpCodes.Ldloc, forIteratorIndex); // i
+                c.Emit(OpCodes.Ldloc, forMaxIndex); // max
+                c.Emit(OpCodes.Blt, burnStart); // if (i < max) go to start
+
+                //Log.Warning(il);
             }
             else
             {
                 Log.Error("Burn Dot IL Hook failed");
-            }*/
+            }
         }
 
         public static void ImprovisedWeaponSkillOverrides(CharacterBody characterBody)

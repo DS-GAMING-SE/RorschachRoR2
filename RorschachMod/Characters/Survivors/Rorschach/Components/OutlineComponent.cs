@@ -51,6 +51,15 @@ namespace RorschachMod.Characters.Survivors.Rorschach.Components
             overlay.duration = float.PositiveInfinity;
             overlay.originalMaterial = material;
             overlay.AddToCharacterModel(characterModel);
+            if (characterModel.TryGetComponent<ModelSkinController>(out var skin))
+            {
+                skin.onSkinApplied += OnSkinChanged;
+            }
+        }
+
+        private void OnSkinChanged(int index)
+        {
+            if (overlay != null) overlay.materialInstance.SetColor("_TintColor", RorschachSkinEffects.GetSkinColor(characterModel, index));
         }
 
         private void OnDisable()
