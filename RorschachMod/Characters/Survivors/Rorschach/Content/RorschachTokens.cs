@@ -47,6 +47,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             Language.Add(prefix + "SPACE_SKIN_NAME", "Space");
             Language.Add(prefix + "SPACE_ALT_SKIN_NAME", "Space - Alternate");
             Language.Add(prefix + "FUTURE_SKIN_NAME", "Future");
+            Language.Add(prefix + "QUESTION_SKIN_NAME", "Question");
             Language.Add(prefix + "WARFRAME_SKIN_NAME", "Warframe");
             #endregion
 

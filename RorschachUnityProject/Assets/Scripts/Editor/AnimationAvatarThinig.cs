@@ -36,4 +36,31 @@ public class AvatarMaker
             AssetDatabase.CreateAsset(avatar, path);
         }
     }
+    [MenuItem("Assets/Clean Animation Clips", validate = true)]
+    private static bool CleanAnimationClipsValidate()
+    {
+        for (int i = 0; i < Selection.objects.Length; i++)
+        {
+            if (!AssetDatabase.GetAssetPath(Selection.objects[i]).EndsWith(".anim"))
+                return false;
+        }
+        return true;
+    }
+    [MenuItem("Assets/Clean Animation Clips")]
+    private static void CleanAnimationClips()
+    {
+        EditorUtility.DisplayProgressBar("Renaming Bones", "", 0);
+        for (int i = 0; i < Selection.objects.Length; i++)
+        {
+            EditorUtility.DisplayProgressBar("Renaming Bones", Selection.objects[i].name, (float)i / (Selection.objects.Length - 1));
+            AnimationClip clip = (AnimationClip)Selection.objects[i];
+            EditorCurveBinding[] objRef = AnimationUtility.GetObjectReferenceCurveBindings(clip);
+            for (int j = 0; j < objRef.Length; j++)
+            {
+                objRef[j].propertyName = objRef[j].propertyName.Replace(".", "");
+            }
+            //AnimationUtility.SetObjectReferenceCurves()
+        }
+        EditorUtility.ClearProgressBar();
+    }
 }

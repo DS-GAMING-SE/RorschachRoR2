@@ -27,7 +27,7 @@ namespace RorschachMod.Characters.Survivors.Rorschach.ImprovisedWeapons
             improvisedWeaponTier.pickupRules = ItemTierDef.PickupRules.Default;
             improvisedWeaponTier.name = prefix + "TIER";
             improvisedWeaponTier.highlightPrefab = Addressables.LoadAssetAsync<GameObject>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_UI.HighlightTier1Item_prefab).WaitForCompletion();
-            improvisedWeaponTier.dropletDisplayPrefab = Addressables.LoadAssetAsync<GameObject>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common.Tier1Orb_prefab).WaitForCompletion();
+            improvisedWeaponTier.dropletDisplayPrefab = Addressables.LoadAssetAsync<GameObject>(RorschachAssets.improvisedWeaponItemOrb).WaitForCompletion();
             improvisedWeaponTier.canScrap = false;
             improvisedWeaponTier.colorIndex = ColorCatalog.ColorIndex.Tier1Item;
             improvisedWeaponTier.darkColorIndex = ColorCatalog.ColorIndex.Unaffordable;

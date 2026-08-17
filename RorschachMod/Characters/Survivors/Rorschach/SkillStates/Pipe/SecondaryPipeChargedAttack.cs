@@ -28,7 +28,9 @@ namespace RorschachMod.Characters.Survivors.Rorschach.SkillStates
         {
             if (base.isAuthority && charge == 1)
             {
-                attack.forceVector = base.inputBank.aimDirection * 250f;
+                attack.forceVector = base.inputBank.aimDirection;
+                attack.forceVector.y = 0;
+                attack.forceVector = attack.forceVector.normalized * 250f;
             }
             base.FireAttack();
         }

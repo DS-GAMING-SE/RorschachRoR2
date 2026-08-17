@@ -17,6 +17,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
     public static class RorschachAssets
     {
         // common stuff
+        public static Material face;
+
         public static GameObject inkDecal;
         public static Material ink;
         public static Material inkDot;
@@ -93,32 +95,57 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public static AssetReferenceSprite specialCleaverSkillIcon = new AssetReferenceSprite("d79f886258b3bb74a90bd0d43ee60854");
         #endregion
         #region Skins
+        #region Common
+        public static AssetReferenceT<Mesh> commonSkinFaceMesh = new AssetReferenceT<Mesh>("f61b5db1bf19b4a469b7bb52c94e1c9a");
+        public static AssetReferenceT<Mesh> commonSkinGlassMesh = new AssetReferenceT<Mesh>("4dcc2256131a72247a6f063f380aa674");
+        public static AssetReferenceT<Mesh> commonSkinArmMesh = new AssetReferenceT<Mesh>("e621f8f419d8ad04d97aa0da34f43bcc");
+        public static AssetReferenceT<Material> commonSkinArmMaterial = new AssetReferenceT<Material>("3c6c7959e383556429c3faa40e7783ff");
+        public static AssetReferenceT<Texture> commonSkinFaceTexture = new AssetReferenceT<Texture>("bb2e98fe74378b543b307d6c1e36d8c4");
+        public static AssetReferenceT<Texture> commonSkinFaceMask = new AssetReferenceT<Texture>("f96eda95e0e337f49bbd75ebf40311a2");
+        #endregion
         #region Default Skin
         public static AssetReferenceT<Material> defaultSkinMaterial = new AssetReferenceT<Material>("83e8838e42f0e0c44bfa65f58572c81e");
-        public static AssetReferenceT<Material> defaultSkinArmMaterial = new AssetReferenceT<Material>("3c6c7959e383556429c3faa40e7783ff");
         public static AssetReferenceT<Material> defaultAltSkinMaterial = new AssetReferenceT<Material>("8ec4f98e2d3d6034fa9ee2be6f47850e");
         public static AssetReferenceT<Mesh> defaultSkinMesh = new AssetReferenceT<Mesh>("33949338006f1a74192571a62910f38c");
-        public static AssetReferenceT<Mesh> defaultSkinGlassMesh = new AssetReferenceT<Mesh>("4dcc2256131a72247a6f063f380aa674");
-        public static AssetReferenceT<Mesh> defaultSkinArmMesh = new AssetReferenceT<Mesh>("e621f8f419d8ad04d97aa0da34f43bcc");
         public static AssetReferenceSprite defaultSkinIcon = new AssetReferenceSprite("e0bd4029a2d0049499dc8c6d68c3716b");
+        public static AssetReferenceSprite defaultAltSkinIcon = new AssetReferenceSprite("e0bd4029a2d0049499dc8c6d68c3716b");
         #endregion
         #region Classic Skin
         public static AssetReferenceT<Material> classicSkinMaterial = new AssetReferenceT<Material>("cd3ae74bb0848124b9c4e4813f731cc6");
         public static AssetReferenceT<Material> classicAltSkinMaterial = new AssetReferenceT<Material>("e4d73585e9a9cb248a7dca6e41e784d3");
-        public static AssetReferenceT<Mesh> classicSkinMesh = new AssetReferenceT<Mesh>("3bdce6993e2b16e46a0fd25fea45cfa5");
+        public static AssetReferenceT<Mesh> classicSkinMesh = new AssetReferenceT<Mesh>("9d18c52fa7dfd594689995a9777c64be");
         public static AssetReferenceSprite classicSkinIcon = new AssetReferenceSprite("b6f91ba019353654992c4a536e207a87");
+        public static AssetReferenceSprite classicAltSkinIcon = new AssetReferenceSprite("b6f91ba019353654992c4a536e207a87");
         #endregion
         #region Future Skin
         public static AssetReferenceT<Material> futureSkinMaterial = new AssetReferenceT<Material>("b0f8af76c50b18d44a0102da35b23dc3");
         public static AssetReferenceT<Texture> futureSkinFresnelMask = new AssetReferenceT<Texture>("4e5d8ec185ae8674caa695c73cf3c4f7");
-        public static AssetReferenceT<Mesh> futureSkinMesh = new AssetReferenceT<Mesh>("7ec157145d7a694428a80d11e7f9dde2");
+        public static AssetReferenceT<Texture> futureSkinFaceTexture = new AssetReferenceT<Texture>("e36638321dfd0b048b863f5820d70b3a");
+        public static AssetReferenceT<Texture> futureSkinFaceMask = new AssetReferenceT<Texture>("eb6492d3e16ea3242a1c51c9836549c5");
+        public static AssetReferenceT<Mesh> futureSkinMesh = new AssetReferenceT<Mesh>("189fba858f987914dba52ef9286cdc29");
         public static AssetReferenceSprite futureSkinIcon = new AssetReferenceSprite("b6f91ba019353654992c4a536e207a87");
+        #endregion
+        #region Space Skin
+        public static AssetReferenceT<Material> spaceSkinMaterial = new AssetReferenceT<Material>("47507833c4f20f642ac05c92737fd26c");
+        public static AssetReferenceT<Material> spaceAltSkinMaterial = new AssetReferenceT<Material>("03a3ae7c520de79479ee94d0172bc276");
+        public static AssetReferenceT<Mesh> spaceSkinMesh = new AssetReferenceT<Mesh>("cb6e5c2798224374bb04a05a5538c3e9");
+        public static AssetReferenceSprite spaceSkinIcon = new AssetReferenceSprite("b6f91ba019353654992c4a536e207a87");
+        public static AssetReferenceSprite spaceAltSkinIcon = new AssetReferenceSprite("b6f91ba019353654992c4a536e207a87");
+        #endregion
+        #region Question Skin
+        public static AssetReferenceT<Material> questionSkinMaterial = new AssetReferenceT<Material>("84866e7150d541b43b2ddfb08f37390a");
+        public static AssetReferenceT<Mesh> questionSkinMesh = new AssetReferenceT<Mesh>("115bdb70f73c6b94990ac28f1ec0077f");
+        public static AssetReferenceSprite questionSkinIcon = new AssetReferenceSprite("b6f91ba019353654992c4a536e207a87");
         #endregion
         #region Warframe Skin
         public static AssetReferenceT<Material> warframeSkinMaterial = new AssetReferenceT<Material>("fa40aa64deb77d04da385a554f3de463");
+        public static AssetReferenceT<Texture> warframeSkinFresnelMask = new AssetReferenceT<Texture>("e4cc6ec017771ee41bc179610a4e9b74");
         public static AssetReferenceT<Material> warframeSkinHatMaterial = new AssetReferenceT<Material>("7bd906e6af579f140917fd51aa9d7a6a");
-        public static AssetReferenceT<Mesh> warframeSkinMesh = new AssetReferenceT<Mesh>("0b11538b5dababe40a1b6984b770f81f");
-        public static AssetReferenceT<Mesh> warframeSkinHatMesh = new AssetReferenceT<Mesh>("7c1947acc115f8d43ac7153c0a8f4f82");
+        public static AssetReferenceT<Texture> warframeSkinFaceTexture = new AssetReferenceT<Texture>("87714cd0eb18d2f4e876e96fca19466b");
+        public static AssetReferenceT<Texture> warframeSkinFaceRamp = new AssetReferenceT<Texture>("868a757a8351d2043820278b97ea4e42");
+        public static AssetReferenceT<Mesh> warframeSkinMesh = new AssetReferenceT<Mesh>("4bb63a9ca15c5b74b90578d026db3464");
+        public static AssetReferenceT<Mesh> warframeSkinFaceMesh = new AssetReferenceT<Mesh>("84a8092af2c68d144ad4894eea9140c0");
+        public static AssetReferenceT<Mesh> warframeSkinHatMesh = new AssetReferenceT<Mesh>("05076c2208f05c749a649b728b7c8f65");
         public static AssetReferenceSprite warframeSkinIcon = new AssetReferenceSprite("b6f91ba019353654992c4a536e207a87");
         #endregion
         #endregion
@@ -138,6 +165,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public static AssetReferenceT<GameObject> cleaverItemModel = new AssetReferenceT<GameObject>("8dce5d1b37999f34faf5a6f53164427b");
         #endregion
         #region VFX
+        public static AssetReferenceT<GameObject> improvisedWeaponItemOrb = new AssetReferenceT<GameObject>("d4d8106d098d889438f9eee294cbebae");
+
         public static AssetReferenceT<GameObject> flameCanSpecialProjectileGhost = new AssetReferenceT<GameObject>("fc0da765d454d7e4f86895ef76de0172");
         public static AssetReferenceT<GameObject> projectileExplodeEffect = new AssetReferenceT<GameObject>("05b273758480af74a919e826c7b80a86");
 
@@ -274,6 +303,19 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             outlineMat.name = "matRorschachOutline";
             OutlineComponent.material = outlineMat;
 
+            GameObject itemOrb = Addressables.LoadAssetAsync<GameObject>(improvisedWeaponItemOrb).WaitForCompletion();
+            var itemOrbSfx1 = itemOrb.AddComponent<PlaySoundOnEvent>();
+            itemOrbSfx1.triggeringEvent = PlaySoundOnEvent.PlaySoundEvent.Start;
+            itemOrbSfx1.soundEvent = "Play_UI_item_spawn_tier2";
+            var itemOrbSfx2 = itemOrb.AddComponent<PlaySoundOnEvent>();
+            itemOrbSfx2.triggeringEvent = PlaySoundOnEvent.PlaySoundEvent.Destroy;
+            itemOrbSfx2.soundEvent = "Play_UI_item_land_tier2";
+            itemOrb.transform.GetChild(0).GetComponent<TrailRenderer>().sharedMaterial = inkTrail;
+            Material itemOrbCore = new Material(AssetAsyncReferenceManager<Material>.LoadAsset(new AssetReferenceT<Material>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_VFX.matTracer_mat)).WaitForCompletion());
+            itemOrbCore.SetInt("_ZTest", 8);
+            itemOrbCore.SetFloat("_DepthOffset", -1f);
+            itemOrb.transform.GetChild(0).GetChild(0).GetComponent<ParticleSystemRenderer>().sharedMaterial = itemOrbCore;
+            itemOrb.transform.GetChild(0).GetChild(1).GetComponent<ParticleSystemRenderer>().sharedMaterial = ink;
             RorschachAssets.projectileExplodeEffect.LoadAssetAsync().Completed += x =>
             { 
                 CreateBombExplosionEffect(x.Result);
@@ -443,11 +485,11 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 RampFog rampFogSettings = ScriptableObject.CreateInstance<RampFog>();
                 rampFogSettings.enabled.Override(true);
                 rampFogSettings.skyboxStrength.Override(0f);
-                rampFogSettings.fogIntensity.Override(0.7f);
+                rampFogSettings.fogIntensity.Override(3f);
                 rampFogSettings.fogColorStart.Override(new Color(0.75f, 0.75f, 0.75f, 0f));
                 rampFogSettings.fogColorMid.Override(new Color(1f, 1f, 1f, 0.4f));
                 rampFogSettings.fogColorEnd.Override(Color.white);
-                rampFogSettings.fogZero.Override(0.2f);
+                rampFogSettings.fogZero.Override(0.02f);
                 x.Result.AddSettings(rampFogSettings);
             };
         }
@@ -523,6 +565,35 @@ namespace RorschachMod.Characters.Survivors.Rorschach
             material.SetTexture("_RemapTex", AssetAsyncReferenceManager<Texture>.LoadAsset(new AssetReferenceT<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_ColorRamps.texRampMaulingRockHit_png)).WaitForCompletion());
             material.SetColor("_TintColor", new Color(0.06f, 0.06f, 0.06f));
             return material;
+        }
+
+        internal static Material CreateDefaultFaceMaterial()
+        {
+            if (face) return face;
+
+            face = new Material(AssetAsyncReferenceManager<Shader>.LoadAsset(new AssetReferenceT<Shader>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Shaders.HGOpaqueCloudRemap_shader)).WaitForCompletion());
+            face.SetTexture("_MainTex", AssetAsyncReferenceManager<Texture>.LoadAsset(commonSkinFaceMask).WaitForCompletion());
+            face.SetTexture("_Cloud1Tex", AssetAsyncReferenceManager<Texture>.LoadAsset(new AssetReferenceT<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common_TiledTextures.texCloudOrganic1_png)).WaitForCompletion());
+            face.SetTextureScale("_Cloud1Tex", new Vector2(0.6f, 0.6f));
+            face.SetTexture("_Cloud2Tex", AssetAsyncReferenceManager<Texture>.LoadAsset(new AssetReferenceT<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common.texCloudWaterFoam2_psd)).WaitForCompletion());
+            face.SetVector("_CutoffScroll", new Vector4(-3, -2, -1.5f, 1.5f));
+            face.SetColor("_EmissionColor", Color.black);
+            face.Inkify();
+            return face;
+        }
+        internal static Material CreateGlowingFaceMaterial(Texture mask, Texture cloud1, Texture remap)
+        {
+            Material face = new Material(AssetAsyncReferenceManager<Shader>.LoadAsset(new AssetReferenceT<Shader>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Shaders.HGCloudRemap_shader)).WaitForCompletion());
+            face.SetTexture("_MainTex", mask);
+            face.SetTexture("_Cloud1Tex", cloud1);
+            face.SetTexture("_Cloud2Tex", AssetAsyncReferenceManager<Texture>.LoadAsset(new AssetReferenceT<Texture>(RoR2BepInExPack.GameAssetPaths.Version_1_39_0.RoR2_Base_Common.texCloudWaterFoam2_psd)).WaitForCompletion());
+            face.SetTexture("_RemapTex", remap);
+            face.SetVector("_CutoffScroll", new Vector4(-3, -2, -1.5f, 1.5f));
+            face.EnableKeyword("USE_CLOUDS");
+            face.SetFloat("_InvFade", 0f);
+            face.SetFloat("_AlphaBias", 0.25f);
+            face.SetInt("_Cull", 2);
+            return face;
         }
     }
 }

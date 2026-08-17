@@ -85,8 +85,8 @@ namespace RorschachMod.Characters.Survivors.Rorschach
         public const float specialFlameCanJudgementExplosionRadiusMultiplier = ((specialFlameCanMaxExplosionRadius / specialFlameCanMinExplosionRadius) - 1) / judgementBuffCap;
         public const int specialFlameCanFinalBurnStacks = 3;
 
-        public const float specialPostProcessWeightStart = 0.04f;
-        public const float specialPostProcessWeightPerAction = 0.06f;
+        public const float specialPostProcessWeightStart = 0.1f;
+        public const float specialPostProcessWeightPerAction = 0.08f;
 
         #endregion
     }

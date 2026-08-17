@@ -149,8 +149,8 @@ MonoBehaviour:
     m_Address: Assets/RorschachAssets/RorschachBundle/mdlPipe.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 7c1947acc115f8d43ac7153c0a8f4f82
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachWarframeHat.mesh
+  - m_GUID: 4bb63a9ca15c5b74b90578d026db3464
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Warframe/meshRorschachWarframe.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 3f08ca721a7f897459657a184428b62b
@@ -161,20 +161,20 @@ MonoBehaviour:
     m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachDefaultArm.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 0b11538b5dababe40a1b6984b770f81f
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachWarframe.mesh
+  - m_GUID: 84a8092af2c68d144ad4894eea9140c0
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Warframe/meshRorschachWarframeFace.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: eea6538410b08774f933d0552c9c0953
     m_Address: Assets/RorschachAssets/RorschachBundle/Materials/matRorschachPipe.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 3bdce6993e2b16e46a0fd25fea45cfa5
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachClassic.mesh
+  - m_GUID: 9d18c52fa7dfd594689995a9777c64be
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Classic/meshRorschachClassic.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 7ec157145d7a694428a80d11e7f9dde2
-    m_Address: Assets/RorschachAssets/RorschachBundle/Mesh/meshRorschachFuture.mesh
+  - m_GUID: 189fba858f987914dba52ef9286cdc29
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Future/meshRorschachFuture.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 33949338006f1a74192571a62910f38c
@@ -287,6 +287,82 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 1cde781a8e6fd40488dd4ae7e68514f5
     m_Address: Assets/RorschachAssets/RorschachBundle/VFX/RorschachSpecialPostProcessing.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bb2e98fe74378b543b307d6c1e36d8c4
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/texRorschachDefaultFace.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8964518f3145608408226bb69f684ad5
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/texRorschachPropsBlack.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d02bc9d598deaf74284f8be3643b5155
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/texRorschachPropsDefaultAlt.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ba9b3c49d6183914baf17a79990dc1c1
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Warframe/texRorschachPropsWarframe2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 47693c58e62f7264f922389bc24711b5
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Warframe/texRorschachPropsWarframe.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 87714cd0eb18d2f4e876e96fca19466b
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Warframe/texRorschachWarframeFace.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e4cc6ec017771ee41bc179610a4e9b74
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Warframe/texRorschachWarframeFresnelMask.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 84866e7150d541b43b2ddfb08f37390a
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Question/matRorschachQuestion.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 115bdb70f73c6b94990ac28f1ec0077f
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Question/meshRorschachQuestion.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d4d8106d098d889438f9eee294cbebae
+    m_Address: Assets/RorschachAssets/RorschachBundle/VFX/Prefabs/RorschachImprovsedWeaponItemOrb.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 05076c2208f05c749a649b728b7c8f65
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Warframe/meshRorschachWarframeHat.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cb6e5c2798224374bb04a05a5538c3e9
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Space/meshRorschachSpace.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f61b5db1bf19b4a469b7bb52c94e1c9a
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Common/meshRorschachCommonFace.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e36638321dfd0b048b863f5820d70b3a
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Future/texRorschachFutureFace.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eb6492d3e16ea3242a1c51c9836549c5
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Future/texRorschachFutureFaceMask.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f96eda95e0e337f49bbd75ebf40311a2
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Common/texRorschachFaceMask.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 03a3ae7c520de79479ee94d0172bc276
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Space/matRorschachSpaceAlt.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 47507833c4f20f642ac05c92737fd26c
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Space/matRorschachSpace.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 868a757a8351d2043820278b97ea4e42
+    m_Address: Assets/RorschachAssets/RorschachBundle/Skins/Warframe/texRampRorschachWarframe.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

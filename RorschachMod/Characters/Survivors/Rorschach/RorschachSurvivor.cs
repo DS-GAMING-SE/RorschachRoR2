@@ -65,15 +65,21 @@ namespace RorschachMod.Characters.Survivors.Rorschach
                 },
                 new CustomRendererInfo
                 {
+                    childName = "FaceModel",
+                    dontHotpoo = true,
+                    material = RorschachAssets.CreateDefaultFaceMaterial()
+                },
+                new CustomRendererInfo
+                {
                     childName = "AccessoryModel1",
                     dontHotpoo = true,
-                    material = HedgehogUtils.Helpers.CreateGlassMaterial(new Color(0.6f, 0.6f, 0.6f))
+                    material = HedgehogUtils.Helpers.CreateGlassMaterial(new Color(0.25f, 0.2f, 0.2f))
                 },
                 new CustomRendererInfo
                 {
                     childName = "AccessoryModel2",
                     dontHotpoo = true,
-                    materialReference = RorschachAssets.defaultSkinArmMaterial
+                    materialReference = RorschachAssets.commonSkinArmMaterial
                 }
         };
 
